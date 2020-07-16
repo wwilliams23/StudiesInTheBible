@@ -1,0 +1,513 @@
+<html lang ="em">
+	<head>
+		<title>Studies in the Bible - Rightly Dividing the Word - Lesson 2</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.d2 {	border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.top {	border-top: 3px solid #000000;}
+		</style>
+		<script type="text/javascript">	
+		//Answers
+		    var score = 0;
+		    var answers ="";
+			
+			
+			var L02_01 = [	"L02S101","O.T.",
+							"L02S102","N.T.",
+							"L02S103","N.T.",
+							"L02S104","O.T.",
+							"L02S105","N.T.",
+							"L02S106","O.T.",
+							"L02S107","N.T.",
+							"L02S108","O.T.",
+							"L02S109","O.T.",
+							"L02S110","N.T.",
+							"L02S111","O.T.",
+							"L02S112","N.T.",
+							"L02S113","N.T.",
+							"L02S114","N.T.",
+							"L02S115","O.T."];
+						
+		    var L02_03 = [	"L02S301","No",
+							"L02S302","Yes",
+							"L02S303","Yes",
+							"L02S304","No",
+							"L02S305","No",
+							"L02S306","Yes",
+							"L02S307","Yes",
+							"L02S308","No",
+							"L02S309","Yes",
+							"L02S310","No"];
+					
+			
+		function checkAnswers()
+		{
+		    score = 0;
+		    answers ="";
+		  
+			answers ="LESSON 2:  SECTION ONE:\n";
+			SectionOneChecker();
+			
+			answers +="\n\nLESSON 2:  SECTION TWO:\n";
+			SectionTwoChecker();	
+			
+			answers +="\n\nLESSON 2:  SECTION THREE:\n";
+			SectionThreeChecker();		
+			
+		
+		
+		score =(0.5 + 100 * score/50);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+		}
+function SectionOneChecker()
+	{
+		var radios ="";
+		var radVal ="";
+			for (i=0;i<15;i++)
+				 {  
+				  pre ="Incorrect " + String(i+1) + ".  ";
+					radios=document.getElementsByName(L02_01[2*i]);
+				     for (j=0; j<radios.length; j++)
+					 {
+					     if(radios[j].checked)
+						 {
+							radVal=radios[j].value;
+						 }
+					 }
+					if(radVal==L02_01[2*i+1])
+					{
+						score++;
+						pre = "Correct   " + String(i+1) + ".  ";
+					}
+					answers+=pre + radVal +"\n";
+				 }
+	}
+	
+
+//SECTION TWO DATA
+
+    	var q2blanks= [	"L02S201", "L02S202","L02S203","L02S204",						
+							"L02S205", "L02S206", "L02S207", 
+							"L02S208", "L02S209", "L02S210",
+							"L02S211", "L02S212", "L02S213", "L02S214",
+							"L02S215", "L02S216", "L02S217", 
+							"L02S218", "L02S219", "L02S220",	
+							"L02S221", "L02S222", "L02S223", "L02S2124"];
+							
+	var q2answers = [
+					"Matthew", "Mark", "Luke", "John",
+					"Revelation",
+					"Proverbs","Ecclesiastes", "Song of Solomon",
+					"The Law", "Jewish history", "poetry", "major prophets", "minor prophets",
+					"gospels", "history", "Letters of Paul", "general epistles","prophecy", 
+					"Genesis", "Exodus","Lieviticus", "Numbers", "Deuteronomy",
+					"14",
+					"Acts"
+					];
+					
+					
+    var qbreak2 =   [0, 4,5,8,13,18,23,24,25];
+
+			
+  var secThreeTxt;
+  
+  var qcount2 = 0;
+  var q2ans = "";
+  var pick2;
+  
+  
+  //SECTION TWO FUNCTION
+  
+  function SectionTwoChecker()
+  {
+    qcount2=0;
+	var i;
+	var j;
+	var m = 0;
+	for ( j=1; j<qbreak2.length; j++)  //number of questions
+	{
+		m++;  //question number
+	    q2ans+= "\n"  + m +".";		//build question
+		pick2="";					//answer selected
+		
+		
+		for (i=qbreak2[j-1]; i<qbreak2[j]; i++)
+		{
+		
+		
+			
+			secTwoTxt = document.getElementsByTagName("input")[16+qbreak2[j]+qcount2].value;
+			if (secTwoTxt == q2answers[i])
+			{
+				pick2 += "..." + secTwoTxt + " - " + q2answers[i] + " - correct";
+				score +=1;
+		    }	
+			else
+			{
+				pick2 += "..." + secTwoTxt + " - " + q2answers[i] + " - incorrect";
+			}
+			
+		}
+		
+		q2ans += pick2;
+		qcount2++;
+	}
+	answers = answers +"\n" + q2ans;
+	q2ans ="";
+ }
+ 
+
+
+	
+	
+function SectionThreeChecker()
+	{
+		var radios ="";
+		var radVal ="";
+			for (i=0;i<10;i++)
+				 {  
+				  pre ="Incorrect " + String(i+1) + ".  ";
+					radios=document.getElementsByName(L02_03[2*i]);
+				     for (j=0; j<radios.length; j++)
+					 {
+					     if(radios[j].checked)
+						 {
+							radVal=radios[j].value;
+						 }
+					 }
+					if(radVal==L02_03[2*i+1])
+					{
+						score++;
+						pre = "Correct   " + String(i+1) + ".  ";
+					}
+					answers+=pre + radVal +"\n";
+				 }
+			
+	}
+	
+
+			</script>
+	</head>
+	<body>
+	<nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  2 &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;   
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>Rightly Dividing the Word</h1>
+	<h3>Lesson 2</h3>
+<div class="d1">
+	<p class="p1">
+		"Study to show thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth."  (2 Timothy 2:15.)  In this lesson we shall try to "rightly divide" the Bible in order to know how to better use it.
+
+	</p>
+</div>
+	
+<div>
+	
+
+	<h2>Divisions of the Bible</h2>
+	<p class="p1">
+		The 66 books have two major divisions called the Old and New Testaments.  The old Testament explains God's relationship with man before the coming of Christ while the New Testament tells us about the life of Christ and how God deals with us today.  It is important for us to realize that we must go to the New Testament rather than to the Old if we wish to find out how to become Christians and how to live the Christian life.
+	</p>
+
+	<p class="p1">
+		In Luke 24:44, Jesus mentions three divisions of the Old Testament when he speaks of the Law of Moses, the prophets, and the psalms.  For the purpose of our study we shall divide the Old Testament into five major divisions -- The law, Jewish history, poetry, the major prophets, and the minor prophets.  The New Testament will be divided into the gospels, history, the letters of Paul, the general epistles, and prophecy.
+	</p>
+	
+</div>
+
+<div class="d1">
+	<h2>Old Testament Books</h2>
+	<p class="p1">
+		The first five books are the books of the law, sometimes called the Pentateuch (meaning five books).  The Jews call them the <strong>Torah</strong>.  Written by Moses, they trace the history of man during his earliest years of existence.  Genesis tells the story of the creation and fall of man, the flood, and the events of the <strong>Patriarchal Age</strong>.  This was the period from creation to the giving of the Law of Moses in which there was no written divine law.  It is called the <strong>Patriarchal Age</strong> or dispensation because the father provided the family spiritual leadership.  After the Law of Moses was given, there was an organized system of worship on a national scale.  Exodus relates the deliverance of the children of Israel (later called the Jews) from Egypt, and an account of their forty-year wandering in the wilderness.  Leviticus, Numbers, and Deuteronomy give more of the history of this wandering and also record the Law of Moses which governed God's chosen people, the Israelites, from then until Chirst's death.  From Moses to Chirst is the <strong>Mosaic Age</strong>.
+	</p>
+	
+	<p class="p2">
+		The Law of Moses appied to the Jews and was never intended for Christians.  It was brought to an end when Christ died on the cross.
+	</p>
+	<p class="p1">
+		There are 12 books of history which follow next and record the story of the Jewish nation.  This includes the account of how Israel became a great people, how they sinned and were carried to a far country in captivity, and how a part of them eventually returned home.  These books are Joshua, Judges, Ruth, 1 and 2 Samuel, 1, and 1 Kings, 1 and 2 Chronicles, Ezra, Nehemiah, and Esther.  The authors of some of these are unknown.
+	</p>
+	<p class="p1">
+		The five books of poetry are books of devotion and exhortation.  They may not seem poetic to us because some poetic form has been lost in translation.  In many ways they are among the best loved books of the Bible.  They include Job (author unknon), the Psalms or songs or praise, partially written by David, and Proverbs, Ecclesiastes, and the Song of Solomon, all written by Solomon.  Probably the best known piece of writing in the world is the 23rd Psalm.  One could not find greater words of wisdom in our day than the admonitions of Solomon.  Job is an account of a rich man who lost all he had, remained faithful to God in spite of it and was doubly reworded for his faithfulness.
+	</p>
+	<p class="p1">
+		The prophetic books are usually divided into the major prophets and minor prophets becsuse the major prophets are longer.  With the exception of Lamentations, written by Jeremiah, all of the books of prophecy were penned by the men whose names they bear.  The five books of major prophecy are Isaiah, Jeremiah, Lamentations, Ezekiel, and Daniel, while the minor prophets are Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zepahniah, Haggai, Zechariah, and Malachi.  Isaiah is often called the Messianic prophet because he prophesies more than any other of the coming of Christ.  Daniel includes, besides prophecy, some very interesting events occuring during the captivity of the Jews in Babylon.  Many of these books also deal with events which were soon to happen to the Jews and their neighbors.
+	</p>
+	<p class="p1">
+		With Malachi, the Old Testament ends.  The first four books of the New Testament (Matthew, Mark, Luke and John) are written by the men whose name they bear.  They are known as the four gospels.  The word gospel means "good news" and these books tell us the good news of the coming of Christ to save mankind.  Actually, each is a biography of Jesus.  While they all record some of the same events, each also contains things not found in the other three. Together they give us a complete story of the ministry, death and resurrection of Christ.
+	</p>
+	<p class="p1">
+		With the death of Jesus came the end of the Mosaic Age and the beginning of the <strong>Christian Age</strong> which will last until the end of time.  The book of Acts written by Luke, is a book of history.  It tells how Christ's church was established and gives a record of the activities of some of the apostles and much of the history of the early chruch.  It is also called the book of conversions because it is the chief book to which we must go to find out how people became Christians in those days.
+	</p>
+	<p class="p1">
+		The next 21 books are epistles telling Christians how to live.  Some were written to individuals and others to various congregations.  The first 14, attributed to Paul, are Romans, 1 and 2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1 and 2 Thessalonians, 1 and 2 Timothy, Titus, Philemon, and Hebrews.  Paul's authorship of Hebrews is uncertain.  The other seven letters are often called the general epistles to distinguish them from the writings of Paul.  They are James, 1 and 2 Peter, 1, 2, and 3 John, and Jude.  All were written by the men for whom they are named.
+	</p>
+	<p class="p1">
+		The last book of the Bible is Revalation, a book of prophecy written by John.  It tells us about things which were to "shortly come to pass."  (Rev. 1:1.)  Although parts of this book are difficult to understand, it is a very valuable book and worthy of our study.
+	</p>
+	<p class="p1">
+		Thus we have divided the Bible into its proper divisions.  The New Testament is much more relevant for us today than the Old because it tells us how we should live, while the law given in the Old Testament applied to those who lived before Christ.  For this reason in this cousse, we will emphasize the New Testament more than the Old.
+	</p>
+	
+	
+</div>
+
+<div class="questions">
+
+<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+
+	<div class ="section1">
+	<table>
+		<tr><td colspan ="4"><strong>Indicate whether the book is in the Old Testament or New Testament by</strong></td><tr>
+		<tr><td colspan ="4"><strong>selecting O.T (Old Testiament) or N.T. (New Testament) followong the book name:</strong></td><tr>
+		
+		<tr><td class="radio8">1.  Genesis</td><td>
+				 <input type="radio" class="r1" name="L02S101" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S101" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S101" value="N.T.">N.T.
+							
+		</td>		
+		
+		<td class="radio9">&nbsp; &nbsp; &nbsp; &nbsp; 9.  Malachi</td><td>
+				 <input type="radio" class="r1" name="L02S109" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S109" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S109" value="N.T.">N.T.		
+		</td></tr>
+		
+		<tr><td class="radio8">2.  James</td><td>
+				 <input type="radio" class="r1" name="L02S102" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S102" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S102" value="N.T.">N.T.
+							
+		</td>		
+		
+		<td class="radio9">&nbsp; &nbsp; &nbsp; 10.  Titus</td><td>
+				 <input type="radio" class="r1" name="L02S110" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S110" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S110" value="N.T.">N.T.		
+		</td></tr>
+		
+		<tr><td class="radio8">3.  Acts</td><td>
+				 <input type="radio" class="r1" name="L02S103" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S103" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S103" value="N.T.">N.T.
+							
+		</td>		
+		
+		<td class="radio9">&nbsp; &nbsp; &nbsp; 11.  Judges</td><td>
+				 <input type="radio" class="r1" name="L02S111" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S111" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S111" value="N.T.">N.T.		
+		</td></tr>
+		
+		<tr><td class="radio8">4.  Isaiah</td><td>
+				 <input type="radio" class="r1" name="L02S104" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S104" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S104" value="N.T.">N.T.
+							
+		</td>		
+		
+		<td class="radio9">&nbsp; &nbsp; &nbsp; 12.  Romans</td><td>
+				 <input type="radio" class="r1" name="L02S112" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S112" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S112" value="N.T.">N.T.		
+		</td></tr>
+		<tr><td class="radio8">5.  Revelation</td><td>
+				 <input type="radio" class="r1" name="L02S105" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S105" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S105" value="N.T.">N.T.
+							
+		</td>		
+		
+		<td class="radio9">&nbsp; &nbsp; &nbsp; 13.  Matthew</td><td>
+				 <input type="radio" class="r1" name="L02S113" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S113" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S113" value="N.T.">N.T.		
+		</td></tr>
+		<tr><td class="radio8">6.  Ezra</td><td>
+				 <input type="radio" class="r1" name="L02S106" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S106" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S106" value="N.T.">N.T.
+							
+		</td>		
+		
+		<td class="radio9">&nbsp; &nbsp; &nbsp; 14.  2 John</td><td>
+				 <input type="radio" class="r1" name="L02S114" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S114" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S114" value="N.T.">N.T.		
+		</td></tr>
+		
+		<tr><td class="radio8">7.  John</td><td>
+				 <input type="radio" class="r1" name="L02S107" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S107" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S107" value="N.T.">N.T.
+							
+		</td>		
+		
+		<td class="radio9">&nbsp; &nbsp; &nbsp; 15.  Job</td><td>
+				 <input type="radio" class="r1" name="L02S115" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S115" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S115" value="N.T.">N.T.		
+		</td></tr>
+		
+		<tr><td class="radio8">8.  Psalms</td><td>
+				 <input type="radio" class="r1" name="L02S108" value="clear" checked="checked">clear
+				 <input type="radio" class="r1" name="L02S108" value="O.T.">O.T.
+				 <input type="radio" class="r1" name="L02S108" value="N.T.">N.T.
+							
+		</td>		
+		
+		<td>	
+		</td></tr>
+		
+	</table>
+	<br><br>
+	</div>    <!--end of section ONE -->
+
+
+
+	<div  class="section2">  <!--SECTION TWO-->	
+	
+	<table>
+	<tr><td colspan ="2"><strong>Fill in the blanks:</strong></td><tr>
+	
+	<tr><td>1.  The four books called the gospels are  	<input type="textbox" id="L02S201a"  class ="txtbox" >, 
+														<input type="textbox" id="L02S201b"  class ="txtbox" >, 
+														<input type="textbox" id="L02S201c"  class ="txtbox" >, and 
+														<input type="textbox" id="L02S201d"  class ="txtbox" >.</td></tr> 
+														
+	<tr><td>2.  The last book of the Bible is <input type="textbox" id="L02S202"  class ="txtbox" >.</td></tr>
+	
+	<tr><td>3.  The three books written by Solomon are  <input type="textbox" id="L02S2013a"  class ="txtbox" >, 
+														<input type="textbox" id="L02S203b"  class ="txtbox" >, and
+														<input type="textbox" id="L02S203c"  class ="txtbox" >.</td></tr> 
+														
+	<tr><td>4.  Five major divisions of the Old Testament are 	<input type="textbox" id="L02S204a"  class ="txtbox" >, 
+																<input type="textbox" id="L02S204b"  class ="txtbox" >, 
+																<input type="textbox" id="L02S204c"  class ="txtbox" >, 
+																<input type="textbox" id="L02S204d"  class ="txtbox" >, and
+																<input type="textbox" id="L02S204e"  class ="txtbox" >.</td></tr> 
+	
+	<tr><td>5.  Five major divisions of the New Testament are 	<input type="textbox" id="L02S205a"  class ="txtbox" >, 
+																<input type="textbox" id="L02S205b"  class ="txtbox" >, 
+																<input type="textbox" id="L02S205c"  class ="txtbox" >, 
+																<input type="textbox" id="L02S205d"  class ="txtbox" >, and
+																<input type="textbox" id="L02S205e"  class ="txtbox" >.</td></tr> 
+													
+	<tr><td>6.  Five five books written by Moses, called the Pentateuch are <input type="textbox" id="L02S206a"  class ="txtbox" >, 
+																			<input type="textbox" id="L02S206b"  class ="txtbox" >, 
+																			<input type="textbox" id="L02S206c"  class ="txtbox" >, 
+																			<input type="textbox" id="L02S206d"  class ="txtbox" >, and
+																			<input type="textbox" id="L02S206e"  class ="txtbox" >.</td></tr> 
+	
+	<tr><td>7. The number of books attributed to Paus is <input type="textbox" id="L02S207"  class ="txtbox" >.</td></tr>
+	
+	<tr><td>8.  The book of <input type="textbox" id="L02S208"  class ="txtbox" > has often been called the book of conversion because it tells us how to become Christians.</td></tr>
+	
+	
+	
+	</table>
+	<br><br>
+	</div>  <!--END OF SECTION TWO-->
+
+    <div class="section2">  <!--Section THREE--> 
+		
+		<table>
+		<tr><td colspan ="2"><strong>answer by yes or no:</strong></td><tr>
+		
+		<tr><td><input type="radio" name="L02S301"  value="Yes">Yes 
+				<input type="radio" name="L02S301"  value="No">No
+				<input type="radio" name="L02S301"  value="Clear" checked ="checked">Clear
+		</td><td>  &nbsp; &nbsp;  &nbsp; 1.  Are we living today during the Patiriarchal Age?</td></tr>
+	
+		<tr><td><input type="radio" name="L02S302"  value="Yes">Yes 
+				<input type="radio" name="L02S302"  value="No">No
+				<input type="radio" name="L02S302"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  2.  Was the book of Lamentations written by Jeremiah?</td></tr>
+		
+		<tr><td><input type="radio" name="L02S303"  value="Yes">Yes 
+				<input type="radio" name="L02S303"  value="No">No
+				<input type="radio" name="L02S303"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  3.  Do the first four books of the New Testament tell us of Christ?"</td></tr>
+		
+		<tr><td><input type="radio" name="L02S304"  value="Yes">Yes 
+				<input type="radio" name="L02S304"  value="No">No
+				<input type="radio" name="L02S304"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  4.  Is Jonah often called the Messianic prophet because he prophesies the coming of Christ more than any other?</td></tr>
+		
+		<tr><td><input type="radio" name="L02S305"  value="Yes">Yes 
+				<input type="radio" name="L02S305"  value="No">No
+				<input type="radio" name="L02S305"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  5.  Were there only three books of Jewish history?</td></tr>
+		
+		<tr><td><input type="radio" name="L02S306"  value="Yes">Yes 
+				<input type="radio" name="L02S306"  value="No">No
+				<input type="radio" name="L02S306"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  6.  Do the 21 epistles of the New Testament tell Christians how to live?</td></tr>
+		
+		<tr><td><input type="radio" name="L02S307"  value="Yes">Yes 
+				<input type="radio" name="L02S307"  value="No">No
+				<input type="radio" name="L02S307"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  7.  Do Leviticus, Numbers, and Deuteronomy tell us about the Law of Moses?</td></tr>
+		
+		<tr><td><input type="radio" name="L02S308"  value="Yes">Yes 
+				<input type="radio" name="L02S308"  value="No">No
+				<input type="radio" name="L02S308"  value="Clear" checked ="checked">Clear
+				</td><td> &nbsp; &nbsp;  &nbsp;  8.  Did Paul write the book of Psalms?</td></tr>
+		
+		<tr><td><input type="radio" name="L02S309"  value="Yes">Yes 
+				<input type="radio" name="L02S309"  value="No">No
+				<input type="radio" name="L02S309"  value="Clear" checked ="checked">Clear
+				</td><td> &nbsp; &nbsp;  &nbsp;  9.  Can a person find out how to become a Christian by reading the New Testament?</td></tr>
+		<tr><td><input type="radio" name="L02S310"  value="Yes">Yes 
+				<input type="radio" name="L02S310"  value="No">No
+				<input type="radio" name="L02S310"  value="Clear" checked ="checked">Clear
+				</td><td> &nbsp; &nbsp; 10. Is the story of the establishment of Christ's church found in the book of 2 Chronicles?</td></tr>
+	</table>
+	
+	
+	</div> <!--End of section THREE-->
+
+</div>  <!--END OF SECTION QUESTIONS-->
+<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>	
+
+</body>	
+<html>

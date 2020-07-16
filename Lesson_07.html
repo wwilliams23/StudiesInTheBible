@@ -1,0 +1,483 @@
+ <html lang ="em">
+	<head>
+		<title>Studies in the Bible - The Divided Kingdom - Lesson 7</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.p4 {	margin-left: 50px;
+					margin-right: 50px;
+			        font-weight: bold;
+					border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+					
+			.p5{	font-size:   18px;
+					line-height: 34px;
+					text-indent: 50px;
+					}
+			
+			.radio3 {   max-width: 675px;
+						min-width: 675px;
+						
+			}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.t-radio {max-width: 840px;
+						min-width: 840px;
+						}
+			.top {	border-top: 3px solid #000000;}
+			.tableNo { 	vertical-align: top;
+						padding-right: 10px;}
+			.tableNo1 {
+						vertical-align: top;
+						width: 180px;
+						max-width: 180px;
+						min-width: 180px;
+						overflow: hidden;
+						
+									 }
+			table {border-spacing: 1px 15px;}
+		</style>
+		<script type="text/javascript">	
+		
+	    
+		//Answers
+		    var score = 0;
+		    var answers ="";
+			
+			var L07_1 = [	"L07S101","Saul",
+							"L07S102","Solomon",
+							"L07S103","David",
+							"L07S104","David",
+							"L07S105","Saul",
+							"L07S106","Saul",
+							"L07S107","Solomon",
+							"L07S108","Solomon",
+							"L07S109","Saul",
+							"L07S110","David"];
+			
+			var L07_02 = [	"L07S201","c",
+							"L07S202","a",
+							"L07S203","a",
+							"L07S204","c",
+							"L07S205","b"
+							];	
+					
+						
+			var L07_03 = [	"L07S301","Goliath",
+							"L07S302","six-hundred",
+							"L07S303","Jesse",
+							"L07S304","sheep",
+							"L07S305","cheese",
+							"L07S306","Eliab",
+							"L07S307","Saul",
+							"L07S308","brass",
+							"L07S309","five",
+							"L07S310","forehead"];
+							
+			var activeFile=[];   
+			
+///////////////////////// main function /////////////////
+		function checkAnswers()
+		{
+		    answers ="";
+	
+			answers +="\n\n---------------------------------------\nLesson 7:  Section One:\n";
+			dropdownChecker(L07_1);
+			answers +="\n\nLesson 7:  Section Two:\n\n";
+			radioChecker(L07_02);	
+			answers +="\n\nLesson 7:  Section Three:\n";
+			paragraphChecker(L07_03);
+		
+		score =(0.5 + 100 * score/25);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+		}
+			
+
+//-----------------------------end of section three -----------------------------
+	//////////  -- Section Radio ---------
+	function radioChecker(activeFile)
+	{
+		var radios ="";
+		var radVal ="";
+	
+	
+			for (i=0;i<activeFile.length/2;i++)
+				 {  
+				  pre ="Incorrect " + String(i+1) + ".  ";
+					radios=document.getElementsByName(activeFile[2*i]);
+				     for (j=0; j<radios.length; j++)
+					 {
+					     if(radios[j].checked)
+						 {
+							radVal=radios[j].value;
+						 }
+					 }
+				 
+				 
+					if(radVal==activeFile[2*i+1])
+					{
+						score++;
+						pre = "Correct   " + String(i+1) + ".  ";
+
+					}
+					answers+=pre + radVal +"\n";
+				 }
+				
+				
+	}
+	//////////////////----end SectionRadioChecker function ----------------///////
+	//////////////////  dropdown-select-list checker
+	function dropdownChecker(activeFile)
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<activeFile.length/2; i++)
+				{
+					e = document.getElementById(activeFile[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = activeFile[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+//////////////////////////// end dropdown /////////////////////////////////////
+
+////////////////////////////  fill in blanks in paragraph /////////////////////////////
+	
+	function paragraphChecker(activeFile)
+{		
+		var q2ans;
+		var pick;
+		var count = 0;
+		var strUser ="";
+	
+    for (i=0; i<activeFile.length/2; i++)
+	{
+		strUser = document.getElementById(activeFile[2*i]).value;
+		if (strUser === activeFile[2*i+1])
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- correct";
+			score = score +1;
+		}
+		else
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- incorrect";	
+		}
+		count +=1;
+		answers +="\n" + count +".  "+ strUser; 
+				
+	}
+
+}
+
+
+	</script>
+	</head>
+	<body>
+	<nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+   7 &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;   
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>The United Kingdom</h1>
+	<h3>Lesson 7</h3>
+
+	
+
+	
+
+<div class="d1">
+
+	<p class="p1">
+The most glorious part of the history of Israel was the <b>United Kingdom,</b> so called to distinguish it from the <b>Divided Kingdom</b> which followed.  It lasted from about 1095 to 975 B.C. and included the reigns of three great kings -- Saul, David, and Solomon.  The story of this period is related in the two books of Samuel, the first eleven chapters of I Kings and parts of the Chronicles.
+	</p>
+	<h2>Saul -- Israel's First King</h2>
+	<p class="p1">
+You will remember that for about 300 years the twelve tribes of Israel had been loosely governed by judges.  The last and greaest of these was the prophet Samuel.  But the children of Israel wanted to be like their neighbors; they came to Samuel and asked for a king.  Although god was much displeased with their request, He instructed Samuel to anoint as their king a young man named Saul who stood "head and shoulders" above the people.  The people gathered at Mizpeh and were presented with their new ruler who was so timid that he hid among the baggage.
+	</p>
+	<p class ="p1">
+Saul began his forty-year reign well.  Israel was beset by enemies and he undertook the task of driving them back.  His Army defeated the Ammonites, the Philistines, the Moabites, the Edomites and others.  Soon Saul was a popular figure among the people.  
+But his popularity went to his head nd he ceased to be a humble servant of God.  Instead he became self-willed, bent on doing things the way he wanted them done, regardless of the will of God.  On one occasion he was commissioned to "utterly destroy the Amalekites."  
+Instead he spared the king and saved some sheep and cattle to sacrifice.  Because he had thus disobeyed the Loard, Samuel rebuked him with the words, "Behold to obey is better than sacrifice, and to hearken than the fat of rams."  (I Samuel 15:22.)  From that time on, God rejected Saul as king.  
+	</p>
+	<p class="p1">
+After Saul's rejection (although he was still reigning), God commanded Samuel to anoint privately as his successor a young shepherd boy named David, one of the greatest of all Bible characters.  After his anointing, David was called upon by Saul to play the harp for him whenever his spirit was troubled.  
+Saul deeply loved him nd selected him as his armorbearer.  David quickly rose to prominence by slaying the champion of the Philistines, the giant Goliath.  The ensuing glory given David provoked the jealously of Saul who began to suspect that David was trying to supplant him as king.  From that time on Saul sought to kill David and for years hunted him as an outlaw over the hills of Israel.
+	</p>
+	
+	<p class="p1">
+Perhaps the most beautiful friendship in the Bible is that of David and Jonathan, the son of Saul, who although he realized that David would become king instead of himself, constantly sought to save David from his father's ire.  Saul and Jonathan both fell in battle with the philistines to prepare the way for David as king.
+	</p>
+		
+		
+</div>
+
+<div class="d1">
+<h2>David -- Man After God's Heart</h2>	
+	<p class="p1">
+After Saul's death David was crowned king of the tribe of Judah while Saul's sorry son, Ishbosheth, reigned over the rest of Israel.  When his kingdom collapsed after seven years, David's authority was extended over all Israel.  David selected Jerusalem s his capital and set about the task of making Israel a great nation.  In successive wars he expanded the kingdom from the Nile to the Euphrates River.
+	</p>
+	
+	<p class="p2">
+David was truly a man after God's own heart.  The Lord declared of him, "I have found David the son of Jesse, a man after mine own heart, which shall fulfil all my will."  (Acts 13:22.)  The psalms written by David are an expression of his complete devotion to God.  This consecration was expecially evident in his constant willingness to obey all the Lord's commands.  We my learn from him that we cannot expect the aproval of God unless we are always willing to do what He asks of us without question. 
+	</p>
+	
+	<p class="p1">
+In spite of David's success and his faithfulness to God, he made one grave mistake that followed him to his death.  He committed adultery with Bathsheba, the wife of Uriah, the Hittite.  Some stories have protrayed Bathsheba as a siren who intentionally seduced David.  Nothing in the Bible bears out this idea.  To cover up his sin, David haad Uriah placed in the thick of battle to that he might be slain, nd then, when he was dead, took Bathsheba as his wife.  
+All of this greatly displeased God and Nathan the prophet was sent to rebuke David by telling him the parable of the ewe lamb.  (II Samuel 12.)  David repented, but his troubles now began.  His son, Adonijah, attempted to usurp the kingdom with the help of David's trusted general, Joab.  To forestall the kingdom falling into the wrong hands, David had his son, Solomon, crowned king while he yet lived.  Shortly thereafter David died, bringing to an end the forty-year reign of a great man of God.
+	</p>
+	
+	
+	
+</div>
+
+<div class="d1">
+<h2>Solomon -- From Wisdom To Idolatry</h2>	
+	<p class="p1">
+Solomon's rule was in sharp contrast with his father's.  While David had faced turmoil for almost his entire reign, Solomon's was one of unbroken peace.  He began auspiciously.  In a dream be asked of God wisdom rather than riches and honor, and because of his thoughtful request was rewarded with all three.  Solomon's wisdom is known to all.  Three thousand proverbs and 1005 songs came from this sage!  Much of his wisdom is recorded for us in the three books which he wrote and which we will study in another lesson.  Politically he extended the influence of Israel to its greatest height, making it a world power.
+	</p>
+	
+	<p class="p1">
+The fabulous wealth of Solomon astounds us, even in this day.  He had 1400 chariots, 12,000 horsemen and an annual income equal to 20 million dollars.  And he didn't have to pay an income tax!  On one occasion he was given an outright gift of three and a half million dollars by the queen of Sheba.  When she visited Solomon to see if all the reports of his fame were true she was so amazed thaat she exclaimed, "Behold, the half was not told me:  thy wisdom and prosperity exceedeth the fame which I heard." (I Kings 10:7.)
+	</p>
+	
+	<p class="p1">
+The greatest of all Solomon's accomlishments was his building of the temple of God to replace the tabernacle in which Israel had worshipped since the wilderness wanderings.  Probably no structure in the world's history has equaled it in cost.  Built by 183,000 men in seven and a half years, it cost from two to five billion dollars to erect.
+	</p>
+	
+	<p class="p1">
+The great wealth of Solomon eventually led to his undoing.  He sought every kind of pleasure and married 700 wives and 300 concubines.  Most of there were idolaters and whaat a time he must have had in trying to please them all.  His high cost of living led him to tax the people heavily, much to their dissatisfaction.  His reign had started with wisdom and wealth; it ended with women and idolatry.  When his forty-year rule ended he was a thoroughly disillusioned and unhappy man.  In his revelry he had laid the groundwork for the division of his great kingdom after his death.  This we shall study in our next lesson.
+	</p>
+	
+			
+</div>
+<div>
+<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+<table>
+
+
+		<tr><td colspan ="2"><strong>Select the name of the king described by each of these statements:</strong></td></tr>
+		<tr><td> &nbsp; &nbsp; 1.  He was the first king of Israel.</td>
+			<td>
+			<select size="1" name="L07S101" id="L07S101">
+				<option>Select the king:</option>
+				<option value="Saul">Saul</option>
+				<option value="David">David</option>
+				<option value="Solomon">Solomon</option>
+			</select>
+			</td>
+			</tr>
+		
+		<tr><td> &nbsp; &nbsp; 2.  He had 700 wives</td>
+			<td>
+			<select size="1" name="L07S102" id="L07S102">
+				<option>Select the king:</option>
+				<option value="Saul">Saul</option>
+				<option value="David">David</option>
+				<option value="Solomon">Solomon</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 3.  He was  man after God's own heart.</td>
+			<td>
+			<select size="1" name="L07S103" id="L07S103">
+				<option>Select the king:</option>
+				<option value="Saul">Saul</option>
+				<option value="David">David</option>
+				<option value="Solomon">Solomon</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 4.  His son Absalom led a revolt against him.</td>
+			<td>
+			<select size="1" name="L07S104" id="L07S104">
+				<option>Select the king:</option>
+				<option value="Saul">Saul</option>
+				<option value="David">David</option>
+				<option value="Solomon">Solomon</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 5.  He stood "head and shoulders" above the people.</td>
+			<td>
+			<select size="1" name="L07S105" id="L07S105">
+				<option>Select the king:</option>
+				<option value="Saul">Saul</option>
+				<option value="David">David</option>
+				<option value="Solomon">Solomon</option>
+		</select>
+		</td>
+		</tr>
+	
+		<tr><td> &nbsp; &nbsp; 6.  Samuel announced to the people at Mizpeh that he was their new king.</td>
+			<td>
+			<select size="1" name="L07S106" id="L07S106">
+				<option>Select the king:</option>
+				<option value="Saul">Saul</option>
+				<option value="David">David</option>
+				<option value="Solomon">Solomon</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 7.  During his reign the temple was built.</td>
+			<td>
+			<select size="1" name="L07S107" id="L07S107">
+				<option>Select the king:</option>
+				<option value="Saul">Saul</option>
+				<option value="David">David</option>
+				<option value="Solomon">Solomon</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 8.  On one occasion he was visited by the queen of Sheba.</td>
+			<td>
+			<select size="1" name="L07S108" id="L07S108">
+				<option>Select the king:</option>
+				<option value="Saul">Saul</option>
+				<option value="David">David</option>
+				<option value="Solomon">Solomon</option>
+				
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 9.  He had a son named Jonathan.</td>
+			<td>
+			<select size="1" name="L07S109" id="L07S109">
+				<option>Select the king:</option>
+				<option value="Saul">Saul</option>
+				<option value="David">David</option>
+				<option value="Solomon">Solomon</option>
+		</select>
+		</td>
+		</tr>
+		<tr><td> &nbsp; 10.  He sinned by taking for his wife Bathsheba, the wife of Uriah, the Hittite.</td>
+			<td>
+			<select size="1" name="L07S110" id="L07S110">
+				<option>Select the king:</option>
+				<option value="Saul">Saul</option>
+				<option value="David">David</option>
+				<option value="Solomon">Solomon</option>
+		</select>
+		</td>
+		</tr>	
+	</table>
+<table class="t-radio">
+		<tr><td colspan ="3"><strong>Select the letter representing the best answer</strong></td></tr>
+		
+		<tr class="radio2" ><td class="radio2">
+				 <input type="radio" class="r1" name="L07S201" value="a">a 
+				 <input type="radio" class="r1" name="L07S201" value="b">b  
+				 <input type="radio" class="r1" name="L07S201" value="c">c 
+				 <input type="radio" class="r1" name="L07S201" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 1. Samuel instructed Saul to utterly destroy the: (a) Philistines; (b) Ammonites; (c) Amalekites. 
+		</td><td class="radio4"></td></tr>
+		
+		<tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S202" value="a">a
+				
+				 <input type="radio" class="r1" name="L07S202" value="b">b 
+				 <input type="radio" class="r1" name="L07S202" value="c">c 
+				 <input type="radio" class="r1" name="L07S202" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 2.  Saul spared:  (a) some of the animals and the king; (b) all the animals; (c) no one.
+		</td><td></td></tr>
+		
+	    <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S203" value="a">a 
+				 <input type="radio" class="r1" name="L07S203" value="b">b 
+				 <input type="radio" class="r1" name="L07S203" value="c">c 
+				 <input type="radio" class="r1" name="L07S203" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 3. Saul's actions:  (a) displeased God; (b)  went unnoticed by God;  (c) pleased God.
+		</td><td></td></tr>
+		
+		<tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S204" value="a">a 
+				 <input type="radio" class="r1" name="L07S204" value="b">b 
+				 <input type="radio" class="r1" name="L07S204" value="c">c  
+				 <input type="radio" class="r1" name="L07S204" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 4.  Samuel said that which pleased the Lord more was:  (a) sacrifices; (b)  burnt offerings;  (c) obedience. 
+		</td><td></td></tr>
+		
+	    <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S205" value="a">a 
+				 <input type="radio" class="r1" name="L07S205" value="b">b
+				 <input type="radio" class="r1" name="L07S205" value="c">c 
+				 <input type="radio" class="r1" name="L07S205" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 5. Because of his actions Saul was:  (a) immediately killed; (b)  rejected as king;  (c) honored by God.
+		</td><td></td></tr>
+	</table>
+	
+<p><b>Read the story of David and Goliath in I Samuel 17 and fill in the blanks:</b></p>
+<p class="p5">When the Philistines gathered to battle the men of Israel, they had a champion<br>
+named <input id="L07S301"></input> who was six cubits and a span tall.  The staff <br>
+of his spear was like a weaver's beam and his spear head weighed <input id="L07S302"></input> <br>
+shekels of iron.  He dared the Israelites to send out a man to fight him.  The three <br>
+elder sons of <input id="L07S303"></input>,  the father of David, were in Saul's army.  <br>
+but David had to take care of his father's <input id="L07S304"></input>.  One day his <br>
+father sent David to Saul's army with corn, loaves of bread and <input id="L07S305"></input>. <br>
+When David arrived he heared the challenge of Goliath and asked to fight him. <br>
+This made his brother named <input id="L07S306"></input> angry with him.  David's <br>
+brave words were heard by <input id="L07S307"></input> and he sent for David.  He <br>
+gave him his armor and a helmet of <input id="L07S308"></input> for his head.  But <br>
+David took them off because he had not proved them.  Instead he selected <br>
+<input id="L07S309"></input> smooth stones and ut them in his bag.  When David <br>
+met the giant he shot a stone with his sling and it struck him in the <input id="L07S310"></input> <br>
+When he had killed him, the enemy army fled because they had lost their champion. </p>
+
+
+</p>
+</div>
+<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>	
+
+</body>
+</html>

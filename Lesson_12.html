@@ -1,0 +1,627 @@
+<html lang ="em">
+	<head>
+		<title>Studies in Bible - Jesus Christ -- His Teaching - Lesson 12</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			
+			.numcol {width: 20px;
+						vertical-align: text-top
+			}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.p4 {	margin-left: 50px;
+					margin-right: 50px;
+			        font-weight: bold;
+					border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+					
+			.p5 {	font-size:   18px;
+					line-height: 34px;
+					text-indent: 50px;
+					}
+			
+			.radio3 {   max-width: 675px;
+						min-width: 675px;
+						
+			}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.t-radio {max-width: 840px;
+						min-width: 840px;
+						}
+			.table-txt {	font-size:   18px;
+						
+						line-height: 34px;}
+			
+			.top {	border-top: 3px solid #000000;}
+			.tableNo { 	vertical-align: top;
+						padding-right: 10px;}
+			.tableNo1 {
+						vertical-align: top;
+						width: 180px;
+						max-width: 180px;
+						min-width: 180px;
+						overflow: hidden;
+						
+									 }
+			table {border-spacing: 1px 15px;}
+			
+			.t2 {border: 1px solid #000000;
+				padding: 30px;}
+				
+			.cell1 {border: 1px solid #000000;
+				}
+				
+		</style>
+<script type="text/javascript">	
+//Main Data storage		
+var score = 0;
+var answers ="";
+//Lesson 12 section One data	
+
+var L12_1= ["L12S101","True",
+			"L12S102","False",
+			"L12S103","True",
+			"L12S104","False",
+			"L12S105","False",
+			"L12S106","True",
+			"L12S107","False",
+			"L12S108","True",
+			"L12S109","True",
+			"L12S110","False"];		
+
+//Lesson 12 section Two data	
+var L12_2=[ "L12S201", "first",
+			"L12S202", "light",
+			"L12S203", "vine",
+			"L12S204", "kingdom",
+			"L12S205", "Judged",
+			"L12S206", "scripture",
+			"L12S207", "salt",
+			"L12S208", "destruction",
+			"L12S209", "water",
+			"L12S210", "soul"];
+
+var L12_3= ["L12S301","5",
+			"L12S302","6",
+			"L12S303","4",
+			"L12S304","2",
+			"L12S305","1",
+			"L12S306","3"];		
+
+	
+
+
+var L12_4= ["L12S403","a grain of musteard seed",
+			"L12S404","heaven",
+			"L12S405","net",
+			"L12S402","ten virgins",
+		    "L12S401","treasure hid in a field"];
+		
+		
+///////  MAIN FUNCTION ////////////////////////////////////			    
+		function checkAnswers()
+		{
+		    answers ="";
+		  
+			answers +="LESSON 12:  SECTION ONE:\n";
+			SectionOneChecker();
+			
+			answers +="\n\nLESSON 12:  SECTION TWO:\n";
+			SectionTwoChecker();	
+			
+			answers +="\n\nLESSON 12:  SECTION THREE:\n";
+			SectionThreeChecker();		
+			
+			answers +="\n\nLESSON 12:  SECTION FOUR:\n";
+			SectionFourChecker()
+		
+		
+		score =(0.5 + 100 * score/31);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+		}
+ 
+/////////////////----end main function ----------------///////
+
+
+//////////////  Section one function ///////////////////////////		
+function SectionOneChecker()
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<10; i++)
+				{
+					e = document.getElementById(L12_1[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = L12_1[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+	
+////////////////// section Two function ///////////////////
+
+function SectionTwoChecker()
+{
+	var count = 0;
+	var strUser ="";
+	
+    for (i=0; i<10; i++)
+	{
+		strUser = document.getElementById(L12_2[2*i]).value;
+		if (strUser === L12_2[2*i+1])
+		{
+			strUser = strUser +" -- "+ L12_2[2*i+1] + " -- correct";
+			score = score +1;
+		}
+		else
+		{
+			strUser = strUser +" -- "+ L12_2[2*i+1] + " -- incorrect";	
+		}
+		count +=1;
+		answers +="\n" + count +".  "+ strUser; 
+				
+	}
+}
+
+//////////////  Section Three function ///////////////////////////		
+function SectionThreeChecker()
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<6; i++)
+				{
+					e = document.getElementById(L12_3[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = L12_3[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+	
+////////////////// End od section Three function ///////////////////
+
+//////////////  Section Four function ///////////////////////////		
+function SectionFourChecker()
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<5; i++)
+				{
+					e = document.getElementById(L12_4[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = L12_4[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+	
+////////////////// section Two function ///////////////////
+
+
+	</script>
+	</head>
+	<body>
+	<nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;   
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp; 
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+    12 &nbsp; &nbsp;
+ <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>Jesus Christ -- His Teaching</h1>
+	<h3>Lesson 12</h3>
+	
+
+<div class="d1">
+<p class="p1">
+Jesus Christ was the world's master teacher.  His miracles were great;  His teachings even greater.  In this lesson we shall study what Jesus taught and how He taught it.
+</p
+
+</div>
+<div class="d1">
+<h2>How Jesus Taught</h2>
+	<p class="p1">
+	The teachings of Jesus was characterized by <b>simplicity.</b>  He used words the common people could understand and took His illustrations from those things with which they were familiar.  Man of His principles were set forth by parables.  A parable is a tru-to-life story with a lesson.  Thus while the story of the prodigal son (Luke 15:11-32) is a wonderful story that could have happened.  Christ did not tell it just to entertain His listeners.  He intended to show that a loving God will receive again His children when they stray.  The number of Christ's parables is usually placed between 27 and 50, depending on what is clasified as a parable.  Of these a majority deal with human beings while the others are built around animals or plants or other objects with whichthe people were familiar.
+	
+	</p>
+	<p class="p1">
+	The parable of the sower is typical of Jesus' parables.  In it He tells about a man who went forth to sow.  Some of his seed fell by the wayside, other on rocky ground or among the thorns, while some was planted in good ground.  Only that which fell on the good ground brought forth fruit.  After Jesus related this story, He then told His disciples what it meant -- the seed was the word of God and the way it grew or failed to grow represented the way men received or rejected the word of God, and the fruits they brought forth in their lives.
+	</p>
+	<p class="p1">
+	Jesus made effective use of questions.  Once He asked, "Who is my mother?"  He startled the people by answering His own question by saying, "Whosoever shall do the will of my Father which is in heaven, the same is my borther, and sister, and <b>mother."</b>  (Matt. 12:50.)  When His enemies tried to catch Him in a dilemma, He asked them a question.  When they were unable to answer His interrogation, He refused to answer theirs.  Sometimes He taught by example as He did when He washed His dicipes' feet.  He did not wash their feet because they were dirty, but to show that true greatness is measured by the service one renders to his foelow men.
+	</p>
+	
+</div>
+<div class="d1">
+<h2>What Jesus Taught</h2>
+	<p class="p1">
+	The things Jesus taught are more important than His methods.  He gave man a completely new way of life which is summed up in what has been called the golden rule of the Bible, <b>"Whatsoever ye would that men should do to you, do ye even to them."</b>  (*Matt. 7:12.)  This way of life is far above that of any pagan *******
+	</p>
+	
+<p class="p1">
+	The essence of the teachings of Jesus is in the Mb>Sermon of the Mount</b> found in Matthew 5, 6, and 7.  The student should read the entire discourse.  The sermon does not have a connected thought, but is made up of sayings ondifferent subjects.  It begins with a group of "beatitudes" in which blessing is pronounced upon those who please God.  For example, "Blessed are the merciful; for they shall obtain mercy.   Blessed are the pure in heart: for they shall see God."  (Matt. 5:7, 8.)  You will note that Jesus gives His blessing,m not to the rich or famous, but to those whose hearts are right and who strive to serve God by serving their fellow men.  In fact, by teaching, "Lay not up for yourselves treasures upon earth . . . but lay up for yourselves treasures in heaven."  (Matt. 6:19, 20) the Lord shows htat true riches are to be found in spiritual, not material things.
+</p>
+	
+	<p class="p1">
+	In the sermon Jesus shows htat we may sin by thought as well as by actionl.  "Ye have heard that it was said by them of old time, Thou shalt not kill . . . but I say unto you, that whosoever is angry with his brother without a cause shall be in danger of the judgmemnt."  (Matt. 5:21, 22.)  Again, "Whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.  :Matt. 5:28.)
+	</p>
+	
+	<p class="p1">
+	The words of Jesus on the subject of divorce are very clear.  "But I say unto you, that whosoever shall put away his wife, saving for the cause of fornication, causeth her to commit adultery: and whosoever shall marrr that is divorced committeth adultery."  (Matt. 5:32.)  Equally plain is His declaration aout oaths, "But I say unto you, swear not at all; neigher by heaven; for it is God's throne; nor by the earth; for it is his footstool."  (Matt. 5:34, 35.)
+	</p>
+	
+	<p class="p1">
+	Jesus taught the principle of non-resistance in the Sermon on the Mount.  Perhaps no teaching goes more counter to human nature than this.  Yet if all men carried it out wars would cease tomorrow.  Hear Him as He says, "Ye have heard that uit hath been said, An eye for an eye, and a tooth for a tooth; but I say unto you, that ye resist not evil; but whosoever shall smite thee on thy right cheek turn to him the other also."  (Matt. 5:38, 39.)  This is hard to do, but it lies at the basis of all Christ's teachings.
+	</p>
+</div>
+
+
+<div class="d1">
+
+<h2>The Kingdom of God</h2>
+	<p class="p1">
+	During His personal ministry Jesus taught much about the kingdom of God.  Many of His parables compared the kingdom of God to such familiar things as leaven or mustard seed.  Daniel had prophesied that God would establish an indestructible kingdom.  (Daniel 2:44.)  The Jews were looking for a temporal kingdom, but the kingdom Christ came to establish was a spiritual one.  He was to reign, not on the throne of David in Jerusalem, but in the hearts of men.  Jesus did not teach that He woul ever establish an earthly kingdom, but He did teach that His kingdom was the church (Matt. 16:18, 19) and that it soon was to be established.  In another lesson we will learn how and when it was set up.
+
+	</p>
+	
+	<p class="p1">
+	Jesus had much to say about heaven and hell.  He portrays heaven as a place to be inherited by those faithful to the Lord, but hell as the unhappyp fate of those who reject God.  He taught that the unprepared would be cast "into a furnace of fire; there shall be wailing and gnashing of teeth."  (Matt. 13:42.)  But He also showed that God loved man so much that He sent His son to save him from that terrible fate.
+	</p>
+
+
+	<p class="p1">
+	Jesus claimed to be the Son of God.  He was much more than a good moral man who taught others how to live better.  He came to save the world from sin.  If Jesus was not God's Son, than He was the greatest impostor in history, and His teachings cannot be trusted.  But those very teachings are within themselves proff that He is the Son of God and that His claims to deity are valid.
+	</p>
+</div>
+<div class="d1">	
+<h1>The Invitation Of Jesus</h1>
+	<p class="p2">
+	It is the wish of the Savior that men come to Him.  But while He will compel no man to accept Him, He invites all.  "Come unto me, all ye that labour and are heavy laden, and I will give you rest.  Take my yoke upon oyou, and learn of me; for I am meek and olowly in heart and ye shall find rest unto your souls.  For my yoke is easy, and my burden is light."  (Matt. 11:28-30.)  Dear student, have you accepted His invitation?
+	
+	</p>
+</div>
+
+
+<div>
+<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+<table>
+
+		<tr><td colspan ="2"><strong>  Select true or false before each statement:</strong></td></tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L12S101" id="L12S101">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 1.  A parable is a story with a lesson that is true-to-life.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L12S102" id="L12S102">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 2.  Jesus said, "Whosoever refuses to do the will of my Father is my mother.".</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L12S103" id="L12S103">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 3.  He once taught His disciples by washing their feet.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L12S104" id="L12S104">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 4.  The golden rule is, "If a man hits you, hit him back."</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L12S105" id="L12S105">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 5.  The Sermon on the Mount is found in chapters 13, 14, and 15 of Matthew.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L12S106" id="L12S106">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 6.  It begins with a group of statements called the beatitudes.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L12S107" id="L12S107">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 7.  Jesus taught His disciples that it does not make any difference what you think.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L12S108" id="L12S108">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 8.  He cameto establish a spiritual kingdom.</td>
+			</tr>
+			
+			<tr><td>
+			<select size="1" name="L12S09" id="L12S109">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 9.  Jesus described the place of punishment as a "furnace of fire."</td>
+			</tr>
+			
+			<tr><td>
+			<select size="1" name="L12S110" id="L12S110">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; 10.  He did not claim to be the son of God.</td>
+			</tr>
+
+</table>
+
+
+
+
+
+<br><br>
+
+<table>
+<tr><td colspan="2"><b>Fill in the blanks in each quotation from Jesus:</b></td></tr>
+<tr><td>&nbsp;1.&nbsp;&nbsp;</td><td>"Seek ye "<input id="L12S201"> the kingdom of God."  Matt. 6:33.</td></tr>
+<tr><td>&nbsp;2.&nbsp;&nbsp;</td><td>"I am the <input id="L12S202"> of the world."  John 8:12.</td.</tr>
+<tr><td>&nbsp;3.&nbsp;&nbsp;</td><td>"I ame the true <input id="L12S203">." John 15:1.</td></tr> 
+<tr><td>&nbsp;4.&nbsp;&nbsp;</td><td>"No man, having put his hand to the plough, and looking back, if fit for the <input id="L12S204"> of God."  Luke 9:62.</td></tr>
+<tr><td>&nbsp;5.&nbsp;&nbsp;</td><td>"Judge not,that ye be not <input id ="L12S205">."  Matt. 7:1.</td></tr>
+<tr><td>&nbsp;6.&nbsp;&nbsp;</td><td>"Search the <input id="L12S206">."  John 5:39.</td></tr>
+<tr><td>&nbsp;7.&nbsp;&nbsp;</td><td>"Ye are the <input id="L12S207"> of the earth."  Matt. 5:32.</td></tr>
+<tr><td>&nbsp;8.&nbsp;&nbsp;</td><td>"Broad is the way, that leadeth to <input id="L12S208">."  Matt. 7:13.</td></tr>
+<tr><td>&nbsp;9.&nbsp;&nbsp;</td><td>"Except a man be born of <input id="L12S209"> and of the Spirit, he cannot enter into the kingdom of God."  John 3:5.</td></tr>
+<tr><td>10.&nbsp;&nbsp;</td><td>"For what shall it profit a man, if he shall gain the whole world and lose his own<input id="L12S210">?"  Mark 8:36.</td></tr>
+</table>
+
+<br><br>
+
+
+
+<table>
+<tr><td colspan="4"><b>Read the beatitudes in Matthew 5:1-11.  In each blank place the number oo the phrase in the right hand colum before the statement which it matches.  The first one is done correctly:</td></tr>
+
+<tr>	
+	<td><select size="1" name="L12S301" id="L12S301">
+		<option value="No answer"></option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>			     
+	</select></td><td>Blessed are the pure in heart</td><td>1. </td><td>For they shall inherit the earth.</td></tr>
+
+<tr>	
+	<td><select size="1" name="L12S302" id="L12S302">
+		<option value="No answer"></option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>			     
+	</select></td><td>Blessed are they that mourn</td><td>2. </td><td>For theirs is the kingdom of heaven.</td></tr>
+
+<tr>	
+	<td><select size="1" name="L12S303" id="L12S303">
+		<option value="No answer"></option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>			     
+	</select></td><td>Blessed are the peacemakers</td><td>3. </td><td>For they shall obtain mercy.</td></tr>
+
+<tr>	
+	<td><select size="1" name="L12S304" id="L12S304">
+		<option value="No answer"></option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>			     
+	</select></td><td>Blessed are the pure in spirit</td><td>4. </td><td>For they shall be called the children of God.</td></tr>
+
+<tr>	
+	<td><select size="1" name="L12S305" id="L12S305">
+		<option value="No answer"></option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>			     
+	</select></td><td>Blessed are the meek</td><td>5. </td><td>For they shall see God.</td></tr>
+
+<tr>	
+	<td><select size="1" name="L12S306" id="L12S306">
+		<option value="No answer"></option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>			     
+	</select></td><td>Blessed are the merciful</td><td>6. </td><td>For they shall be comforted.</td></tr>
+
+</table>
+
+<table>
+<tr><td colspan="2"><b>To what does Jesus compare the kingdom of heaven in each of the scriptures:</b></td></tr>
+<tr><td>1.  Matthew 13:44</td><td>
+	<select size="1" name="L12S401" id="L12S401">
+		<option value="No answer"></option>
+		<option value="a grain of musteard seed">a grain of musteard seed</option>
+		<option value="heaven">heaven</option>
+		<option value="net">net</option>
+		<option value="ten virgins">ten virgins</option>
+		<option value="treasure hid in a field">treasure hid in a field</option>	     
+	</select></td></tr>
+<tr><td>2.  Matthew 25:1</td><td>
+	<select size="1" name="L12S402" id="L12S402">
+		<option value="No answer"></option>
+		<option value="a grain of musteard seed">a grain of musteard seed</option>
+		<option value="heaven">heaven</option>
+		<option value="net">net</option>
+		<option value="ten virgins">ten virgins</option>
+		<option value="treasure hid in a field">treasure hid in a field</option>	     
+	</select></td></tr>
+</td></tr>
+<tr><td>3.  Matthew 13:31</td><td>
+	<select size="1" name="L12S403" id="L12S403">
+		<option value="No answer"></option>
+		<option value="a grain of musteard seed">a grain of musteard seed</option>
+		<option value="heaven">heaven</option>
+		<option value="net">net</option>
+		<option value="ten virgins">ten virgins</option>
+		<option value="treasure hid in a field">treasure hid in a field</option>	     
+	</select></td></tr>
+</td></tr>
+<tr><td>4.  Matthew 13:33</td><td>
+	<select size="1" name="L12S404" id="L12S404">
+		<option value="No answer"></option>
+		<option value="a grain of musteard seed">a grain of musteard seed</option>
+		<option value="heaven">heaven</option>
+		<option value="net">net</option>
+		<option value="ten virgins">ten virgins</option>
+		<option value="treasure hid in a field">treasure hid in a field</option>	     
+	</select></td></tr>
+</td></tr>
+<tr><td>5.  Matthew 13:47</td><td>
+	<select size="1" name="L12S405" id="L12S405">
+		<option value="No answer"></option>
+		<option value="a grain of musteard seed">a grain of musteard seed</option>
+		<option value="heaven">heaven</option>
+		<option value="net">net</option>
+		<option value="ten virgins">ten virgins</option>
+		<option value="treasure hid in a field">treasure hid in a field</option>	     
+	</select></td></tr>
+</td></tr>
+
+</table>
+
+
+</div>
+<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>	
+
+</body>
+</html>

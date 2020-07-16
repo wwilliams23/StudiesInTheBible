@@ -1,0 +1,768 @@
+<html>                                                                                                                                                     
+	<head>
+		<title>Studies In The Bible - How We Got Our Bible - Lesson 1</title>
+		<style type ="text/css">
+			h1, h2 {text-align: center;}
+			.h3ctr {text-align: center;}
+			p {line-height: 30px;}
+			#L01Q ul {list-style-type: none;}
+			#L01Q li {display: inline;}
+			#L01Q a {text-decoration: none; padding-right: 10px;}
+			#L01  {border: 5px solid #000000; padding: 5px;}
+			tr {line-height: 30px;}
+			.tab {text-indent: 40px;}
+			.subhead {color: blue;}
+			.choice {width: 2em; text-align: left; border: 5px solid #00ffcc;}
+			.question {background-color: 00ffcc; }
+			.question0 {background-color: 00ffcc; border: none;}
+			}
+			</style>
+			
+			
+			
+<script type="text/javascript">
+	
+	function checkAnswers()
+	{
+	    answers ="LESSON 1:  SECTION ONE:\n";
+		SectionOneChecker();
+		answers +="\n\nLESSON 1:  SECTION TWO:";
+		SectionTwoChecker();	
+		answers +="\n\nLESSON 1:  SECTION THREE:";
+		SectionThreeChecker();		
+		score =(0.5 + 100 * score/37);
+		score = Math.floor(score);
+       answers +="\n\nSCORE:  " + score+"%";
+alert(answers);
+	/////email results to me//////////////////////////////////////////////
+	//check for internet connection
+	//no connection - save results in text file with date, email later
+	////check for previous results
+	////////if found attach to file
+	//email results to this address
+	//delete text file
+	
+	}
+	
+///////////////////////////////////////////////////////////////////////////////////////
+//////////////////  GLOBAL VARIABLES //////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+
+var answers ="\n";
+var score =0;
+
+
+
+
+
+
+
+
+//  SECTION ONE ///////////////////////////////////////////////////////////////////////
+var s1q = [0,0,0,0,0,0,0,0,0,0,0];
+
+var s1a =[ "Answers", 
+           "1.  c.  66", 
+		   "2. b.  40.", 
+		   "3.  a.  Book",
+		   "4.  c.  Hebrew", 
+		   "5.  b.  Greek", 
+		   "6.  a.  Septuagint",
+		   "7.  a.  British Museum", 
+		   "8.  c.  Wyclif's", 
+		   "9.  b.  1611", 
+		   "10.  b.  hidden" ];
+
+var q1ans = "";
+var i;
+
+// SECION ONE FUNCTIONS /////////////////////////////////////////////////////////////////////////////
+function SectionOneChecker()
+{
+	
+	score =0;
+	for ( i=1; i<11; i++)
+	{
+		if (s1q[i] == 1)
+		{  
+			q1ans = q1ans + "Correct   "+ s1a[i] +"\n";  
+			score +=1;
+	    }
+		else
+		{ 
+			q1ans = q1ans + "Incorrect "+ s1a[i] +"\n";
+		}
+	};
+answers += q1ans;
+q1ans="";
+};
+
+
+function answerSelect(q)
+{
+//queston 1 //////////////////////////////////////////////////////////
+  if (q == s1011)
+	{
+      document.getElementById("s1012").style.backgroundColor="red";
+	  document.getElementById("s1013").style.backgroundColor="red";
+	  document.getElementById("s1010").style.backgroundColor="red";
+	  document.getElementById("s1011").style.backgroundColor="#cccccc";
+      s1q[1]=0;
+	};
+  if (q == s1012)
+	{
+      document.getElementById("s1011").style.backgroundColor="red";
+	  document.getElementById("s1013").style.backgroundColor="red";
+	  document.getElementById("s1010").style.backgroundColor="red";
+      document.getElementById("s1012").style.backgroundColor="#cccccc";
+	  s1q[1]=0;
+	};  
+  if (q == s1013)
+	{
+      document.getElementById("s1012").style.backgroundColor="red";
+	  document.getElementById("s1011").style.backgroundColor="red";
+	  document.getElementById("s1010").style.backgroundColor="red";
+	  document.getElementById("s1013").style.backgroundColor="#cccccc";
+	  s1q[1]=1;
+	};
+  if (q == s1010)
+	{
+      document.getElementById("s1012").style.backgroundColor="#cccccc";
+	  document.getElementById("s1013").style.backgroundColor="#cccccc";
+	  document.getElementById("s1011").style.backgroundColor="#cccccc";  
+	  document.getElementById("s1010").style.backgroundColor="#00ffcc";
+	  s1q[1]=0;
+	};
+ //Question 2 ////////////////////////////////////////////////////////
+  if (q == s1021)
+	{
+      document.getElementById("s1022").style.backgroundColor="red";
+	  document.getElementById("s1023").style.backgroundColor="red";
+	  document.getElementById("s1020").style.backgroundColor="red";
+	  document.getElementById("s1021").style.backgroundColor="#cccccc";
+      s1q[2]=0;
+	};
+  if (q == s1022)
+	{
+      document.getElementById("s1021").style.backgroundColor="red";
+	  document.getElementById("s1023").style.backgroundColor="red";
+	  document.getElementById("s1020").style.backgroundColor="red";  
+	  document.getElementById("s1022").style.backgroundColor="#cccccc";
+	  s1q[2]=1;
+	};
+  if (q == s1023)
+	{
+      document.getElementById("s1022").style.backgroundColor="red";
+	  document.getElementById("s1021").style.backgroundColor="red";
+	  document.getElementById("s1020").style.backgroundColor="red";
+      document.getElementById("s1023").style.backgroundColor="#cccccc";
+	  s1q[2]=0;
+	};
+  if (q == s1020)
+	{
+      document.getElementById("s1022").style.backgroundColor="#cccccc";
+	  document.getElementById("s1023").style.backgroundColor="#cccccc";
+	  document.getElementById("s1021").style.backgroundColor="#cccccc";
+   	  document.getElementById("s1020").style.backgroundColor="#00ffcc";
+	  s1q[2]=0;
+	};
+ //question 3 ///////////////////////////////////////////////////////
+  if (q == s1031)
+	{
+      document.getElementById("s1032").style.backgroundColor="red";
+	  document.getElementById("s1033").style.backgroundColor="red";
+	  document.getElementById("s1030").style.backgroundColor="red";
+      document.getElementById("s1031").style.backgroundColor="#cccccc";
+      s1q[3]=1;
+	};
+  if (q == s1032)
+	{
+      document.getElementById("s1031").style.backgroundColor="red";
+	  document.getElementById("s1033").style.backgroundColor="red";
+	  document.getElementById("s1030").style.backgroundColor="red";  
+	  document.getElementById("s1032").style.backgroundColor="#cccccc";
+	  s1q[3]=0;
+	};
+  if (q == s1033)
+	{
+      document.getElementById("s1032").style.backgroundColor="red";
+	  document.getElementById("s1031").style.backgroundColor="red";
+	  document.getElementById("s1030").style.backgroundColor="red";
+	  document.getElementById("s1033").style.backgroundColor="#cccccc";
+	  s1q[3]=0;
+	};
+  if (q == s1030)
+	{
+      document.getElementById("s1032").style.backgroundColor="#cccccc";
+	  document.getElementById("s1033").style.backgroundColor="#cccccc";
+	  document.getElementById("s1031").style.backgroundColor="#cccccc";  
+	  document.getElementById("s1030").style.backgroundColor="#00ffcc";
+	  s1q[3]=0;
+	};
+//Question 4  ////////////////////////////////////////////////////////
+ if (q == s1041)
+	{
+      document.getElementById("s1042").style.backgroundColor="red";
+	  document.getElementById("s1043").style.backgroundColor="red";
+	  document.getElementById("s1040").style.backgroundColor="red";
+      document.getElementById("s1041").style.backgroundColor="#cccccc";
+      s1q[4]=0;
+	};
+  if (q == s1042)
+	{
+      document.getElementById("s1041").style.backgroundColor="red";
+	  document.getElementById("s1043").style.backgroundColor="red";
+	  document.getElementById("s1040").style.backgroundColor="red";
+      document.getElementById("s1042").style.backgroundColor="#cccccc";
+	  s1q[4]=0;
+	};
+  if (q == s1043)
+	{
+      document.getElementById("s1042").style.backgroundColor="red";
+	  document.getElementById("s1041").style.backgroundColor="red";
+	  document.getElementById("s1040").style.backgroundColor="red";  
+	  document.getElementById("s1043").style.backgroundColor="#cccccc";
+	  s1q[4]=1;
+	};
+  if (q == s1040)
+	{
+      document.getElementById("s1043").style.backgroundColor="#cccccc";
+	  document.getElementById("s1042").style.backgroundColor="#cccccc";
+	  document.getElementById("s1041").style.backgroundColor="#cccccc";  
+	  document.getElementById("s1040").style.backgroundColor="#00ffcc";
+	  s1q[4]=0;
+	};
+//Question 5  /////////////////////////////////////////////////////////
+ if (q == s1051)
+	{
+      document.getElementById("s1052").style.backgroundColor="red";
+	  document.getElementById("s1053").style.backgroundColor="red";
+	  document.getElementById("s1050").style.backgroundColor="red";  
+	  document.getElementById("s1051").style.backgroundColor="#cccccc";
+      s1q[5]=0;
+	};
+  if (q == s1052)
+	{
+      document.getElementById("s1051").style.backgroundColor="red";
+	  document.getElementById("s1053").style.backgroundColor="red";
+	  document.getElementById("s1050").style.backgroundColor="red";  
+	  document.getElementById("s1052").style.backgroundColor="#cccccc";
+	  s1q[5]=1;
+	};
+  if (q == s1053)
+	{
+      document.getElementById("s1052").style.backgroundColor="red";
+	  document.getElementById("s1051").style.backgroundColor="red";
+	  document.getElementById("s1050").style.backgroundColor="red";  
+	  document.getElementById("s1053").style.backgroundColor="#cccccc";
+	  s1q[5]=0;
+	};
+  if (q == s1050)
+	{
+      document.getElementById("s1053").style.backgroundColor="#cccccc";
+	  document.getElementById("s1052").style.backgroundColor="#cccccc";
+	  document.getElementById("s1051").style.backgroundColor="#cccccc";  
+	  document.getElementById("s1050").style.backgroundColor="#00ffcc";
+	  s1q[5]=0;
+	};
+//questoon 6  /////////////////////////////////////////////////////////
+  if (q == s1061)
+	{
+      document.getElementById("s1062").style.backgroundColor="red";
+	  document.getElementById("s1063").style.backgroundColor="red";
+	  document.getElementById("s1060").style.backgroundColor="red";  
+	  document.getElementById("s1061").style.backgroundColor="#cccccc";
+      s1q[6]=1;
+	};
+  if (q == s1062)
+	{
+      document.getElementById("s1061").style.backgroundColor="red";
+	  document.getElementById("s1063").style.backgroundColor="red";
+	  document.getElementById("s1060").style.backgroundColor="red";  
+	  document.getElementById("s1062").style.backgroundColor="#cccccc";
+	  s1q[6]=0;
+	};
+  
+  if (q == s1063)
+	{
+      document.getElementById("s1062").style.backgroundColor="red";
+	  document.getElementById("s1061").style.backgroundColor="red";
+	  document.getElementById("s1060").style.backgroundColor="red";  
+	  document.getElementById("s1063").style.backgroundColor="#cccccc";
+	  s1q[6]=0;
+	};
+  if (q == s1060)
+	{
+      document.getElementById("s1062").style.backgroundColor="#cccccc";
+	  document.getElementById("s1063").style.backgroundColor="#cccccc";
+	  document.getElementById("s1061").style.backgroundColor="#cccccc";  
+	  document.getElementById("s1060").style.backgroundColor="#00ffcc";
+	  s1q[6]=0;
+	};
+ //Question 7  //////////////////////////////////////////////////////////
+
+  if (q == s1071)
+	{
+      document.getElementById("s1072").style.backgroundColor="red";
+	  document.getElementById("s1073").style.backgroundColor="red";
+	  document.getElementById("s1070").style.backgroundColor="red";  
+	  document.getElementById("s1071").style.backgroundColor="#cccccc";
+      s1q[7]=1;
+	  };
+  if (q == s1072)
+	{
+      document.getElementById("s1071").style.backgroundColor="red";
+	  document.getElementById("s1073").style.backgroundColor="red";
+	  document.getElementById("s1070").style.backgroundColor="red";  
+	  document.getElementById("s1072").style.backgroundColor="#cccccc";
+	  s1q[7]=0;
+	};
+  if (q == s1073)
+	{
+      document.getElementById("s1072").style.backgroundColor="red";
+	  document.getElementById("s1071").style.backgroundColor="red";
+	  document.getElementById("s1070").style.backgroundColor="red";
+	  document.getElementById("s1073").style.backgroundColor="#cccccc";
+	  s1q[7]=0;
+	};
+  if (q == s1070)
+	{
+      document.getElementById("s1072").style.backgroundColor="#cccccc";
+	  document.getElementById("s1073").style.backgroundColor="#cccccc";
+	  document.getElementById("s1071").style.backgroundColor="#cccccc";  
+	  document.getElementById("s1070").style.backgroundColor="#00ffcc";
+	  s1q[7]=0;
+	};
+ //quesstion 8  //////////////////////////////////////////////////////
+	if (q == s1081)
+	{
+      document.getElementById("s1082").style.backgroundColor="red";
+	  document.getElementById("s1083").style.backgroundColor="red";
+	  document.getElementById("s1080").style.backgroundColor="red";  
+	  document.getElementById("s1081").style.backgroundColor="#cccccc";
+      s1q[8]=0;
+	};
+  if (q == s1082)
+	{
+      document.getElementById("s1081").style.backgroundColor="red";
+	  document.getElementById("s1083").style.backgroundColor="red";
+	  document.getElementById("s1080").style.backgroundColor="red";  
+	  document.getElementById("s1082").style.backgroundColor="#cccccc";
+	  s1q[8]=0;
+	};
+  if (q == s1083)
+	{
+      document.getElementById("s1082").style.backgroundColor="red";
+	  document.getElementById("s1081").style.backgroundColor="red";
+	  document.getElementById("s1080").style.backgroundColor="red";  
+	  document.getElementById("s1083").style.backgroundColor="#cccccc";
+	  s1q[8]=1;
+	};
+  
+  if (q == s1080)
+	{
+      document.getElementById("s1082").style.backgroundColor="#cccccc";
+	  document.getElementById("s1083").style.backgroundColor="#cccccc";
+	  document.getElementById("s1081").style.backgroundColor="#cccccc";  
+	  document.getElementById("s1080").style.backgroundColor="#00ffcc";
+	  s1q[8]=0;
+	};
+//Question 9  ////////////////////////////////////////////////////////
+ if (q == s1091)
+	{
+      document.getElementById("s1092").style.backgroundColor="red";
+	  document.getElementById("s1093").style.backgroundColor="red";
+	  document.getElementById("s1090").style.backgroundColor="red";  
+	  document.getElementById("s1091").style.backgroundColor="#cccccc";
+      s1q[9]=0;
+	};
+  if (q == s1092)
+	{
+      document.getElementById("s1091").style.backgroundColor="red";
+	  document.getElementById("s1093").style.backgroundColor="red";
+	  document.getElementById("s1090").style.backgroundColor="red";  
+	  document.getElementById("s1092").style.backgroundColor="#cccccc";
+	  s1q[9]=1;
+	};
+  if (q == s1093)
+	{
+      document.getElementById("s1092").style.backgroundColor="red";
+	  document.getElementById("s1091").style.backgroundColor="red";
+	  document.getElementById("s1090").style.backgroundColor="red";  
+	  document.getElementById("s1093").style.backgroundColor="#cccccc";
+	  s1q[9]=0;
+	};
+  if (q == s1090)
+  {
+      document.getElementById("s1093").style.backgroundColor="#cccccc";
+	  document.getElementById("s1092").style.backgroundColor="#cccccc";
+	  document.getElementById("s1091").style.backgroundColor="#cccccc";
+	  document.getElementById("s1090").style.backgroundColor="#00ffcc";
+	  s1q[9]=0;
+	};
+//Question 10  ///////////////////////////////////////////////////////
+ if (q == s1101)
+	{
+      document.getElementById("s1102").style.backgroundColor="red";
+	  document.getElementById("s1103").style.backgroundColor="red";
+	  document.getElementById("s1100").style.backgroundColor="red";
+	  document.getElementById("s1101").style.backgroundColor="#cccccc";
+      s1q[10]=0;
+	};
+  if (q == s1102)
+	{
+      document.getElementById("s1101").style.backgroundColor="red";
+	  document.getElementById("s1103").style.backgroundColor="red";
+	  document.getElementById("s1100").style.backgroundColor="red";
+	  document.getElementById("s1102").style.backgroundColor="#cccccc";
+	  s1q[10]=1;
+	};
+  if (q == s1103)
+	{
+      document.getElementById("s1102").style.backgroundColor="red";
+	  document.getElementById("s1101").style.backgroundColor="red";
+	  document.getElementById("s1100").style.backgroundColor="red";
+	  document.getElementById("s1103").style.backgroundColor="#cccccc";
+	  s1q[10]=0;
+	};
+  if (q == s1100)
+	{
+      document.getElementById("s1103").style.backgroundColor="#cccccc";
+	  document.getElementById("s1102").style.backgroundColor="#cccccc";
+	  document.getElementById("s1101").style.backgroundColor="#cccccc";
+	  document.getElementById("s1100").style.backgroundColor="#00ffcc";
+	  s1q[10]=0;
+	};
+ }
+  // END OF SECTION ONE FUNCTION ///////////////////////////////////////////////////////
+  
+  
+  
+  
+  
+  
+  //SECTION TWO ////////////////////////////////////////////////////////////////////////
+  
+  //SECTION TWO VARIABLES ////////////////////////////////////////////////////////
+  var q2blanks= ["s2011", "s2012", "s2013",
+			"s2021", "s2022",
+			"s2031", "s2032", 
+			"s2041", "s2042", "s2043", "s2044"];
+  var q2answers =[ "Ezra","people","opened",
+					"God", "Holy",
+					"words","wisdom", 
+					"scripture", "inspiration", "reproof", "correction"];		
+  var secTwoTxt;
+  var qbreak=[0, 3, 5,7, 11];  //cumulative
+  var qcount = 0;
+  var q2ans = "";
+  var pick;
+  
+  
+  
+  //SECTION TWO FUNCTION
+  
+  function SectionTwoChecker()
+  {
+var i;
+   var m = 0;
+   qcount =0;
+	for (var j=1; j<qbreak.length; j++)  //number of questions
+	{
+		m++;  //question number
+		                                                                     
+	    q2ans+= "\n"  + m +".";    //build question by parts
+		pick="";  //answer selected  
+	
+		for (i=qbreak[j-1]; i<qbreak[j]; i++)
+		{
+		
+		   //pick += "---"+i;
+			
+			secTwoTxt = document.getElementsByTagName("input")[39+qbreak[j]+qcount].value;
+	        
+			if (secTwoTxt == q2answers[i])
+			{
+				pick += "..." + secTwoTxt + " - " + q2answers[i] + " - correct";
+				score +=1;
+		    }	
+			else
+			{
+				pick += "..." + secTwoTxt + " - " + q2answers[i] + " - incorrect";
+			}
+		
+		}
+		q2ans += pick;
+		qcount++;
+	}
+	answers = answers +"\n" + q2ans;
+	q2ans ="";
+
+ }
+ 
+ // END OF SECTION TWO FUNCTION ///////////////////////////////////////////////////////
+  
+  
+  
+  
+  
+  
+  
+  
+  //SECTION THREE ////////////////////////////////////////////////////////////////////////
+  
+  
+  
+  //SECTION THREE VARIABLES ////////////////////////////////////////////////////////
+  var q3blanks= ["s2011", "s2012", "s2013",     //not needed
+			"s2021", "s2022",
+			"s2031", "s2032", 
+			"s2041", "s2042", "s2043", "s2044"];
+			
+  var q3answers =[ "Vatican","Alexandria","Sinaitic",
+					"Miles Coverdale", "King James Version", "New King James",
+					"1582",
+					"Dead Sea",
+					"papyrus",
+					"Johanne Gutenberg",
+					"1382",
+					"London", 
+					"scientifically", "historically", "prophetically", 
+					"Bible"];		
+  var secThreeTxt;
+  var qbreak3 =   [0, 3, 6, 7, 8, 9,10,11, 12, 15, 16];
+  var qcount3 = 0;
+  var q3ans = "";
+  var pick3;
+  
+  
+  //SECTION THREE FUNCTION
+  
+  function SectionThreeChecker()
+  {
+    qcount3=0;
+	var i;
+	var m = 0;
+	
+	for (var j=1; j<qbreak3.length; j++)  //number of questions
+	{
+		m++;  //question number
+		
+	    q3ans+= "\n"  + m +".";		//build question
+		pick3="";					//answer selected
+	
+		for (i=qbreak3[j-1]; i<qbreak3[j]; i++)
+		{
+			
+			secThreeTxt = document.getElementsByTagName("input")[41+qbreak3[j]+qcount3].value;
+	 
+			if (secThreeTxt == q3answers[i])
+			{
+				pick3 += "..." + secThreeTxt + " - " + q3answers[i] + " - correct";
+				score +=1;
+				
+		    }	
+			else
+			{
+				pick3 += "..." + secThreeTxt + " - " + q3answers[i] + " - incorrect";
+			}
+
+		}
+
+		q3ans += pick3;
+		qcount3++;
+	}
+
+	answers = answers +"\n" + q3ans;
+	
+	q3ans ="";
+ }
+ 
+	</script>
+	</head>
+	<body><nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+   1 &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;   
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+		<h1>Studies In The Bible</h1>
+	<h2>How We Got Our Bible</h2>
+	<h3 class ="h3ctr">Lesson 1</h3>
+     <p class ="tab">
+     	You are about to begin a study of the world's most wonderful book.  It has often been called "the book" and rightly so for it is in a class by itself.  "Bible" means "book."  Actually, it is a compilation of 66 books written by about 40 different authors scattered across many countries during a period of 1600 years.  The story of how this remarkable book came int being with each part fitting perfectly into the others and with no real contradictions is most interesting.  We must conclude it could have come only from God.
+     </p>
+     <h2 class="subhead">How The Bible Was Written </h2>
+     <p class ="tab">
+     	The Bible is divided into two great divisions know as the Old Testament and the New Testament.  The Old Testament is over three times as long as the New Testament and its writing was completed about 400 years before the birth of Christ.  Originally the biblical books were hand written on animal skins (paarchment) or on paper made from the papyrus plant.  Printing was not yet invented, so every copy of an original had to be made by hand.  Therefore, copies were rear and extremely valuable.
+     </p>
+     <p class="tab">
+     	The 39 Old testament books were written in Hebrew, except for small portions in the Aramaic language.  The first five were written by Moses about 1500 years B.C. (before Christ.)  During the next thousand years the remaining books were penned, and it appears that Ezra, the scribe, brought them all together into a single book (Nehemiah 8:5) about 400 B.C.  In the third century before Christ the first great translation of the Old Testament from Hebrew to Greek was made at Axlexandria, Egypt.  It was called the <strong>Septuagint</strong> (meaning seenty) because it was supposedly translated by seventy scholars.  Christ often quoted this version or a Hebrew text similar to it.
+     </p>
+     <p class="tab">
+     	The 27 New Testament books were written in Greek by eight men, several of them apostles of Christ, in the first century A.D.  (since Christ.)  The New Testament covers events occurring in that century, including the life of Christ and the establishment of his 
+		church.  As is true of the Old Testament, all original copies have been lost or destroyed, and yet we have writings substantially as they were penned.  Many Copies have been preserved and are available for scholars to use in trnslating into other languages.  The three most important are the Vatican Manuscript at the Vatican in Rome, written in the fourth century;  the Alexandrian Manuscript in the British Museum in London, written in the fifth century; and the Sinaitic Manuscript, also in the British Museum, written in the fourth century.  In addition there are hundreds of other copies of lesser importance which are of value to translators in making sure that we have the original New Testament Writings.
+     </p>
+     <p class="tab">
+     	The <strong>Dead Sea Scrolls,</strong> the first of which were discovered in 1947 in a cave near the Dead Sea and which date from the first or second century before Christ, have helped in recent translations of the Old Testament.  They have also substantiated the accuracy of the Manuscrits from which erlier translations were made so that we may be even more confident that we have the real message of the Old Testment writers. 
+     </p>
+ 	<p class="tab">
+ 		There are two additional sources of information about the orginal New Testament books.  One is the translations made soon after the New Testament was written.  The most importan, written in Latin, is called the <strong>Vulgate</strong> and was completed by Jerome in 405 A.D.  We also have numerous Bible quotations from the writings of the early church fathers.  By comparing the Greek manuscripts, the early translations, and the quotations of the church fathers, Bible scholars have been able to determine with great accuracy what the New Testament authors wrote.  In fact, so sure are we that we have the Bible almost as it was given that we can positively say that no major Bible doctrine is in any way affected by minor errors of copying through the centuries.
+ 	</p>
+ 	
+ 	<h2 class ="subhead">The Bible In English</h2>
+ 	<p class="tab">
+ 	The first major English translation of the New Testment was completed by John Wyclif in 1382 after 22 years of hard work.  In 1456 printing was invented by Johanne Gutenberg, making it possible to pubish Bibles much faster and virtually eliminating typographicl errors so common in hand copies.  In fact, the first book printed by Gutenberg was a Latin Bible.  The first printed English Bible was the New Testament as translated by <strong>William Tyndale</strong> in 1525.  He was strongly opposed in this by the Catholic Church and he found it necessary to have his Bible printed on the continent and smuggled into England.  Most were publicly burned in London.  He was betrayed, and burned at the stake for giving the Bible to the people.  His final words were, "Lord, open the King of England's eyes."
+ 	</p>
+ 	<p class="tab">
+ 	The first complete English Bible was the work of <strong>Miles Coverdale.</strong>  Other versions soon followed and by 1604 the King of England's eyes were opened.  He authorized the translation of a new version, the work of 54 scholars.  It was completed in 1611 and is known as the <strong>King James Version</strong> after the monarch who authorized it.  Although it was translated over 350 years ago, it is still one of the most widely used English versions.  In 1982 the <strong>New King James</strong> revision was published.  It follows the same basic text as the King James, but updates much of the archaic speech to make it more readable.
+ 	</p>
+ 	<p class ="tab">
+ 	The discoery of additional Bible manuscripts not available to King James translators nd the inevitable change of the English language prompted the publication of other versions that would be more readable and accurate.  An 1885 revision of the King James by 84 British and American scholars was called the <strong>English Revised Version,</strong> and was followed in 1901 by an American edition called the <strong>American Standard,</strong> a highly literal rendering of the scriptures.  Other revisions of the King James and American Standard followed; the <strong>Revised Standard Version</strong> in 1952 and the <strong>New American Standard</strong> in 1970.  These translations were intended to combine the finer characteristics of their predecessors with improved readability and increased accuracy based on recent manuscript findings.
+ 	</p>
+ 	<p class = "tab">
+ 	The <strong>New International Version</strong> (1978) is comparable in its approach to translation with the Revised Standard and New American Standard, but unlike these is a completely new translation rather than a revision of its predecessors.  The <strong>New English Bible</strong> and the <strong>Good News Bible</strong> (or <strong>Today's English Version</strong>) are tpical of recent free translations tat are less literal and concentrate on capturing the sense of the original.  <strong>The Living Bible</strong> of Kenneth Taylor is a paraphase rather than a translation and reworks the original in an effort to cpture the intent of the originial writers. 
+ 	The Roman Catholic Church has produced its own translations. The <strong>Rheims-Douai Bible</strong> appeared in 1582.  It has been replaced by the <strong>New American Bible</strong> of 1970.  Catholic versions include the same books found in other versions (sometimes under a different name) plus fourteen more in the Old Testament usually called the Apocrypha.  This word mean "hidden" and is applied to these books because of their doubtful origin.  They are found only in the Greek, not the Hebrew canon of the Old Testament, and have been rejected by the Jews and most non-Catholics as not belonging in the Old testment.  However, their exclusion form the Old Testament does not materially affect any Bible docrine.
+ 	</p>
+ 	<h2 class="subhead">The Bible In God's Word</h2>
+	<p class ="tab">
+	The Bible claims to be inspired.  Peter said, "Holy men of God spake as they were moved by the Holy Ghost."  (II Peter 1:21.)  The Holy Spirit (Holy Ghost) so guided the writers of the Bible that they could not make mistakes.  "Which things also we speak, not in the words which man's wisdom teacheth, but which the Holy Ghost teacheth."  (I Cor. 2:13.)  Because of this there are no real contradictions in the Bible.  Those things which appear to be contradictions disappear under close investigation.
+	</p>
+	<p class ="tab"> 
+	That the Bible is true may be shown by several of its characteristics.  It is <strong>scientifically accurate.</strong> even though it is not a book of science.  It is <strong>historically accurate.</strong> Every attempt to prove it historically wrong has failed.  It is <strong>prophetically correct</strong> as is seem in many prophecies which have been fulfilled beyond question.  It is <strong>impartial,</strong> presenting both good and bad of all men, not trying to gloss over the sins of any man who might be "a man after God's own heart."  It presents the world's <strong> highest standard of morality.</strong> Finally, <strong>it has never been destroyed</strong> in spite of dozens of attempts to exterminate it.
+	</p>
+			
+
+			
+<h1 class= "subhead2">"Seek and Ye Shall Find"</h1>
+
+<div id="lesson_01_Section_1">
+	
+	<h3>Select the letter representing te correct answer</h3>
+
+	<table id="L01" class ="questionTable">
+
+	<tr>
+		<td class ="choice"><input type="submit" id= "s1011" value="a" onclick ="answerSelect(s1011)"></td>
+	    <td class ="choice"><input type="submit" id= "s1012" value="b" onclick ="answerSelect(s1012)" ></td>
+		<td class ="choice"><input type="submit" id= "s1013" value="c" onclick ="answerSelect(s1013)"></td>
+	    <td class ="question"><input type="submit" id="s1010"  value="1.  The number of books in the Bible: (a) 27; (b) 39; (c) 66. " class="question0" onclick="answerSelect(s1010)"></td>
+	</tr>
+	<tr><td class ="choice"><input type="submit" id= "s1021" value="a" onclick ="answerSelect(s1021)"></td>
+	    <td class ="choice"><input type="submit" id= "s1022" value="b" onclick ="answerSelect(s1022)"></td>
+		<td class ="choice"><input type="submit" id= "s1023" value="c" onclick ="answerSelect(s1023)"></td>
+	    <td class ="question"><input type="submit" id="s1020" value="2.  About how many men wrote the Bible:  (a) 8; (b) 40; (c) 70. "  class="question0" onclick="answerSelect(s1020)"></td>
+	</tr>
+	
+	<tr><td class ="choice"><input type="submit" id= "s1031" value="a" onclick ="answerSelect(s1031)"></td>
+	    <td class ="choice"><input type="submit" id= "s1032" value="b" onclick ="answerSelect(s1032)"></td>
+		<td class ="choice"><input type="submit" id= "s1033" value="c" onclick ="answerSelect(s1033)"></td>
+	    <td class ="question"><input type="submit" id="s1030" value="3.  Bible means:  (a)  Book; (b)  version;  (c)  manuscript. "  class="question0" onclick="answerSelect(s1030)"></td>
+	</tr>
+	<tr><td class ="choice"><input type="submit" id= "s1041" value="a" onclick ="answerSelect(s1041)"></td>
+	    <td class ="choice"><input type="submit" id= "s1042" value="b" onclick ="answerSelect(s1042)"></td>
+		<td class ="choice"><input type="submit" id= "s1043" value="c" onclick ="answerSelect(s1043)"></td>
+	    <td class ="question"><input type="submit" id="s1040" selected ="true"  value="4.  The Old Testament was written in:  (a)  Greek;  (b)  English;  (c)  Hebrew. "  class="question0" onclick="answerSelect(s1040)"></td>
+	</tr>
+	
+    <tr><td class ="choice"><input type="submit" id= "s1051" value="a" onclick ="answerSelect(s1051)"></td>
+	    <td class ="choice"><input type="submit" id= "s1052" value="b" onclick ="answerSelect(s1052)"></td>
+		<td class ="choice"><input type="submit" id= "s1053" value="c" onclick ="answerSelect(s1053)"></td>
+	    <td class ="question"><input type="submit" id="s1050" value="5.  The New Testament was written in:  (a)  Hebrew;  (b)  Greek;  (c)  Latin. "  class="question0" onclick="answerSelect(s1050)"></td>
+	</tr>
+	<tr><td class ="choice"><input type="submit" id= "s1061" value="a" onclick ="answerSelect(s1061)"></td>
+	    <td class ="choice"><input type="submit" id= "s1062" value="b" onclick ="answerSelect(s1062)"></td>
+		<td class ="choice"><input type="submit" id= "s1063" value="c" onclick ="answerSelect(s1063)"></td>
+	    <td class ="question"><input type="submit" id="s1060" value="6.  The first great Old Testament translation was:  (a)  Septuagint;  (b)  Vulgate;  (c)  King James. "  class="question0" onclick="answerSelect(s1060)"></td>
+	</tr>
+	
+	<tr><td class ="choice"><input type="submit" id= "s1071" value="a" onclick ="answerSelect(s1071)"></td>
+	    <td class ="choice"><input type="submit" id= "s1072" value="b" onclick ="answerSelect(s1072)"></td>
+		<td class ="choice"><input type="submit" id= "s1073" value="c" onclick ="answerSelect(s1073)"></td>
+	    <td class ="question"><input type="submit" id="s1070" value="7.  The Sinaitic Manuscript is at:  (a)  British Museum;  (b)  Alexandria;  (c)  Vatican. "  class="question0" onclick="answerSelect(s1070)"></td>
+	</tr>
+	<tr><td class ="choice"><input type="submit" id= "s1081" value="a" onclick ="answerSelect(s1081)"></td>
+	    <td class ="choice"><input type="submit" id= "s1082" value="b" onclick ="answerSelect(s1082)"></td>
+		<td class ="choice"><input type="submit" id= "s1083" value="c" onclick ="answerSelect(s1083)"></td>
+	    <td class ="question"><input type="submit" id="s1080" value="8.  First major English translation:  KingJames;  (b)  Gutenberg;  (c)  Wyclif's."  class="question0" onclick="answerSelect(s1080)"></td>
+	</tr>
+	
+	<tr><td class ="choice"><input type="submit" id= "s1091" value="a" onclick ="answerSelect(s1091)"></td>
+	    <td class ="choice"><input type="submit" id= "s1092" value="b" onclick ="answerSelect(s1092)"></td>
+		<td class ="choice"><input type="submit" id= "s1093" value="c" onclick ="answerSelect(s1093)"></td>
+	    <td class ="question"><input type="submit" id="s1090" value="9.  The King James Version appeared in:  (a)  1952;  (b)  1611;  (c)  1882."  class="question0" onclick="answerSelect(s1090)"></td>
+	</tr>
+	<tr><td class ="choice"><input type="submit" id= "s1101" value="a" onclick ="answerSelect(s1101)"></td>
+	    <td class ="choice"><input type="submit" id= "s1102" value="b" onclick ="answerSelect(s1102)"></td>
+		<td class ="choice"><input type="submit" id= "s1103" value="c" onclick ="answerSelect(s1103)"></td>
+	    <td class ="question"><input type="submit" id="s1100" value="10.  Apocrypha means:  (a)  book;  (b)  hidden;  (c)  parchment."  class="question0" onclick="answerSelect(s1100)"></td>
+	</tr>
+	</table>
+		<br>
+	<br>
+	
+</div>  <!-- END OF SECTION ONE --> 
+
+<div id="lesson_01_Section_2">
+
+<h3>Complete the scripture quotations:</h3>
+<table>
+
+<tr><td>1.  <strong>Neh. 8:5 --</strong> "And <input type="textbox" id="s2011" class ="txtbox"> opened the book in the sight of all the <input type="textbox" id="s2012" class ="txtbox">; (for he was above all the people;) and when he  <input type="textbox" id="s2013" class ="txtbox"> it, all the people stood up."</td></tr>
+
+<tr><td>2.  <strong>II Peter 1:21 --</strong> "Holy men of <input type="textbox" id="s2021" class ="txtbox">spake as they were moved by the <input type="textbox" id="s2022" class ="txtbox"> Ghost"</td></tr>
+
+<tr><td>3.  <strong>I Cor. 2:13 --</strong> "Which things also we speak, not in the <input type="textbox" id="s2031" class ="txtbox"> which man's <input type="textbox" id="s2032" class ="txtbox"> teacheth, but which the Holy Ghost teacheth."</td></tr>
+
+<tr><td>4.  <strong>II Tim. 3:16 --</strong> "All <input type="textbox" id="s2041" class ="txtbox"> is given by <input type="textbox" id="s2042" class ="txtbox"> of God, and is profitable for doctrine, for <input type="textbox"id="s2043"  class ="txtbox">, for <input type="textbox" id="s2044" class ="txtbox">, for instruction in righteousness."</td></tr>
+</table>
+
+
+
+</div>  <!--END OF SECTION TWO -->
+<div>  <!--SECTION THREE-->	
+<h3>Fill in the blanks"</h3>
+<table>
+<tr><td>1.  The three most important New Testament manuscrripts are <input type="textbox" id="s3011"  class ="txtbox" >, <input type="textbox" id="s3012"  class ="txtbox" >, and <input type="textbox" id="s3013"  class ="txtbox" >.</td></tr> 
+<tr><td>2.  Three of the many English translations which have been made are <input type="textbox" id="s3021"  class ="txtbox" >, <input type="textbox" id="s3022"  class ="txtbox" >, and <input type="textbox" id="s3023"  class ="txtbox" >.</td></tr>
+<tr><td>3.  The Rheims-Douai Catholic Version was issued in the year <input type="textbox" id="s3031"  class ="txtbox" >.</td></tr>
+<tr><td>4.  The <input type="textbox" id="s3041"  class ="txtbox" > Scrolls were discovered in 1947. </td></tr>
+<tr><td>5.  Some books of the Bible were originally written on paper made from the <input type="textbox" id="s3051"  class ="txtbox" > plant.</td></tr>
+<tr><td>6.  The inventor of printing was <input type="textbox" id="s3061"  class ="txtbox" >. </td></tr>
+<tr><td>7.  Wyclif completed his translation in the year <input type="textbox" id="s3071"  class ="txtbox" >. </td></tr>
+
+<tr><td>8.  Copies of Tyndale's translation were burned in the city of 
+													<input type="textbox" id="s3081"  class ="txtbox">. </td></tr>
+
+<tr><td>9.  The Bible is							<input type="textbox" id="s3091"  class ="txtbox"> accurate, 
+													<input type="textbox" id="s3092"  class ="txtbox"> accurate, and 
+													<input type="textbox" id="s3093"  class ="txtbox"> correct. </td></tr>
+
+<tr><td>10.  The world's highest stndard of morality is presented in the 
+													<input type="textbox" id="s3101"  class ="txtbox">. </td></tr>
+</table>
+	<br>
+</div>  <!--END OF SECTION THREE-->
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+</div>
+
+</body>
+</html>

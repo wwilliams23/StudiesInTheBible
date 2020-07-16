@@ -1,0 +1,569 @@
+<html lang ="em">
+	<head>
+		<title>Studies in the Bible - The Creation And Fall Of Man - Lesson 3</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.p4 {	margin-left: 50px;
+					margin-right: 50px;
+			        font-weight: bold;
+					border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.top {	border-top: 3px solid #000000;}
+		</style>
+		<script type="text/javascript">	
+////////////////////  GOBAL VARIABLES  ////////////////////////////////////////////////////////// 
+		//Answers
+		    var score = 0;
+		    var answers ="";
+	
+///////////////////////////////////  DATA FILES //////////////////////////////////////////////		
+		
+var L03_1 =["L03S101", "1st",
+			"L03S102", "4th",
+			"L03S103", "6th",
+			"L03S104", "5th",
+			"L03S105", "7th",
+			"L03S106", "2nd",
+			"L03S107", "3rd",
+			"L03S108", "5th",
+			"L03S109", "3rd",
+			"L03S110", "5th",
+			"L03S111", "5th"];
+
+var L03_2 =["L03S201", "c",
+			"L03S202", "a",
+			"L03S203", "c",
+			"L03S204", "c",
+			"L03S205", "c"];
+
+var L03_3 =["L03S301", "Cain",
+			"L03S302", "serpent",
+			"L03S303", "adam",
+			"L03S304", "Noah",
+			"L03S305", "Methusel"];
+
+var L03_4 =["L03S401", "Cain",
+			"L03S402", "Abel",
+			"L03S403", "Shem",
+			"L03S404", "Ham",
+			"L03S405", "Japheth",
+			"L03S406", "Babel",
+			"L03S407", "baptism",
+			"L03S408", "heaven",
+			"L03S409", "earth",
+			"L03S410", "gopher"];
+
+
+var qbreak=[0, 2, 5, 6, 7, 9, 10];  //cumulative
+///////// section four - two data files		
+		
+		
+	///////////////////////////////   MAIN FUNCTION -checkAnswers()  //////////////////////////////////////////////
+		function checkAnswers()
+		{
+		    answers ="";
+		  
+			answers ="LESSON 3:  SECTION ONE:\n";
+			dropdownChecker(L03_1);
+			
+			answers +="\n\nLESSON 3:  SECTION TWO:\n\n";
+			radioChecker(L03_2);	
+			
+			answers +="\n\nLESSON 3:  SECTION THREE:\n";
+			paragraphChecker(L03_3);		
+			
+			answers +="\n\nLESSON 3:  SECTION FOUR numberPCk:\n";
+			numberedPCk(L03_4);
+		
+		score =(0.5 + 100 * score/31);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+	
+		}
+		
+		//////////////////////////////////  FUNCTIONS TO CHECK QUESTIONS   /////////////////////////////////////
+
+//--------------------------------------------------------------------------------------------------////
+	//////////////////  dropdown-select-list checker
+	function dropdownChecker(activeFile)
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<activeFile.length/2; i++)
+				{
+					e = document.getElementById(activeFile[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = activeFile[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+//////////////////////////// end dropdown /////////////////////////////////////
+	
+	//////////  -- Section Radio ---------
+	function radioChecker(activeFile)
+	{
+		var radios ="";
+		var radVal ="";
+	
+	
+			for (i=0;i<activeFile.length/2;i++)
+				 {  
+				  pre ="Incorrect " + String(i+1) + ".  ";
+					radios=document.getElementsByName(activeFile[2*i]);
+				     for (j=0; j<radios.length; j++)
+					 {
+					     if(radios[j].checked)
+						 {
+							radVal=radios[j].value;
+						 }
+					 }
+				 
+				 
+					if(radVal==activeFile[2*i+1])
+					{
+						score++;
+						pre = "Correct   " + String(i+1) + ".  ";
+
+					}
+					answers+=pre + radVal +"\n";
+				 }
+				
+				
+	}
+	//////////////////----end SectionRadioChecker function ----------------///////
+//------------------------------------------------------------------------------------------
+
+//////////  fill in blanks in paragraph and single answer numbered questions /////////////////
+	
+	function paragraphChecker(activeFile)
+{
+	var count = 0;
+	var strUser ="";
+	
+    for (i=0; i<activeFile.length/2; i++)
+	{
+		strUser = document.getElementById(activeFile[2*i]).value;
+		if (strUser === activeFile[2*i+1])
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- correct";
+			score = score +1;
+		}
+		else
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- incorrect";	
+		}
+		count +=1;
+		answers +="\n" + count +".  "+ strUser; 
+				
+	}
+
+}
+//////////////////////////////////////// END OF FILL IN  ////////////////////////////////////// 
+//----------------------------------------------------------------------------------------------
+
+///////////////////////////////////////// QUESTIONS WITH MULTIPLE ANSWERS  /////////////////////
+
+ function numberedPCk(activeFile)
+  {
+   var secTxt="";
+	var qcount = 0;
+	var q2ans="";
+	var pick;
+   var i=0;
+   var m = 0;
+   
+   
+ 
+	for (var j=1; j<qbreak.length; j++)  //number of questions
+	{    
+    		m++;  //question number                                                         
+	    q2ans+= "\n"  + m +".";    //build question by parts
+		pick="";  //answer selected  
+	  
+		for (i=qbreak[j-1]; i<qbreak[j]; i++)
+		{         
+			secTxt = document.getElementById(activeFile[2*i]).value;
+			if (secTxt == activeFile[1+2*i])
+			{
+				pick += "..." + secTxt + " - " + activeFile[2*i+1] + " - correct";
+				score +=1;
+		    }	
+			else
+		   {
+				pick += "..." + secTxt + " - " + activeFile[2*i+1] + " - incorrect";
+			}
+		}
+		
+		q2ans += pick;
+		qcount++;
+	}
+	answers = answers +"\n" + q2ans;
+	q2ans ="";
+
+ }
+ 
+
+
+			</script>
+	</head>
+	<body>
+	<nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+   3 &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;   
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>The Creation And Fall Of Man</h1>
+	<h3>Lesson 3</h3>
+<div class="d1">
+	<p class="p1">
+		The best place to start a story is at the beginning.  That is where the Bible story begins.  The meaning of "Genesis", the name of the first book, is "the beginning".  The first verse of the Bible says, "In the beginning God created the heaven and the earth." (Gen. 1:1.)  You will note that the statement, "In the beginning God . . .", assumes the existence of God rather than trying to prove it.  Men have always naturally believed in a supeme being.  The Bible writers, supposing that any person with ordinary intelligence could see the handiwork of God on every side, did not waste space on that which should be evident to all.  The Psalmist writes, "The heavens declare the glory of God; and the firmament showeth his handywork."  (Psalm 19:1.)
+	</p>
+</div>
+
+<div>
+	<h2>The Days Of Creation</h2>
+	
+	<p class="p1">
+		We are not told when "the beginning" was, and it is useless for us to speculate.  We do know that after God created the earth it was "without form and void."  How long it remained in this condition we have not been informed.  Sometime later, however, God placed the world in its present natural state.  On the first day of creation He made light and created day and night.  Heaven (called the firmament) was created on the second day.  On the following days He created the heavenly bodies and members of the vegetable and animal kingdoms, with each species of plant and animal bringing forth after its kind.  Last of all on the sixth day He mad man in His own mage.  On the seventh day God rested from His labor.
+	</p>
+</p>
+</div>
+
+<div>
+	<h2>The Fall Of Man</h2>
+	
+	<p class="p1">
+		God placed the first man, Adam, in a beautiful garden in Eden.  Because it was not good for Adam to be alone, God caused a deep sleep to come upon him and from his side He took a rib, from which He made a woman who became Adam's wife.  Adam named her Eve because she was the mother of all living.  God gave the first couple the responsibility of keeping the garden and placed on them only one prohibition -- they could not eat of the tree of the knowledge of good and evil.  "In the day tht thou eatest thereof thou shalt surely die," God told them.  (Gen. 2:17.)  One day, however, the serpent (which was able to talk) told Eve that they would not die if they ate of that tree.  This is the first lie recorded in the Bible.  Eve believed him, ate some of the fruit and give some to Adam who also ate.  Immediately they knew the difference between right and wrong and hid themselves from God because they realized for the first time that they were naked.  This was man's first sin.  We are told tht "sin is the transgression of the law," (1 John 3:4) and Adam and Eve had transgressed God's law in disobeying His commandment. 
+	</p>
+	
+	<p class="p1">
+		Because they sinned, God punished them in several ways.  They were cast out of the garden; woman was given the pain of childbearing; man was forced to labor for his food among the thorns and thistles; worst of all, death was brought on mankind.  From that day until this, all men, with the exception of Enoch and Elijah, have died physically.  Furthermore, spiritual death -- eternal separation from God -- entered the world on the day that Adam and Eve sinned.
+	</p>
+	
+	<p class="p2">
+		From our parents we inherit the human weakness which in time leads us to sin,  But we do not inherit the GUILD of adam's sin or our parents'.  We are told, "So then every one of us shall give account of HIMSELF to God." (Rom. 3:23) and have need of Christ to redeem us from that sin so that we might have an eternal home in heaven.  This will be discussed in detail in another lesson.
+	</p>
+	<p class="p1">
+		The first two children born to Adam and Eve were Cain and Abel.  One day Cain became angry with his brother and killed him.  This was the first murder.  For his sin Cain was banished from his people.  Adam and Eve had many other children (Gen. 5:4) and  undoubtedly they married among themselves to produce the first families.  Little is told about the following years except that the number of men on earth greatly multiplied and poeple forsook God for the ways of sin.  In those days men lived to be very old.  The oldest man mentioned in the Bible is Methuselah who was 969 years old when he died.  Even adam lived to be 930.
+	
+	</p>
+</div>
+ 
+ <div>
+	<h2>The Flood</h2>
+	
+	<p class="p1">
+		The wickedness of man so grieved God that He decided to destroy him.  There was one just man named Noah, whom Peter calls a "preacher of righteousness." (II Peter 2:5.)  The Lord resolved to save him and his family.  He commanded Noah to build an ark and gave him exact specifications.  Noah built the large boat precisely as God had ordered.  <strong>Just as it was important for Noah to follow the blueprint the Lord gave him, so we today must be sure to follow God's commands exactly as He has given them to us.</strong>  When the ark was finished, God told Noah to take into it seven pairs of every clean animal and one pair of every unclean animal.  Sometimes people wonder if the ark was big enoug to hold every species.  Actualy there was plenty of room since the ark was 300 cubits long, 50 cubits wide and three stories high.  (That would be at least 450 feet long and 75 feet wide.)
+	</p>
+	<p class="p1">
+		When all was in readiness Noah, his wife, his three sons (Shem, Ham, and Japheth) and their wives entered the ark and waited there seven days.  It began to rain and continued for 40 days, covering the earth witha great flood.  Only those in the ark were saved.
+	</p>
+	
+	<p class="p4">
+		Peter, in showing that baptism is essential to salvation, takes Noah as an example when he says, "Which sometime were disobedient, when once the longsuffering of God waited in the days of Noah, while the ark was a preparing, wherin few, that is, eight souls were saved by water.  The like figure wherunto even baptism doth also now save us ...  (I Peter 3:30, 21.)"
+	</p>
+	
+	<p class="p1">
+		The water was on the earth for 150 days (Gen. 7:24) before the ark came to rest in the mountains of Ararat.  Finally the eight emerged from the ark, a year and ten days after the flood began, and offered a sacrifice to God.  God promised that never again would He destroy the earth by water and as a seal placed the rainbow in the sky.
+	</p>
+	
+	<p class="p1">
+		The flood ended the <strong>Antedivuvian Period</strong> (before the flood.)  The time after the flood is known as the <strong>Postdiluvian Period.</strong>
+	</p>
+		
+	<p class="p1">
+		After the flood, the descendants of Noah were afraid that once again they might be scattered.  They resolved to build at <strong>Babel</strong> a tower which would reach to heaven.  This did not please God, so He confounded their anguage that they might not understand one another.  This made them scatter in different directions.  The sons of Jepheth went north.  Most of teh people of Europe and America  are probably descendants of Japheth.  Ham's children settled in Canaan and Egypt and other countries in that region while Shem became the father of the Semitic people who include the Jews.  Jesus Christ was a descendant of Sham.  To gain a better understanding of this period, read the first eleven chapters of Genesis.
+	</p>
+</div>
+
+
+<table>
+		<tr><td colspan ="2"><strong>Read Genesis 1.  After each of the folling things in creation give the</strong></td></tr>
+		<tr><td colspan ="2"><strong>day on which God did it.  Frist one is done correctly:</strong></td></tr>
+		
+		<tr><td> &nbsp; &nbsp; 1.  Created light</td>
+			<td>
+			<select size="1" name="L03S101" id="L03S101">			
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd" disabled="disabled">2nd</option>
+				<option value="3rd" disabled="disabled">3rd</option>
+				<option value="4th" disabled="disabled">4th</option>
+				<option value="5th" disabled="disabled">5th</option>
+				<option value="6th" disabled="disabled">6th</option>
+				<option value="7th" disabled="disabled">7th</option>
+			</select>
+			</td>
+			</tr>
+		
+		<tr><td> &nbsp; &nbsp; 2.  Made stars, sun and moon</td>
+			<td>
+			<select size="1" name="L03S102" id="L03S102">
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd">2nd</option>
+				<option value="3rd">3rd</option>
+				<option value="4th">4th</option>
+				<option value="5th">5th</option>
+				<option value="6th">6th</option>
+				<option value="7th">7th</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 3.  Made man</td>
+			<td>
+			<select size="1" name="L03S103" id="L03S103">
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd">2nd</option>
+				<option value="3rd">3rd</option>
+				<option value="4th">4th</option>
+				<option value="5th">5th</option>
+				<option value="6th">6th</option>
+				<option value="7th">7th</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 4.  Made birds</td>
+			<td>
+			<select size="1" name="L03S104" id="L03S104">
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd">2nd</option>
+				<option value="3rd">3rd</option>
+				<option value="4th">4th</option>
+				<option value="5th">5th</option>
+				<option value="6th">6th</option>
+				<option value="7th">7th</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 5.  God rested</td>
+			<td>
+			<select size="1" name="L03S105" id="L03S105">
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd">2nd</option>
+				<option value="3rd">3rd</option>
+				<option value="4th">4th</option>
+				<option value="5th">5th</option>
+				<option value="6th">6th</option>
+				<option value="7th">7th</option>
+		</select>
+		</td>
+		</tr>
+	
+		<tr><td> &nbsp; &nbsp; 6.  Made the firmament (heaven)</td>
+			<td>
+			<select size="1" name="L03S106" id="L03S106">
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd">2nd</option>
+				<option value="3rd">3rd</option>
+				<option value="4th">4th</option>
+				<option value="5th">5th</option>
+				<option value="6th">6th</option>
+				<option value="7th">7th</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 7.  Separated the dry land from the seas</td>
+			<td>
+			<select size="1" name="L03S107" id="L03S107">
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd">2nd</option>
+				<option value="3rd">3rd</option>
+				<option value="4th">4th</option>
+				<option value="5th">5th</option>
+				<option value="6th">6th</option>
+				<option value="7th">7th</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 8.  Made cattle</td>
+			<td>
+			<select size="1" name="L03S108" id="L03S108">
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd">2nd</option>
+				<option value="3rd">3rd</option>
+				<option value="4th">4th</option>
+				<option value="5th">5th</option>
+				<option value="6th">6th</option>
+				<option value="7th">7th</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 9.  Made fruit trees</td>
+			<td>
+			<select size="1" name="L03S109" id="L03S109">
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd">2nd</option>
+				<option value="3rd">3rd</option>
+				<option value="4th">4th</option>
+				<option value="5th">5th</option>
+				<option value="6th">6th</option>
+				<option value="7th">7th</option>
+		</select>
+		</td>
+		</tr>
+		<tr><td> &nbsp; 10.  Made whales</td>
+			<td>
+			<select size="1" name="L03S110" id="L03S110">
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd">2nd</option>
+				<option value="3rd">3rd</option>
+				<option value="4th">4th</option>
+				<option value="5th">5th</option>
+				<option value="6th">6th</option>
+				<option value="7th">7th</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; 11.  Made creeping things</td>
+			<td>
+			<select size="1" name="L03S111" id="L03S111">
+				<option>Select day:</option>
+				<option value="1st">1st</option>
+				<option value="2nd">2nd</option>
+				<option value="3rd">3rd</option>
+				<option value="4th">4th</option>
+				<option value="5th">5th</option>
+				<option value="6th">6th</option>
+				<option value="7th">7th</option>
+		</select>
+		</td>
+		</tr>	
+	</table>
+
+	<br><br>
+	
+	<table>
+		<tr><td colspan ="3"><strong>Select the letter representing the correct answer</strong></td></tr>
+		
+		<tr class="radio2" ><td class="radio2">
+				 <input type="radio" class="r1" name="L03S201" value="a">a 
+				 <input type="radio" class="r1" name="L03S201" value="b">b  
+				 <input type="radio" class="r1" name="L03S201" value="c">c 
+				 <input type="radio" class="r1" name="L03S201" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 1. The forbidden fruit was:  (a) an apple;  (b) the fruit of the tree of life;  (c)  the fruit of the tree of knowledge of good and evil. 
+		</td><td class="radio3">(Gen. 2:17.)</td></tr>
+		
+		<tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L03S202" value="a">a
+				
+				 <input type="radio" class="r1" name="L03S202" value="b">b 
+				 <input type="radio" class="r1" name="L03S202" value="c">c 
+				 <input type="radio" class="r1" name="L03S202" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 2. Sin is defined as:  (a) transgression of the law;  (b)  ignoring your conscience;  (c)  a curse inherited from parents.
+		</td><td class="radio3">(I John 3:4.)</td></tr>
+		
+	    <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L03S203" value="a">a 
+				 <input type="radio" class="r1" name="L03S203" value="b">b 
+				 <input type="radio" class="r1" name="L03S203" value="c">c 
+				 <input type="radio" class="r1" name="L03S203" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 3. The ark was:  (a)  1000 cubits long;  (b)  100 cubits long;  (c)  300 cubits long.
+		</td><td class="radio3">Note: a cubit was about eighteen inches.</td></tr>
+		
+		<tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L03S204" value="a">a 
+				 <input type="radio" class="r1" name="L03S204" value="b">b 
+				 <input type="radio" class="r1" name="L03S204" value="c">c  
+				 <input type="radio" class="r1" name="L03S204" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 4.  Then number of pairs of clean animals taken into the war was: (a)  one;  (b)  two;  (c)  seven.
+		</td><td></td></tr>
+		
+	    <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L03S205" value="a">a 
+				 <input type="radio" class="r1" name="L03S205" value="b">b
+				 <input type="radio" class="r1" name="L03S205" value="c">c 
+				 <input type="radio" class="r1" name="L03S205" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 5. The time from the beginning of the flood until Noah left the ark was:  (a)  40 days;  (b)  1 year, ten days;  (c)  150 days.
+		</td><td></td></tr>
+	</table>
+	
+	<br><br>
+	<table>
+		<tr><td colspan ="2"><strong>Who--</strong></td></tr>
+		<tr><td> 1.  Who committed the first murder?              </td><td><input id="L03S301"></input></td></tr>
+		<tr><td> 2.  Who told Eve to eat the forbidden fruit?     </td><td><input id="L03S302"></input></td></tr>
+		<tr><td> 3.  Who was the first man?                       </td><td><input id="L03S303"></input></td></tr>
+		<tr><td> 4.  Who built the ark?                           </td><td><input id="L03S304"></input></td></tr>
+		<tr><td> 5.  Who is the oldest man mentioned in the Bible?</td><td><input id="L03S305"></input></td></tr>
+		
+	</table>
+	</br></br>
+	<table>
+		<tr><td colspan ="2"><strong>Fill in the blanks:</strong></td><tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 1.</td><td>The first two sons of Adam were <input id="L03S401"> and <input id="L03S402">.  (Gen. 4:1, 2.)</td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 2.</td><td>The three sons of Noah were <input id="L03S403">, &nbsp;  <input id="L03S404">, and &nbsp;  <input id="L03S405">.  (Gen. 6:10.)</td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 3.</td><td>After the flood the people built a tower at <input id="L03S406">.  (Gen. 11:9.)</td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 4.</td><td>Peter compares the salvation of Noah by water to <input id="L03S407">. (I Peter 3:20, 21.)</td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 5.</td><td>"In the beginning God created the <input id="L03S408"> and the <input id="L03S409">."  (Gen. 1:1.)</td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 6.</td><td>Noah built the ark out of <input id="L03S410"> wood  (Gen. 6:14.).</td></tr>
+	   	</table>
+	</br></br>
+	
+	
+	<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>
+</body>
+</html>

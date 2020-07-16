@@ -1,0 +1,453 @@
+<html lang ="em">
+	<head>
+		<title>Studies in the Bible - The Wilderness Wanderings - Lesson 5</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.p4 {	margin-left: 50px;
+					margin-right: 50px;
+			        font-weight: bold;
+					border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.top {	border-top: 3px solid #000000;}
+		</style>
+		<script type="text/javascript">	
+		////////////  DATA ///////////////////////////////////////////
+ 
+		
+var score = 0;
+var answers ="";
+
+var L05_1 =["L05S101", "quails", 
+			"L05S102", "manna",
+			"L05S103", "Sinai", 
+			"L05S104", "calf", 
+			"L05S105", "Mosanic", 
+			"L05S106", "Passover", 
+			"L05S107", "Pentecost", 
+			"L05S108", "Tabenacle", 
+			"L05S109", "holy place", 
+			"L05S110", "most holy place"];
+
+var L05_1_BK =[0,2,3,4,5,8,10];
+
+var L05_2 =["L05S201","3","L05S202","8","L05S203", "15", "L05S204", "16", "L05S205", "13"];
+var L05_3 =[	"L05S301", "True", 
+				"L05S302", "False",
+				"L05S303", "True",
+				"L05S304", "False",
+				"L05S305", "True" ];
+var L05_4 =[	"L05S401", "True", 
+				"L05S402", "False",
+				"L05S403", "True",
+				"L05S404", "True",
+				"L05S405", "False" ];
+var L05_5 =[	"L05S501", "True",
+				"L05S502", "False",
+				"L05S503", "True",
+				"L05S504", "False",
+				"L05S505", "True" ];
+		
+		
+/////////////    FUNCTIONS ///////////////////////	
+
+///////////////////////////MAIN FUNCTION ////////////////////////	
+function checkAnswers()
+		{
+		    answers ="";
+		  
+			answers ="Lesson 5:  SECTION ONE:";  //numbered fill in the multiple blank
+			numberedPCk(L05_1_BK, L05_1);
+			
+			answers +="\n\nLesson 5:  SECTION TWO:\n";  //numbered single fill in blanks
+			paragraphChecker(L05_2);	
+			
+			answers +="\n\nLesson 5:  SECTION THREE:\n\n";  //true-false select-list--use radioChecker(activeFile)
+			radioChecker(L05_3);
+			
+			answers +="\n\nLesson 5:   SECTION FOUR:\n\n";  //true -false select list--use radioChecker(activeFile)
+			radioChecker(L05_4);	
+		
+			answers +="\n\nLesson 5:   SECTION FIVE:\n\n";  //true -false select list--use //radioChecker(activeFile)
+			radioChecker(L05_5);
+			
+		score =(0.5 + 100 * score/30);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+		}
+//////////////////////// END MAIN FUNCTION /////////////////////////////////////////////////////////				
+		
+		
+	/////////////////////////////////////
+		
+		//////////////////  dropdown-select-list checker
+	function dropdownChecker(activeFile)
+			{
+				var e;
+				var strUser;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<activeFile.length/2; i++)
+				{
+					e = document.getElementById(activeFile[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = activeFile[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+//////////////////////////// end dropdown /////////////////////////////////////	
+
+
+		
+		
+///////////////////////////////////////// Numbered QUESTIONS WITH MULTIPLE ANSWERS  /////////////////////
+/////////  NEED ** TWO ** FILES
+
+
+ 
+ 
+ 
+ 
+ ///////////////////////////////////////// QUESTIONS WITH MULTIPLE ANSWERS  /////////////////////
+
+ //function numberedPCk(activeFile)
+ function numberedPCk(qbreak, activeFile)
+  {
+	var aa="";
+	var qcount = 0;
+	var q2ans="";
+	var pick;
+	var i=0;
+	var m = 0;
+	
+	for (var j=1; j<qbreak.length; j++)  //number of questions
+	{    
+    	m++;  //question number                                                         
+	    q2ans+= "\n"  + m +".";    //build question by parts
+		pick="";  //answer selected  
+	
+		for (i=qbreak[j-1]; i<qbreak[j]; i++)
+		{    
+			
+			
+			aa = document.getElementById(activeFile[2*i]).value;
+	
+			if (aa === activeFile[1+2*i])  // working to this point
+			{
+				pick += "..." + aa + " - " + activeFile[2*i+1]+ " - correct";
+				score +=1;
+		    }	
+			else{pick += "..." + aa + " - "+ activeFile[2*i+1] + " - incorrect";}
+		}
+		
+		q2ans += pick;
+		qcount++;
+	}
+	answers = answers +"\n" + q2ans;
+	q2ans ="";
+
+ }
+ 
+
+ 
+/////////////////////////////////////////////////////////////////////////////////////////////		
+		
+///////////fill in blanks in paragraph -- works with numbered single ianswer questions ///////////////
+	
+function paragraphChecker(activeFile)
+{		
+		var q2ans;
+		var pick;
+		var count = 0;
+		var strUser ="";
+	
+    for (i=0; i<activeFile.length/2; i++)
+	{
+		strUser = document.getElementById(activeFile[2*i]).value;
+		if (strUser === activeFile[2*i+1])
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- correct";
+			score = score +1;
+		}
+		else
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- incorrect";	
+		}
+		count +=1;
+		answers +="\n" + count +".  "+ strUser; 
+				
+	}
+
+}	
+/////////////////////////////---- radio -------------------		
+function radioChecker(activeFile)
+	{
+		var radios ="";
+		var radVal ="";
+	
+	
+			for (i=0;i<activeFile.length/2;i++)
+				 {  
+				  pre ="Incorrect " + String(i+1) + ".  ";
+					radios=document.getElementsByName(activeFile[2*i]);
+				     for (j=0; j<radios.length; j++)
+					 {
+					     if(radios[j].checked)
+						 {
+							radVal=radios[j].value;
+						 }
+					 }
+				 
+				 
+					if(radVal==activeFile[2*i+1])
+					{
+						score++;
+						pre = "Correct   " + String(i+1) + ".  ";
+
+					}
+					answers+=pre + radVal +"\n";
+				 }
+				
+				
+	}
+	//////////////////----end SectionRadioChecker function ----------------///////	
+		
+			</script>
+	</head>
+	<body><nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+   5 &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;   
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>The Wilderness Wanderings</h1>
+	<h3>Lesson 5</h3>
+<div class="d1">
+	<h2>The Flight From Egypt</h2>
+	<p class="p1">
+	We left the children of Israel in our last lesson about to leave Egypt to begin 40 years of wandering in the wilderness.  After the ten plagues, Pharaoh agreed to let them depart.  Before leaving, they ate a final feast called the Passover and then began their march out of Egypt, 600,000 men plus families.  Coming to the Red Sea theyt looked back.  To their dismay they saw that Pharaoh had changed his mind and had sent his army to return them to bondage.  Seeing their distress, God instructed Moses to stretch forth his hand over the se.  As he dis so, the water divided and Israel marched through on dry land with water on both sides.  Paul says they were also under a could and that they "were all baptized unto Moses in the cloud and in the sea."  (1 Cor. 10:2.)  Their baptism unto Moses was thus a complete immersion in the cloud and in the sa.  <strong>Thus it was a type of the baptism commanded by Christ which is an immersion or burial in water.</strong> (See Rom. 6:4; Col. 2:12.)
+	</p>
+</div>
+
+<div class="d1">
+<h2>Israel Forgets God</h2>	
+	<p class="p1">
+	The Egyptians tried to follow Israel, but when the Israelites reached the other side, Moses stretched forth his hand once more, the sea closed up and destroyed the Egyptians.  After 400 years of bondage, the children of israel were at last free.  For several weeks they marched southeast through the desert.  During this period they murmured against Moses for want of food and water.  In response God game them quails and a kind of bread called manna to satisfy their huynger.  (Exodus 16.)  To quench their thirst Moses struck a rock from which water came froth (Exodus 17.)  In tis we have an example of God's providence in caring for His children.
+	</p>
+	
+	<p class="p1">
+	Finally, the people reached Mt. Sini at the southern tim of the SiniPeninsula.  Moses climbed the mountain to receive from God the law which was to guide the Israelites until the death of Christ.  God gave Moses two tables of stone upon which He wrote with His own hand the ten commandments.  Forty days after Moses had ascended the mountain he returned to discover that his brother Aaron had, at the insistence of the people, made a golden calf for them to worship!  How short our memories sometimes are!  Here was a people who turn to idolatry only a few weeks after their God had delivered them from slavery.  So angry was Moses thtat he broike the tables of stone and forced the people to dring the water ino which he cast the ground-up power of the golden calf.  Three thousand of the Israelites were slain that day for their idolatry.
+	</p>
+	<p class="p1">
+	Once more Moses climbed Mt. Sinai to commune with Johovah for another 40 days.  The tables of stone were renewed and further protions of God's law for Israel were revealed to Moses.  Moses, in turn, communicated to the people this law which we know as <strong>The Law of Moses.</strong>
+	</p>
+	</div>
+	<div class="d1">
+<h2>The Law Of Moses</h2>	
+	<p class="p1">
+	The was of Moses was to govern Israel for 1500 years from its proclamation to the death of Jesus Christ.  This period of time is known as the <strong>Mosaic Age,</strong> (sometimes Jewish Age), taking its name from the great lawgiver.  The age before Moses is the <strong>Ptriarchal Age;</strong> that after the death of Christ is the <strong>Christian Age.</strong>  All of man's histroy falls into one of these three periods.
+	</p>
+	<p class="p1">
+	The law, which is recorded in protions of Exodus, Leviticus, Numbers, and Deuteronomy, covered virtually every phase of the life3 of the Israelites.  It had civil, criminal, and judicial regulations.  It governed the religionus activities of the priests and the peopld, and set the moral standards by which they were to live. 
+	</p>
+	
+	<p class="p2">
+	Underlying the entire law of Moses were the ten commandmens.  These moral precepts dealt with (1) man's duties to God and (2) man's duties to his followmen.  All of them, execpt for the fourth commandment ("Remember the Sabbath day, to keep it holy") are repeated in some form in the teachings of Christ and His apositles.  We are to keep those nine tht have been repeated, not because they were a part of Moses' law, but because they have been made a part of Chirst's.  The Law of Moses as such has been done away by the death of Christ (see Col. 2:14)and we are not bliged to keep it today.  The command to keep the sabbath or seventh day (Saturday) has not been repeated in the New Testament.  Instead, we are to worship on the Lord's daay or first day (Sunday).  See Acts 20:7; I Cor. 16:2; Rev. 1:10.)
+	</p>
+	
+	<p class="p1">
+	The Law of Moses provided for three annual feasts.  They were (1) <strong>Feast of Passoover</strong> or <strong>Unleavened Bread</strong>which came at the beginning of the grain harvest, about April -- a memorial of Istel's deliverance from Egypt; (2)<strong> Feast of Weeks</strong> or<strong> Pentecost,</strong> kept on the 50th day after the Passover at the end of the grain harvest; (3) <strong>Freast of Tabernacles</strong> or <strong>Ingathering</strong> which came in the fall at the final harvest and which lasted seven days during whcih the Israelites lived in booths made of tree limbs in memory of their wilderness wandering.
+	</p>
+	
+	<p class="p1">
+	Gon commanded the erection of a tabernacle, a small portable tent, to be used as a place of worship during the wanderings.  It had two parts -- the holy place and the most holy place or holy of holies.  Into the former only the priests might enter and into the latter only the high priest on the <strong>Day of Atonement</strong> to offer a sacrifice on behalf of his own sins and those of the people.
+	</p>
+	
+	<p class="p1">
+	Priest were selected from the tribe of Levi and their duties were prescribed.  These included the offering of animal sacrifices for the people's sins.  Chief of these were (1) burnt offerings, symbolic of entire dedication to God; (2) peace offering, an expression of thanksgiving to God; (3) sin offering, an acknowledgement of man's defilement by sin.
+	</p>
+</div>
+
+<div class="d1">
+<h2>Forty Years Of Wandering</h2>	
+	<p class="p1">
+	After the institution of the law, Moses sent twelve spies into the land of Canaan.  This was the former home of Abraham, Isac, and acob and the lad which God had promised to their seed.  The twelve reported that it was a land flowing with "mild and honey", but that the ihabitants were so strong that it was unwise to try to conquer it.  Only Caleb and Joshua filed a minority repoert, urging the people to believe that with God's help they could conuer the land.  But the majority prevailed and for its disbelief God compelled Israel to wander for 40 years in the wilderness.  Of all the men who left Egypt, only Caleb and Joshua reached the promised land.
+	</p>
+	<p class="p1">
+	We do not know much aboput the rest of this foryt-year period.  Israel wandered nomadically from place to place in the Sinai peninsula.  It is during this period that we have such stories as the rebellion of Aaron and Miriam (Moses' sister) against Moses, and the Leprosy of Miriam as a result (Numbers 12); the biting of the people by serpents and their healing when they looked unon the brazen serpent (Numbers 21); and the account of the effort of King Balak of the Moabites to get the prophet Baalam to curse Israel.  (Numbers 22-24.)
+	</p>
+	
+	<p class="p1">
+	During the wilderness wandering Moses committed his great sin-smiting the rock instead of speaking to it as commanded by Godl  and in doing, assuming personal credit for the miracle of water which poured forth.  For this he was not allowed to enter the promised land.  Shortly before Israel corssed the Jordan River to enter Canaan.  Mosed climed Mt. Nebo to look into the promised land.  His mission completed, he died at the ange of 120 and was puried by the Lord.  The entire story of the wilderness wandering may be found starting withe Exodus 13 and concluding with the book of Deuteronomuy.
+	</p>
+	
+	
+</div>
+<div>
+<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+<strong>Fill in the blanks:</strong>
+<br><br>
+1.  When the Israelites murmured for food, God gave them <input id="L05S101"></input> and <input id="L05S102"></input> to eat.
+<br><br>
+2.  Moses went up on Mt. <input id="L05S103"></input> to receive the Law from God.
+<br><br>
+3.  When he returned after 40 days he found the people worshipping a golden <input id="L05S104"></input>
+<br><br>
+4.  The period from the giving of the Law of Moses to the death of Christ is known as the <input id="L05S105"></input>
+<br><br>
+5.  The three annual feasts which Israel was to observe were (1) <input id="L05S106"></input>, (2) <input id="L05S107"></input>, and (3) <input id="L05S108"></input>.
+<br><br>
+6.  Two parts of the tabernacle were the <input id="L05S109"></input> and the <input id="L05S110"></input>.
+<br><br>
+<br>
+<strong>Read Exodus 20:1-17 (the ten commandments).  After each of these commandm,ents write the verse in which it is found:</strong>
+<br><br>
+1.  The 1st commandment -- Thoushalt have no other gods before me.  Verse <input id="L05S201"></input>
+<br><br>
+2.  The 4th commandment -- Rember the sabbath day, to keep it holy.   Verse <input id="L05S202"></input>
+<br><br>
+3.  The 8th commandment -- Thou shalt not steal.   Verse <input id="L05S203"></input>
+<br><br>
+4.  The 9th commandment -- Thou shalt not bear false witness against thy neighbor.  Verse <input id="L05S204"></input>
+<br><br>
+5.  The 6th commandment -- Thou shalt not kill.   Verse <input id="L05S205"></input>
+<br><br><br>
+<table>
+		<tr><td colspan ="2"><strong>Read Exodus 14.  Select true or false before each statement:</strong></td><tr>
+		
+		<tr><td><input type="radio" name="L05S301" value="True">True
+				<input type="radio" name="L05S301" value="False">False
+				<input type="radio" name="L05S301"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 1.  Moses said to the people, "Fear ye not, stand still, and see the salvation of the Lord."</td></tr><tr></tr>
+	
+		<tr><td><input type="radio" name="L02S302" value="True">True 
+				<input type="radio" name="L02S302" value="False">False
+				<input type="radio" name="L02S302"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 2.  Pharaoh's army caught and destroyed many Israelites.</td></tr><tr></tr>
+		
+		<tr><td><input type="radio" name="L05S303" value="True">True
+				<input type="radio" name="L05S303" value="False">False
+				<input type="radio" name="L05S303"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 3.  The children of Israel passed throug the sea with water on both sides.</td></tr><tr></tr>
+		
+		<tr><td><input type="radio" name="L05S304" value="True">True
+				<input type="radio" name="L05S304" value="False">False
+				<input type="radio" name="L05S304"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 4.  The Egyptians did not try to follow Israel into the sea.</td></tr><tr></tr>
+		
+		<tr><td><input type="radio" name="L05S305" value="True">True 
+				<input type="radio" name="L05S305" value="False">False
+				<input type="radio" name="L05S305"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 5.  When Israel was across, the sea closed up again.</td></tr>
+</table>	
+
+<br><br><br>
+<table>
+		<tr><td colspan ="2"><strong>Read Exodus 32.  Select true or false before each statement:</strong></td><tr>
+		
+		<tr><td><input type="radio" name="L05S401" value="True">True
+				<input type="radio" name="L05S401" value="False">False
+				<input type="radio" name="L05S401"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 1.  The perple asked Aaron to make them gods to worship.</td></tr><tr></tr>
+	
+		<tr><td><input type="radio" name="L02S402" value="True">True 
+				<input type="radio" name="L02S402" value="False">False
+				<input type="radio" name="L02S402"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 2.  As Moses cme down from the mountain he was carrying five tables of stone.</td></tr><tr></tr>
+		
+		<tr><td><input type="radio" name="L05S403" value="True">True
+				<input type="radio" name="L05S403" value="False">False
+				<input type="radio" name="L05S403"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 3.  Aaron tried to place the blamefor the idol onthe people.</td></tr><tr></tr>
+		
+		<tr><td><input type="radio" name="L05S404" value="True">True
+				<input type="radio" name="L05S404" value="False">False
+				<input type="radio" name="L05S404"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 4.  When Monse asked those on the Lord's side to stand by him the sons of Levi took their place by him.</td></tr><tr></tr>
+		
+		<tr><td><input type="radio" name="L05S405" value="True">True 
+				<input type="radio" name="L05S405" value="False">False
+				<input type="radio" name="L05S405"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 5.  The Levites killed 10,000 men that day.</td></tr>
+</table>	
+
+<br><br><br>
+<table>
+		<tr><td colspan ="2"><strong>Read Numbers 13.  Select true or false before each statement:</strong></td></tr>
+		
+		<tr><td><input type="radio" name="L05S501" value="True">True
+				<input type="radio" name="L05S501" value="False">False
+				<input type="radio" name="L05S501"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 1.  One man was selected as a spy from each tribe of Israel.</td></tr><tr></tr>
+	
+		<tr><td><input type="radio" name="L02S502" value="True">True 
+				<input type="radio" name="L02S502" value="False">False
+				<input type="radio" name="L02S502"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 2.  They brought back peaches, apples, and corn.</td></tr><tr></tr>
+		
+		<tr><td><input type="radio" name="L05S503" value="True">True
+				<input type="radio" name="L05S503" value="False">False
+				<input type="radio" name="L05S503"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 3.  They toldMoses it was a land flowing with "milk and honey".</td></tr><tr></tr>
+		
+		<tr><td><input type="radio" name="L05S504" value="True">True
+				<input type="radio" name="L05S504" value="False">False
+				<input type="radio" name="L05S504"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 4.  Geuel was the man who said, "Let us go up at once, and possess it."</td></tr><tr></tr>
+		
+		<tr><td><input type="radio" name="L05S505" value="True">True 
+				<input type="radio" name="L05S505" value="False">False
+				<input type="radio" name="L05S505"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp; 5.  The majority said, "And there we saw the giants, the sons of Anak, </td></tr>
+		<tr><td></td><td> &nbsp; &nbsp;  &nbsp; &nbsp; which come of giants: and we were in our own sight as bumblebees."</td></tr>
+</table>	
+
+</div>
+
+<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>	
+
+</body>
+	</html>

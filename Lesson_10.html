@@ -1,0 +1,643 @@
+<html lang ="em">
+	<head>
+		<title>Studies in Bible - Jesus Christ -- His Birth and Baptism - Lesson 10</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			
+			.numcol {width: 20px;
+						vertical-align: text-top
+			}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.p4 {	margin-left: 50px;
+					margin-right: 50px;
+			        font-weight: bold;
+					border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+					
+			.p5 {	font-size:   18px;
+					line-height: 34px;
+					text-indent: 50px;
+					}
+			
+			.radio3 {   max-width: 675px;
+						min-width: 675px;
+						
+			}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.t-radio {max-width: 840px;
+						min-width: 840px;
+						}
+			.table-txt {	font-size:   18px;
+						
+						line-height: 34px;}
+			
+			.top {	border-top: 3px solid #000000;}
+			.tableNo { 	vertical-align: top;
+						padding-right: 10px;}
+			.tableNo1 {
+						vertical-align: top;
+						width: 180px;
+						max-width: 180px;
+						min-width: 180px;
+						overflow: hidden;
+						
+									 }
+			table {border-spacing: 1px 15px;}
+			
+			.t2 {border: 1px solid #000000;
+				padding: 30px;}
+				
+			.cell1 {border: 1px solid #000000;
+				}
+				
+		</style>
+		<script type="text/javascript">	
+//Main Data storage		
+var score = 0;
+var answers ="";
+		
+		
+//section one data		
+var q2blanks=[	"L10S101", "L10S102","L10S103","L10S104",				 "L10S105", 
+				"L10S106", "L10S107", 
+				"L10S108", "L10S109",
+				
+				"L10S110",
+				"L10S111", "L10S112", 
+				"L10S113", 
+				"L10S114", "L10S115",
+				
+				"L10S116",
+				"L10S117", "L10S118",
+				"L10S119",
+				"L10S120"
+							];
+		//Answers
+		
+		var q2answers =["Matthew","Mark","Luke","John",
+						"gospels", 
+						"John","Baptist",
+						"locust","honey",
+						"Herod",
+						"4 B.C", "Bethlehem", 
+						"Egypt",
+						"Nazareth", "Galilee",
+						"twelve",
+						"John", "Jordan",
+						"Cana",
+						"Capemaum"];	
+						
+			var secTxt="";
+			var qbreak=[0, 4,5,7,9,10,12, 13, 15, 16, 18, 19, 20];  //cumulative
+			var qcount = 0;
+			var q2ans="";
+			var pick;
+  
+///////////  Section two data
+
+
+var L10_2 = [	"L10S201","2:10",
+				"L10S202","2:12",
+				"L10S203","2:14",
+				"L10S204","2:15",
+				"L10S205","2:19"];
+				
+///////// Section three data
+				
+var L10_3= ["L10S301","Galilee",
+			"L10S302","John",
+			"L10S303","baptized",
+			"L10S304","righteousness",
+			"L10S305","out",
+			"L10S306","water",
+			"L10S307","dove"];
+							
+///////// Section four data /////////////
+var L10_4= ["L10S401","False",
+			"L10S402","False",
+			"L10S403","True",
+			"L10S404","True",
+			"L10S405","True",
+			"L10S406","False",
+			"L10S407","True",
+			"L10S408","False"];		
+		
+		//////////////  FUNCTIONS  ///////////////
+		////////////// SECTION ONE ///////////////
+		
+function SectionOneChecker()
+  {
+
+	var i=0;
+	var m = 0;
+	qcount =0;
+
+	for (var j=1; j<qbreak.length; j++)  //number of questions
+	{ 
+		m++;  //question number
+		                                                                     
+	    q2ans+= "\n"  + m +".";    //build question by parts
+		pick="";  //answer selected  
+	
+		for (i=qbreak[j-1]; i<qbreak[j]; i++)
+		{ 
+				        
+			secTxt = document.getElementById(q2blanks[i]).value;
+			 
+			if (secTxt == q2answers[i])
+			{
+			    alert(secTxt);
+				alert(q2answers[i]);
+				pick += "..." + secTxt + " - " + q2answers[i] + " - correct";
+				score +=1;
+		    }	
+			else
+			{
+				pick += "..." + secTxt + " - " + q2answers[i] + " - incorrect";
+			}	
+		  
+		}		
+		q2ans += pick;
+		qcount++;
+		
+	}
+	
+	answers = answers +"\n" + q2ans;
+	q2ans ="";
+ }
+	
+//-----------------------------end of section one -----------------------------
+//////// Section Two Function
+		
+
+	function SectionTwoChecker()
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<5; i++)
+				{
+					e = document.getElementById(L10_2[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = L10_2[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+/////////////////----end function ----------------///////	
+
+
+function SectionThreeChecker()
+{
+	var count = 0;
+	var strUser ="";
+	
+    for (i=0; i<7; i++)
+	{
+		strUser = document.getElementById(L10_3[2*i]).value;
+		if (strUser === L10_3[2*i+1])
+		{
+			strUser = strUser +" -- "+ L10_3[2*i+1] + " -- correct";
+			score = score +1;
+		}
+		else
+		{
+			strUser = strUser +" -- "+ L10_3[2*i+1] + " -- incorrect";	
+		}
+		count +=1;
+		answers +="\n" + count +".  "+ strUser; 
+				
+	}
+
+}
+//-----------------------------end of section three -----------------------------
+//////// Section Four Function
+		
+
+function SectionFourChecker()
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<8; i++)
+				{
+					e = document.getElementById(L10_4[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = L10_4[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+/////////////////----end function ----------------///////	
+
+	
+		
+		///////////////////////////////////////////////
+		///////////////////////////////////////////////    
+			
+					
+////////  MAIN FUNCTION ////////////////////////////////////			    
+		function checkAnswers()
+		{
+		    answers ="";
+		  
+			answers ="LESSON 10:  SECTION ONE:";
+			SectionOneChecker();
+			
+			answers +="\n\nLESSON 10:  SECTION TWO:\n";
+			SectionTwoChecker();	
+			
+			answers +="\n\nLESSON 10:  SECTION THREE:\n";
+			SectionThreeChecker();		
+			
+			answers +="\n\nLESSON 10:  SECTION THREE:\n";
+			SectionFourChecker()
+		
+		
+		score =(0.5 + 100 * score/10);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+		}
+ 
+	</script>
+	</head>
+	<body>
+	<nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+    
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;  
+   10 &nbsp; &nbsp;
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  
+ <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>Jesus Christ -- His Birth and Baptism</h1>
+	<h3>Lesson 10</h3>
+	
+
+<div class="d1">
+
+	<p class="p1">
+	We now begin a study of the life of the greatest man who ever lived.  Jesus Christ was much more than a man; He was and is the Son of God.  The story of His human existence is told in the first four books of the New Testament (Matthew, Mark, Luke, and John) commonly calle the gospels.  But in a larger sense the whole Bible revolves aroun Christ.  As early as the first book in the Bibe God promised Abraham that in his seed all nations of the earth would be blessed.  This promise was fulfilled in Jesus.  Furthermore, in our last lesson we learned that many Old Testament prophecies foretold the comming of the Messiah.  We shall find in future study that the entire New Testament tells us about Christ, His teachings, and His church.
+	</p>
+	<p class="p1">
+	The four gospels are four separate biographies of Jesus.  While they overlap in some respects, each mentions some things not related in the others.  Matthew show that Jesus was the promised Messiah and often quotes the prophets to show how Christ fulfilled their predictions.  Mark emphasizes the things Jesus <b>did</b> more than His teachings.  Luke depicts the humanity of Jesus by describing His interest in the suffering of man.  John writes to prove the deity of Christ and in recording the things which Jesus did says that they were written "that ye might believe that Jesus is the Christ, the son of God; and that believing ye might have life through his name."  (John 20:31.)
+	</p>
+</div>
+
+<div class="d1">
+<h2>John The Baptist</h2>
+	<p class="p1">
+	It is proper to say something here about the harbinger of Christ.  John the Baptist was a cousin of Jesus who should not be confused with John, the apostle, author of the gospel of John.  John was called the Baptist because he Baptized.  The American Standard Version sometimes refers to him as John the Baptizer which is really more accurate.  He was a forerunner of Christ and as prophesied by Iasiah, he came to "prepar . . . the way of the Lord, make his paths straight."  (Matt. 3:3.)
+	</p>
+	<p class="p1">
+	John was an unusual man, dressing in camel's hair and eating locusts and wild honey!  He preached in the wilderness and baptized in the River Jordan those who came to him.  He informed the multitudes that he was not the Christ, but that they should look for one who would come after him.  Fearless in denouncing the sins of the times, he called on the people to repent.  After he immersed Jesus at the high point of his career, he gradually faded in importance until he was arrested and beheaded by King Herod.  As great a man as he was, Jesus says of him, "He that is least in the kingdom of heaem is greater than he."  (Matt. 11:11.)  Truly the Lord's chruch was not to be build upon John the Baptist 
+	</p>
+</div>
+<div class="d1">
+<h2>The Pre-existence Of Christ</h2>
+	<p class="p1">
+	The Son of God existed in the beginning with th Father.  We are told, "In the beginning was the Word, and the Word was with God, and the Word was God." (John 1:1.)  In verses 14-17 of the same chapter we learn that the Word was Jesus Christ.  Thus, when God said in the creation, "Let <b>us</b> make man in <b>our</b> image," (Gen. 1:26) Christ was there.  As God's only begotten son He was sent to earth to redeem the world from sin.
+	</p
+</div>
+<div class="d1">
+<h2>The Birth of Jesus</h2>
+	<p class="p1">
+	Jesus was born about 4 B.C.  Because of a chronological mistake when our present method of reckoning time from His birth was begun, He was not born in the year 1 A.D. as might be supposed.  His mother was the virgin Mary who conceived by the Holy Spirit of God.  Thus, He was both human and divine, born of a human mother and a divine father.  His human geneaology shows that He was of royal birth, a direct descendant of King David.  His kingdom, however, was destined to be spiritual rather than temporal as was David's.
+	</p>
+	<p class="p1">
+	Circumstances caused Jesus to be born in Bethlehem in fulfillment of the prophecy of Micah who had said of that village, "Out of thee shall he come forth unto me that is to be ruler of Israel."  (Micah 5:2.)  A Roman pronouncement required Mary and her husband, Joseph, to go to Bethlehem for a special census.  Arriving there they could find no room at the inn which necessitated their finding quarters in a stable.  There, in the most humble of all places, the baby Jesus was born to be wrapped in swaddling clothes and laid in a manger.  The birth of the Son of Gow was announced by angels to shepherds in the countryside who immediately went to Bethlehem to see the young child.  In the meantime, wise men from the Dast (the Bible doesn't saythere were three) followed a star until they found the newborn infant.  On the way they inquired of King Herod where the Messiah was to be born.  Herod, fearing for his throne, issued an edict that all children from two years of age and under should be slain.  But he did not succeed in killing Jesus as he had hoped because Joseph, being warned by God, took Jesus and His mother and fled into Egypt.
+	</p>
+</div>
+<div class="d1">
+<h2>His Childhood</h2>
+	<p class="p1">
+	Joseph and his family remained in Egypt until the death of Herod.  When they returned they went to Nazareth in Galilee rather than to Bethlehem in Judea where Jesus had been born.  Galilee was the most northern province in Palestine while Judea was the farthest south.  In between lay Sameria.  The early life of Jesus was spent at Nazareth where He learned the carpenter's trade.  At the age of twelve He went to Jerusalem with Joseph and Mary.  There they lost Him to find Hi later in the temple discussing difficult points of the law with the teachers.  We know nothing more of His boyhood except that He "increased in wisdom and stature, and in favour with God and man."  (Luke 2:52.)
+	</p>
+</div>
+<div class="d1">
+<h2>His Baptism</h2>
+	<p class="p2">
+	At the age of thirty Jesus was baptized by John in the Jordan River.  John knowing that Jesus was without sin, hesitated to baptize Him.  But Jesus insisted, saying that "it becometh us to fulfill all righteousness."  (Matt. 3:15.)  Since Jesus was sinless He was not baptized for the remission of sins as were those converts on the day of Pentecost.  (Acts 2:38.)  Sometimes artist picture John sprinkling water on the head of Jesus, but the actual record shows that he immersed Him.  (See Matt. 3:16; Mark 1:11.)  When Jesus came up out of the water the spirit of God in the form of a dove descended on Him and a voice from heaven said, "Thou art by beloved Son, in whom I am well pleased."  (Mark 1:11.)  God thus attested to the deity of His Son.
+	</p>
+</div>
+<div class="d1">
+<h2>Beginning Of His Ministry</h2>
+	<p class="p1">
+	Following His baptism, Jesus went into the wilderness where He fasted forth days.  At the end of this time the devil appeared, tepting Him in various ways.  But Jesus did not yield, nor did He ever succumb to the temptations of sin.  Thusat His cruifixionHe was a spotless offering for the sins of man.  Christ first came to public attention in the village of Cana in Galilee where He performed His first miracle, that of turning water into wine.  He soon was to perform many other miracles.  Shortly Jesus moved to the city of Capemaum by the Sea of Galilee and there made His home during most of His personal ministry which we shall study in our next lesson.
+	</p>
+</div>
+
+
+
+<div>
+<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+<table>
+<tr><td colspan="2"><b>Fill in the blanks:</b></td>
+
+<tr><td class ="numcol">&nbsp;1.  </td><td>The four biographical books which tell us about Christ are <input name="L010S101" id="L10S101">, <input name="L10S102" id="L10S102">, <input name="L10S103" id="L10S103">, and <input name="L10S104" id="L10S104">
+</td></tr>
+<tr><td class ="numcol">&nbsp;2.  </td><td>They are commonly called the  <input name="L010S105" id="L10S105">.
+</td></tr>
+<tr><td class ="numcol">&nbsp;3.  </td><td> <input name="L010S106" id="L10S106"> the <input name="L10S107" id="L10S107"> was the cousin of Jesus.
+</td></tr>
+<tr><td class ="numcol">&nbsp;4.  </td><td>His food was <input name="L010S108" id="L10S108">, and <input name="L10S109" id="L10S109">.
+</td></tr>
+<tr><td class ="numcol">&nbsp;5.  </td><td>He was arrested and beheaded by King  <input name="L010S110" id="L10S110">. 
+</td></tr>
+<tr><td class ="numcol">&nbsp;6.  </td><td>Jesus was born about the year <input name="L010S111" id="L10S111"> in the village of <input name="L10S112" id="L10S112">.
+</td></tr>
+<tr><td class ="numcol">&nbsp;7.  </td><td>Herod tried to kill Jesus so Joseph fled with his family to <input name="L010S113" id="L10S113">. </td></tr>
+<tr><td class ="numcol">&nbsp;8.  </td><td>When they returned they settled in the city of <input name="L010S114" id="L10S114"> in the province of <input name="L10S115" id="L10S115">. 
+</td></tr>
+<tr><td class ="numcol">&nbsp; 9.  </td><td>Jesus visited Jerusalem with Joseph and Mary at the age of <input name="L010S116" id="L10S116">.
+</td></tr>
+<tr><td class ="numcol">10. </td><td>Jesus was baptized by <input name="L010S117" id="L10S117"> in the river <input name="L10S118" id="L10S118">. 
+</td></tr>
+<tr><td class ="numcol">11.  </td><td>He performed His first miracle in the village of <input name="L010S119" id="L10S119">.
+</td></tr>
+<tr><td class ="numcol">12.  </td><td>Afterwards He made His home at <input name="L010S120" id="L10S120"> by the Sea of Galilee.
+</td></tr>
+</table>
+
+<table>
+
+		<tr><td colspan ="2"><strong>The visit of the shepherds is told in Luke 2:8-20.  Before each statement select the number of the verse in which it is found</strong></td></tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L10S201" id="L10S201">
+				<option>Select the verse:</option>
+				<option value="2:8">2:8</option>
+			    <option value="2:9">2:9</option>
+			    <option value="2:10">2:10</option>
+			    <option value="2:11">2:11</option>
+			    <option value="2:12">2:12</option>
+			    <option value="2:13">2:13</option>
+			    <option value="2:14">2:14</option>
+			    <option value="2:15">2:15</option>
+			    <option value="2:16">2:16</option>
+			    <option value="2:17">2:17</option>
+			    <option value="2:18">2:18</option>
+			    <option value="2:19">2:19</option>
+			    <option value="2:20">2:20</option>   
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 1.  "And the angel said unto them.  Fear not: for, behold, I bring you good tidings of great joy."</td>
+			</tr>
+
+		
+		
+			<tr><td>
+			<select size="1" name="L10S202" id="L10S202">
+				<option>Select the verse:</option>
+				<option value="2:8">2:8</option>
+			    <option value="2:9">2:9</option>
+			    <option value="2:10">2:10</option>
+			    <option value="2:11">2:11</option>
+			    <option value="2:12">2:12</option>
+			    <option value="2:13">2:13</option>
+			    <option value="2:14">2:14</option>
+			    <option value="2:15">2:15</option>
+			    <option value="2:16">2:16</option>
+			    <option value="2:17">2:17</option>
+			    <option value="2:18">2:18</option>
+			    <option value="2:19">2:19</option>
+			    <option value="2:20">2:20</option>   
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 2.  "Ye shall find the babe wrapped in swaddling clothes."</td>
+			</tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L10S203" id="L10S203">
+				<option>Select the verse:</option>
+				<option value="2:8">2:8</option>
+			    <option value="2:9">2:9</option>
+			    <option value="2:10">2:10</option>
+			    <option value="2:11">2:11</option>
+			    <option value="2:12">2:12</option>
+			    <option value="2:13">2:13</option>
+			    <option value="2:14">2:14</option>
+			    <option value="2:15">2:15</option>
+			    <option value="2:16">2:16</option>
+			    <option value="2:17">2:17</option>
+			    <option value="2:18">2:18</option>
+			    <option value="2:19">2:19</option>
+			    <option value="2:20">2:20</option>   
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 3.  "Glory to God in the highest."</td>
+			</tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L10S204" id="L10S204">
+				<option>Select the verse:</option>
+				<option value="2:8">2:8</option>
+			    <option value="2:9">2:9</option>
+			    <option value="2:10">2:10</option>
+			    <option value="2:11">2:11</option>
+			    <option value="2:12">2:12</option>
+			    <option value="2:13">2:13</option>
+			    <option value="2:14">2:14</option>
+			    <option value="2:15">2:15</option>
+			    <option value="2:16">2:16</option>
+			    <option value="2:17">2:17</option>
+			    <option value="2:18">2:18</option>
+			    <option value="2:19">2:19</option>
+			    <option value="2:20">2:20</option>   
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 4.  "Let us now go even unto Bethlehem."</td>
+			</tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L10S205" id="L10S205">
+				<option>Select the verse:</option>
+				<option value="2:8">2:8</option>
+			    <option value="2:9">2:9</option>
+			    <option value="2:10">2:10</option>
+			    <option value="2:11">2:11</option>
+			    <option value="2:12">2:12</option>
+			    <option value="2:13">2:13</option>
+			    <option value="2:14">2:14</option>
+			    <option value="2:15">2:15</option>
+			    <option value="2:16">2:16</option>
+			    <option value="2:17">2:17</option>
+			    <option value="2:18">2:18</option>
+			    <option value="2:19">2:19</option>
+			    <option value="2:20">2:20</option>   
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 5.  "But Mary kept all these things, and pondered them in her heart."</td>
+			</tr>
+</table>
+
+<p><b>Following is the account of the baptism of Jesus from Matt. 3:13-17.  Fill in the blanks in the scripture:</b></p>
+
+<p class="p5">"Then cometh Jesus from <input id="L10S301"> to Jordan unto <input id="L10S302">, <br>
+to be baptized of him.  But John forbad him, saying, I have need to be <br>
+<input id="L10S303"> of thee, and comest thou to me?  and Jesus answering <br>
+said unto him, Suffer it to be so now: for thus it becometh us to fulfil all <br>
+<input id="L10S304">.  Then he suffered him.   And Jesus, when he was <br>
+baptized, went up straightway <input id="L10S305"> of the <input id="L10S306">: <br>
+and lo, the heavens were opened unto him, and he saw the Spirit of God descending <br>
+like a <input id="L10S307">, and lighting upon him: and lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased."</p>
+
+<table>
+
+		<tr><td colspan ="2"><strong>Read the account of the temptation of Christ in Matthew 4:1-11.  Select true or false before each statement:</strong></td></tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L10S401" id="L10S401">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 1.  Jesus fasted in the wilderness for sixth days and nights.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L10S402" id="L10S402">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 2.  The devil told Him that if He was the Son of God to turn those stones into meat.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L10S403" id="L10S403">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 3.  Next the devil took Him into the holy city and set Him upon a pinnacle of the temple.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L10S404" id="L10S404">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 4.  The devil also quoted a scripture when he told Christ to cast Himself down.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L10S405" id="L10S405">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 5.  Jesus replied, "It is written again, Thou shalt not tempt the Lord thy God."</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L10S406" id="L10S406">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 6.  Next the devil took Jesus down into a deep valley.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L10S407" id="L10S407">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 7.  He offered Jesus all the kingdoms of the world and the glory of them if Jesus would but worship him.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L10S408" id="L10S408">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 8.  Jesus yielded to this thrid temptation of the devil.</td>
+			</tr>
+
+</table>
+
+</div>
+<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>	
+
+</body>
+</html>

@@ -1,0 +1,402 @@
+<html lang ="em">
+	<head>
+		<title>Studies in the Bible - The Conquest of Canaan - Lesson 6</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.p4 {	margin-left: 50px;
+					margin-right: 50px;
+			        font-weight: bold;
+					border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.top {	border-top: 3px solid #000000;}
+			.tableNo { 	vertical-align: top;
+						padding-right: 10px;}
+			.tableNo1 {
+						vertical-align: top;
+						width: 180px;
+						max-width: 180px;
+						min-width: 180px;
+						overflow: hidden;
+						
+									 }
+			table {border-spacing: 1px 15px;}
+		</style>
+		<script type="text/javascript">	
+		
+		
+var L06_1 = [	"L06S101","13","L06S102","Rehab","L06S103","Achan","L06S104","tent","L06S105","Gibeon",
+			"L06S106","Jarmuth","L06S107","Lachish","L06S108","Eglon","L06S109","sun","L06S110","moon",
+			"L06S111","Reubenites","L06S112","Gadites","L06S113","Manesseh","L06S114","Caleb","L06S115","Hebron"];
+var L06_1_BK =[1,2,4,5,8,10,13, 15];
+
+var L06_2 =[ "L06S201","leave","L06S202","lodge","L06S203","God","L06S204","Lord","L06S205","serve",
+			 "L06S206","house","L06S207","right","L06S208","dog","L06S209","himself"];  
+			 
+var L06_3 =[ "L06S301","False","L06S302","True","L06S303","True","L06S304","False","L06S305","True",
+			 "L06S306","False","L06S307", "True"];
+
+var score = 0;
+var answers ="";
+
+///////////////////////////MAIN FUNCTION ////////////////////////	
+function checkAnswers()
+		{
+		    answers ="";
+		  
+			answers ="Lesson 6:  SECTION ONE:";  //numbered fill in the multiple blank
+			numberedPCk(L06_1_BK, L06_1);
+			
+			answers +="\n\nLesson 6:  SECTION TWO:\n";  //unnumbered single fill in blanks
+			paragraphChecker(L06_2);	
+			
+			answers +="\n\nLesson 6:  SECTION THREE:\n\n";  //true-false radio --use radioChecker(activeFile)
+			radioChecker(L06_3);
+			
+			
+			
+		score =(0.5 + 100 * score/26);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+		}
+//////////////////////// END MAIN FUNCTION /////////////////////////////////////////////////////////				
+		
+		
+	/////////////////////////////////////
+		
+		//////////////////  dropdown-select-list checker
+	function dropdownChecker(activeFile)
+			{
+				var e;
+				var strUser;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<activeFile.length/2; i++)
+				{
+					e = document.getElementById(activeFile[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = activeFile[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+//////////////////////////// end dropdown /////////////////////////////////////	
+
+
+		
+		
+///////////////////////////////////////// Numbered QUESTIONS WITH MULTIPLE ANSWERS  /////////////////////
+/////////  NEED ** TWO ** FILES
+
+
+ 
+ 
+ 
+ 
+ ///////////////////////////////////////// QUESTIONS WITH MULTIPLE ANSWERS  /////////////////////
+
+ //function numberedPCk(activeFile)
+ function numberedPCk(qbreak, activeFile)
+  {
+	var aa="";
+	var qcount = 0;
+	var q2ans="";
+	var pick;
+	var i=0;
+	var m = 0;
+	
+	for (var j=1; j<qbreak.length; j++)  //number of questions
+	{    
+    	m++;  //question number                                                         
+	    q2ans+= "\n"  + m +".";    //build question by parts
+		pick="";  //answer selected  
+	
+		for (i=qbreak[j-1]; i<qbreak[j]; i++)
+		{    
+			
+			
+			aa = document.getElementById(activeFile[2*i]).value;
+	
+			if (aa === activeFile[1+2*i])  // working to this point
+			{
+				pick += "..." + aa + " - " + activeFile[2*i+1]+ " - correct";
+				score +=1;
+		    }	
+			else{pick += "..." + aa + " - "+ activeFile[2*i+1] + " - incorrect";}
+		}
+		
+		q2ans += pick;
+		qcount++;
+	}
+	answers = answers +"\n" + q2ans;
+	q2ans ="";
+
+ }
+ 
+
+ 
+/////////////////////////////////////////////////////////////////////////////////////////////		
+		
+///////////fill in blanks in paragraph -- works with numbered single ianswer questions ///////////////
+	
+function paragraphChecker(activeFile)
+{		
+		var q2ans;
+		var pick;
+		var count = 0;
+		var strUser ="";
+	
+    for (i=0; i<activeFile.length/2; i++)
+	{
+		strUser = document.getElementById(activeFile[2*i]).value;
+		if (strUser === activeFile[2*i+1])
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- correct";
+			score = score +1;
+		}
+		else
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- incorrect";	
+		}
+		count +=1;
+		answers +="\n" + count +".  "+ strUser; 
+				
+	}
+
+}	
+/////////////////////////////---- radio -------------------		
+function radioChecker(activeFile)
+	{
+		var radios ="";
+		var radVal ="";
+	
+	
+			for (i=0;i<activeFile.length/2;i++)
+				 {  
+				  pre ="Incorrect " + String(i+1) + ".  ";
+					radios=document.getElementsByName(activeFile[2*i]);
+				     for (j=0; j<radios.length; j++)
+					 {
+					     if(radios[j].checked)
+						 {
+							radVal=radios[j].value;
+						 }
+					 }
+				 
+				 
+					if(radVal==activeFile[2*i+1])
+					{
+						score++;
+						pre = "Correct   " + String(i+1) + ".  ";
+
+					}
+					answers+=pre + radVal +"\n";
+				 }
+				
+				
+	}
+	//////////////////----end SectionRadioChecker function ----------------///////	
+				
+		
+		
+		
+		
+			</script>
+	</head>
+	<body>
+	<nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+   6 &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;   
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>The Conquest of Canaan</h1>
+	<h3>Lesson 6</h3>
+
+	
+
+	
+
+<div class="d1">
+<h2>The Conquest</h2>	
+	<p class="p1">
+We concluded the previous lesson with Israel just east of the Jordan River, ready to enter the promised land.  Moses was dead and Josua was now in charge of the conquest of Canaan and the settlement to follow.  The story of these events is related in the book of Joshua which may be divided as follows:  (1) conquering Canaan, chapters 1 to 12; (2) dividing the land among the tribes of Israel, chapters 13 to 22; (3) Joshua's farewell address, chapters 23 and 24.
+	</p>
+	
+	<p class="p1">
+In the path of Joshua's army layt the great walled city of Jericho.  Joshua selected two spies who slipped into the city and were given sanctuary by Rahab the Harlot.  When they were discovered she aided them in their escape.  Because of her favor to the people of God, her life was spared when Jericho later fell to Israel.
+	</p>
+	
+	<p class="p1">
+Having recieved a favorable reprot from the spies, the Israelites were certain that Gow would deliver the enemy into their hands.  They prepared to cross the flood-swollen Jordan River, perhaps remembering how God had delivered them forty years before as they passed through the Red Sea.  Now, history repeated itself, and while the Lord restrained the water, they "passed over on dry ground."  (Joshua 3.)  Once safely across the river, they set up two memorials of their crossing of twelve stones each -- one in the bed of the river and the other on the dry land west of the Jordan.	
+	</p>
+	
+	<p class="p1">
+Before Israel lay Jericho.  God commanded the people to march sround the city for seven days and when they had done all that he had commanded, the walls fell and the city was conquered.  Modern archaeologists have discovered remarkable testimony of this event.  True to the Biblical account they have found that the walls fell outward down the hillside rather than inward as would have been true had battering rams been used.
+	</p>
+	
+	<p class="p1">
+The next city before Israel was Ai, small in comparison with Jericho.  But Joshua and his people were soundly defeated because of the sin of an Israelite name Achan.  He had taken that which did not belong to him and brought defeat on God's people.  (Joshua 7.)  This was a terrible lesson that God will not tolerate sin among His children!  Achan was punished with death and Ai was then easily conquered.  So frightened were the neighboring people of Bibeon that they made peace with Israel.  This, in turn, so angered the surrounding nations that five Amorite kings went out in battle against Gibeon.  The resulting encounter (Jushua 10) between the five kings on one side, and Israel and Gibeon on the other was one of the world's historic battles.  God made the sun and moon stand still that His people might be victorious.  The enemy was soundly beaten and the way was opened for the conquest of Canaan which followed.  In this, 31 kings fell to the surging forces of Israel.
+	</p>
+	
+	<p class="p1">
+Having copnquered Csnaan, the tribes of Israel non cst lots for the territory they were to possess.  Gad, Reuben, and half of the tribe of manasseh had already been allotted territory east of the Jordan.  The Levites were given 48 cities.  Six cites of refuge were provided for those who had accidentlly killed anyone.  Eighty-five-year old Caleb, one of the twelve spies, was rewarded with a special inheritance.  The babernacle was set up at Shiloh where it was to remain for several huyndred years.  With the people now settled in the land of promise,  Joshua assembled them at Shechem for his farewell address in which he exhorted them to be faithful to God.  He closed with the words, "Choose you this day whom ye to serve . . . but as for me and m,y house, we will serve the Lord."  (Jushua 24:15.)  Having thus eshorted the people, Joshua died at the age of 110.	
+	</p>
+	
+		
+</div>
+
+<div class="d1">
+<h2>The Judges</h2>	
+	<p class="p1">
+After Joshua's death, Israel was left without any organized government.  The twelve tribes which had cooperated so closely io\n conquering Canaan now went their separate ways.  During the next 300 years Israel seven times apostatized, turning to idol gods.  Seven times Jehovah sent foreign oppressors upon them tobring repentance, and when they did repent, He seven times sent them deliverers called judges.  The power wielded by these judges (there were 15 in all) was more that of a shepherd than a king.  They were the liberators who guided the people in time of need.  They sat in judgment over differences which arose among their people.  Some of them judged only part of Israel; at times there was no judge at all.  The spirit of the period is best conveyed in the expression, <strong>"Every man did that which was right in his own eyes." </strong> (Judges 17:6.)
+	</p>
+	
+	<p class="p1">
+Why did the Israelites so often apoxtatize?  There are several reasons.  (1) The people around them worshipped idols.  They desired to be like their neighbors.  (2)  The generation which conquered Canaan died, and succeeding generations forgot ow God had delivered their fathers.  (3)  Israel ad no strong leader sch as Moses or Joshua to heep them faithful to Jehovah.  The people, doing what was right in their own eyes, sought to please themselves rather than God.  Again and agin they forsook Him., only to cry out for help when they were chastised.
+	</p>
+	
+	<p class="p2">
+From the story of the judges we may learn the meaning of repentance.  God punished the Israelites to make them realize tht they had sinned.  This filled them with remose and their sorrow caused them to change their ways.  Sorrow itself is not repentance, but we are told "Godly sorrow worketh repentance to salvation . . ."  (II Cor. 7:10.)  Repentance is a change of heart which produces a change in life.	
+	</p>
+	
+	<p class="p1">
+Of some of the judges we are told little, but of others we know quite a bit.  <strong>Deborah,</strong> who judged jointly with <strong>Barak,</strong> was the onlyu woman juidge.  (Judges 4, 5.)  <strong>Gideon</strong> with 300 chosen men defeted the whole Midianite army. (Judges 7.)  One of the greatest judges was <strong>Jephthah,</strong> who nevertheless made a foolish vow to sacrifice to God that which he first met coming out his house as he returned home from battle.  To his great sorrow, it was his daughter.  (Judges 11.)  And we all remember the story of <strong>Samson</strong> who with his great physical strength single-handedly sought to defeat the Philistines.  (Judges 14-16.)  The last and greatest judge ws <strong>Samuel</strong> who was promised to God by his mother Hannah before his birth.  He brought integrity to his people and prepared the way for a united Israel.  Tead the entire book of Judges to study the history of this era.	
+	</p>
+	
+	
+</div>
+
+<div class="d1">
+<h2>Ruth</h2>	
+	<p class="p1">
+The story of the period of the judges would not be complete without some notice of the book of Ruth, which some call the greatest love story of all time.  It is the account of a young Moabitish woman who forsook her own people to follow her mother-in-law Naomi to a new ome in a distant land.  Ruth eventually met and married Boaz to become the great-grandmother of David and an ancestress of Christ -- a Gentile in the lineage of our Savior!  Read the whole book.  It will take ou only a short time and yhou will find it well worth your while.
+	</p>
+	
+			
+</div>
+<div>
+<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+
+<table>
+<tr><td colspan="2"> <strong>Fill in correctly.  (All references in book of Joshua):</strong></td></tr>
+
+ <tr><td class="tableNo">1.</td><td>  The children of Israel marched arond the walls of jericho a total of <input id="L06S101"></input> times. (6:3, 4.) </td></tr>
+
+ <tr><td class="tableNo">2.</td><td> Joshua saved <input id="L06S102"></input> the harlot alive, because she had hidden the messengers sent to spy out Jericho.  (6:25.)</td></tr>
+
+ <tr><td class="tableNo">3.</td><td> Ai defeated israel because <input id="L06S103"></input> hid the spoils of war in his <input id="L06S104"></input>.  (7:18-22.)</td></tr>
+
+ <tr><td class="tableNo">4.</td><td>The Inhabitants of <input id="L06S105"></input> pretended they were people from a far country and deceived Joshua (9:3-6.)</td></tr>
+
+ <tr><td class="tableNo">5.</td><td>The kings of Jerusalem, Hebron <input id="L06S106"></input>, <input id="L06S107"></input>, and  <input id="L06S108"></input>. made a league to fight against Gibeon and Israel.  (10:3-5.)</td></tr>
+
+ <tr><td class="tableNo">6.</td><td>During the battle, the  <input id="L06S109"></input> stood still upon Gibeon and the  <input id="L06S110"></input> in the valley of Ajalon.  (10:12.)</td></tr>
+
+ <tr><td class="tableNo">7.</td><td>The <input id="L06S111"></input>, and <input id="L06S112"></input>, and the helf tribe of <input id="L06S113"></input> received an inheritance east of the Jordan river (13:7, 8.)</td></tr>
+
+ <tr><td class="tableNo">8.</td><td><input id="L06S114"></input> was given the city of <input id="L06S115"></input> because he was one of the twelve spies who had wholly followed God.  (14:14.)</td></tr>
+</table>
+<br><br>
+
+<table>
+<tr><td colspan="2"> <strong>Fill in the blanks in the following scriptures:<strong></td></tr>
+
+<tr><td class="tableNo">1.</td><td>  <strong>Ruth 1:16 --</strong> "Intreat me not to <input id="L06S201"></input> thee, or to return from following after thee; for whither thou goest, I will go; and where thou lodgest, I will <input id="L06S202"></input> : thy people shall be my people, and thy <input id="L06S203"></input> my god." </td></tr>
+
+ <tr><td class="tableNo">2.</td><td> <strong>Joshua 24:15 -- </strong> "And if it seem evil unto you to serve the <input id="L06S204"></input>, choose you this daywhom ye will <input id="L06S205"></input>; whether the gods which your fathers served that were on the other side of the flood or the gods of the Amorites in whose land ye dwell: but as for me and my <input id="L06S206"></input>, we will serve the lord." </td></tr>
+
+ <tr><td class="tableNo">3.</td><td> <strong> Judges 17:6 --</strong> "Every man did that which was <input id="L06S207"></input>  in his own eyes." </td></tr>
+
+ <tr><td class="tableNo">4.</td><td> <strong>Judges 7:5 -- </strong> "Every one that lappeth of the water with his tong, as <input id="L06S208"></input> lappeth, him shalt thou set by <input id="L06S209"></input>." </td></tr>
+
+ </table>
+ 
+ <br><br><br>
+<table>
+		<tr><td colspan ="3"><strong>Read the story of Gideon and his 300 valiant soldiers in Judges 7:1-23 and the story of Samson and Delilah in Judges 16:4-21.  Answer the questions by selecting True or False:</strong></td><tr>
+		
+		<tr><td class="tableNo1"><input type="radio" name="L06S301" value="True">True
+				<input type="radio" name="L06S301" value="False">False
+				<input type="radio" name="L06S301"  value="Clear" checked ="checked">Clear
+		</td><td class="tableNo"> 1.</td><td>Before he sent home those who were afraid, Gideon had 22,000 men in his army.</td></tr><tr></tr>
+	
+		<tr><td class="tableNo1"><input type="radio" name="L02S302" value="True">True 
+				<input type="radio" name="L02S302" value="False">False
+				<input type="radio" name="L02S302"  value="Clear" checked ="checked">Clear
+		</td><td class="tableNo"> 2.</td><td>  Gideon equipped the 300 who finally went into battle with a trumpet, a pitcher and a lamp.</td></tr><tr></tr>
+		
+		<tr><td class="tableNo1"><input type="radio" name="L06S303" value="True">True
+				<input type="radio" name="L06S303" value="False">False
+				<input type="radio" name="L06S303"  value="Clear" checked ="checked">Clear
+		</td><td class="tableNo"> 3.</td><td> When Gideon and his men blew their trumpets, the Midianites were so frightened tthat they fled and were pursued by the men of Israel.</td></tr><tr></tr>
+		
+		<tr><td class="tableNo1"><input type="radio" name="L06S304" value="True">True
+				<input type="radio" name="L06S304" value="False">False
+				<input type="radio" name="L06S304"  value="Clear" checked ="checked">Clear
+		</td><td class="tableNo"> 4.</td><td>  The Philistines selected a woman named Bathsheba to entice Samson.</td></tr><tr></tr>
+		
+		<tr><td class="tableNo1"><input type="radio" name="L06S305" value="True">True 
+				<input type="radio" name="L06S305" value="False">False
+				<input type="radio" name="L06S305"  value="Clear" checked ="checked">Clear
+		</td><td class="tableNo"> 5.</td><td>  The first time Delilah tempted him, Samson told her that if he were bound with seven green withs he would lose his strength.</td></tr>
+		
+		<tr><td class="tableNo1"><input type="radio" name="L06S306" value="True">True
+				<input type="radio" name="L06S306" value="False">False
+				<input type="radio" name="L06S306"  value="Clear" checked ="checked">Clear
+		</td><td class="tableNo"> 6.</td><td>  The secret of Samson's strength lay in the fact that he had never eaten green apples.</td></tr><tr></tr>
+		
+		<tr><td class="tableNo1"><input type="radio" name="L06S307" value="True">True 
+				<input type="radio" name="L06S307" value="False">False
+				<input type="radio" name="L06S307"  value="Clear" checked ="checked">Clear
+		</td><td class="tableNo"> 7.</td><td>  When Samson lost his strength, the Philistines captured him and put out his eyes.</td></tr>
+</table>	
+</div>
+
+<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>
+
+
+</body>
+</html>

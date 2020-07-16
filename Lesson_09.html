@@ -1,0 +1,557 @@
+<html lang ="em">
+	<head>
+		<title>Studies in the Bible - The Poets And Prophets - Lesson 9</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			
+			.numcol {width: 20px;
+						vertical-align: text-top
+			}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.p4 {	margin-left: 50px;
+					margin-right: 50px;
+			        font-weight: bold;
+					border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+					
+			.p5 {	font-size:   18px;
+					line-height: 34px;
+					text-indent: 50px;
+					}
+			
+			.radio3 {   max-width: 675px;
+						min-width: 675px;
+						
+			}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.t-radio {max-width: 840px;
+						min-width: 840px;
+						}
+			.table-txt {	font-size:   18px;
+						
+						line-height: 34px;}
+			
+			.top {	border-top: 3px solid #000000;}
+			.tableNo { 	vertical-align: top;
+						padding-right: 10px;}
+			.tableNo1 {
+						vertical-align: top;
+						width: 180px;
+						max-width: 180px;
+						min-width: 180px;
+						overflow: hidden;
+						
+									 }
+			table {border-spacing: 1px 15px;}
+			
+			.t2 {border: 1px solid #000000;
+				padding: 30px;}
+				
+			.cell1 {border: 1px solid #000000;
+				}
+				
+		</style>
+		<script type="text/javascript">	
+		
+	    
+		//Answers
+		    var score = 0;
+		    var answers ="";
+						
+		
+			var L09_01 = [	"L09S101","Psalm 119",
+							"L09S102","Job",
+							"L09S103","Proverbs",
+							"L09S104","Seventeen",
+							"L09S105","Jeremiah",
+							"L09S106","Isaiah",
+							"L09S107","Jeremiah",
+							"L09S108","Malachi",
+							"L09S109","Amos and Hosea"];
+			
+			
+
+					
+					
+///////  SECTION TWO DATA				
+			var L09_2 =[	"L09S201", "Psalm 23:1",
+							"L09S202", "Job 42:2",
+							"L09S203", "Proverbs 22:1",
+							"L09S204", "Ecclesiastes 12:1",
+							"L09S205", "Song of Solomon 2:1",
+							"L09S206", "Ecclesiastes 3:1",
+							"L09S207", "Proverbs 31:10",
+							"L09S208", "Psalm 118:1"];				
+				
+				
+
+////////  SECTION THREE DATA			
+			var q2blanks= [	"L09S301", "L09S302","L09S303","L09S304",						
+							"L09S305", "L09S306", "L09S307", 
+							"L09S308", "L09S309","L09S310",
+							"L09S311", "L09S312", "L09S313", "L09S314" 
+							];
+			var q2answers =[ 	"oppressed","opened","lamb","sheep",
+								"good", "price","thirty",
+								"Sodom","Gomorrah","man",
+								"city", "journey", "forty","overthrown"];		
+			var secTxt="";
+			var qbreak=[0, 4,7,10,14];  //cumulative
+			var qcount = 0;
+			var q2ans="";
+			var pick;
+  
+////////  MAIN FUNCTION ////////////////////////////////////			    
+		function checkAnswers()
+		{
+		    answers ="";
+		  
+			answers ="LESSON 9:  SECTION ONE:\n";
+			SectionOneChecker();
+			
+			answers +="\n\nLESSON 9:  SECTION TWO:\n\n";
+			SectionTwoChecker();	
+			
+			answers +="\n\nLESSON 9:  SECTION THREE:";
+			SectionThreeChecker();		
+			
+			
+		
+		
+		score =(0.5 + 100 * score/21);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+		}
+			
+		////----------------Section One ---------drop down selection ------- 10 questions
+	function SectionOneChecker()
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<9; i++)
+				{
+					e = document.getElementById(L09_01[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = L09_01[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+/////////////////----end function ----------------///////
+	//////////  -- Section Two ---------
+	function SectionTwoChecker()
+	{
+		var radios ="";
+		var radVal ="";
+	
+	
+			for (i=0;i<8;i++)
+				 {  
+				  pre ="Incorrect " + String(i+1) + ".  ";
+					radios=document.getElementsByName(L09_2[2*i]);
+				     for (j=0; j<radios.length; j++)
+					 {    
+					     if(radios[j].checked)
+						 {
+							radVal=radios[j].value;
+						 }
+					}
+				 
+				 
+					if(radVal==L09_2[2*i+1])
+					{
+						score++;
+						pre = "Correct   " + String(i+1) + ".  ";
+
+					}
+					answers+=pre + radVal +"\n";
+				 }
+				
+				
+	}
+	//////////////////----end SectionTwoChecker function ----------------///////
+	
+function SectionThreeChecker()
+  {
+
+	var i=0;
+	var m = 0;
+	qcount =0;
+
+	for (var j=1; j<qbreak.length; j++)  //number of questions
+	{ 
+		m++;  //question number
+		                                                                     
+	    q2ans+= "\n"  + m +".";    //build question by parts
+		pick="";  //answer selected  
+	
+		for (i=qbreak[j-1]; i<qbreak[j]; i++)
+		{ 
+				        
+			secTxt = document.getElementById(q2blanks[i]).value;
+			 
+			if (secTxt == q2answers[i])
+			{
+			    alert(secTxt);
+				alert(q2answers[i]);
+				pick += "..." + secTxt + " - " + q2answers[i] + " - correct";
+				score +=1;
+		    }	
+			else
+			{
+				pick += "..." + secTxt + " - " + q2answers[i] + " - incorrect";
+			}	
+		  
+		}		
+		q2ans += pick;
+		qcount++;
+		
+	}
+	
+	answers = answers +"\n" + q2ans;
+	q2ans ="";
+ }
+	
+//-----------------------------end of section three -----------------------------
+
+
+	</script>
+	</head>
+	<body>
+	<nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+   9 &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;  
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  
+ <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>The Poets And Prophets</h1>
+	<h3>Lesson 9</h3>
+	
+
+<div class="d1">
+
+	<p class="p1">
+Our study of the Old Testament thus far has been largely concerned with the history it relates.  Yet we should realize that twenty-two of its thirty-nine books are either poetry or prophecy and it is these that we shall study in this lesson
+	</p>
+</div>
+<div class="d1">
+	<h2>The Poetical Books</h2>
+	<p class="p1">
+The poetry of the ancient Hebrews did not have meter or rhyme as does that to which we are accustomed.  It consisted rather of rhythmic though in which the same ideas would be repeated in successive statements in different words.  There are five poetical books in the Old Testament -- <b>Job, Psalms, Proverbs, Ecclesiastes, and the Song of Solomon.</b>  Solomon was the author of the last three.  Of the 150Psalms, 73 are ascribed to David and it is likely that he wrote several of the annoymous Psalms.  The authorship of Job is unkown.
+	</p>
+	<p class="p1">
+The book of Job is the story of a righteous man by that name who lost everything he had -- children, wealth and health --  but still remained faithful to God.  Much of the book is in the form of a debate between Job and his friends who tried to convince him that his plight was the result of his sin.  Job protested his innocence and for his faithfulness to Jehovah was rewarded with greater blessings than he had possessed before his affliction.	
+	</p>
+	<p class="p1">
+One of the best loved books in the entire Bible is the Psalms.  Although the Psalms are often found at the end of New Testament copies, they actually belong to the Old Testament.  A "psalm" is a song of praise.  Some of the Psalms have been set to music and are sung by Christians today.  Originally the book was divided into five sections.  The shortest and middle chapter in the Bible is Psalm 117 while Psalm 119 with 176 verses is the longest.
+	</p>
+	<p class="p1">
+In has been said that Solomon wrote the Song of Solomon (or Song or Songs) when young.  Proverbs when middle-aged, and Ecclesiastes when old.  This may be true.  The Song of Solomon is a beautiful song of wedded love.  Proverbs is a group of unconnected wise sayings, many of them familiar to us all.  Ecclesiastes is the most pessimistic book in the Bible.  It was written after Solomon has unsuccessfully tried everything in an effort to find happiness.  He gegins with the thought, "Vanity of vanities, all is vanity" (ECC. 1:2) and ends by concluding, "Fear God, and keep his commandments: for this is the whole duty of man."  (Ecc. 12:13.)
+	</p>
+</div>
+
+<div class="d1">
+<h2>The Prophetical Books</h2>	
+	<p class="p1">
+Following Josiah's death, Judah descended rapidly.  All the remaining kings	were bad or weak.  Judah was soon made a "satellite" of Babylon, and when the kings dared to rebel, King Nebuchadnezzer of Babylon in 606 B. C. carried most of the people into captivity as the Assyrians had done with Israel over 100 years before.  Zedekiah, the last king of Judah, goveerned a few that remained, but in 587 B. C. he too and most of the rest were also carried into Babylon.  This punishment of God taught the Jews a lesson.  Never again did they return to idolatry.
+	</p>
+	<p class="p1">
+The seventeen Old Testament books of prophecy may be divided into five major prophets and twelve minor prophets, so called because the books of major prophecy are of greater length than the minor.  So far as we know they were all written by the men whose names they bear excet Lamentations which was written by Jeremiah.
+	</p>
+	<p class="p1">
+The prophets were the messengers who brought Bod's word to man.  Most of them lived during the troublous times when Israel was turning to idolatry.  Some were priests and others were of royal blood.  Their message was divinely insired and often was written in symbolic language.  Not all of the prophets wrote books.  Two of the greatest, Elijah and Elisha, have left us no written record.
+	</p>
+	<p class="p2">
+The prophets were the conscience of Israel.  Their mission was to try to save the nation from idolatry, and failing in this, to warn that it would be destroyed.  But they held out a ray of hope.  A REMNANT of Israel would be saved out of which there would come an influence to bring the world to Jehovah.  This influence they called THE BRANCH, a prophecy of the coming of Christ, a branch out of the family tree of David who became the Savior of the world.
+	</p>
+	<p class="p1">
+Although the books of prophecy contain some history and much warning and exhortation, there is also a predictive element.  They foretell the destruction of such great cities as Nineveh and Babylon, and dwell at length upon the coming of the Messiah, or Christ, who would be a deliverer and establish His kingdom.  The fulfillment of these many rophecies strengthens our faith in God, in Jesus Christ as our Savior, and in the Bible as the inspired word of God.
+	</p>
+</div>
+<div class="d1">
+<h2>The Major Prophets</h2>	
+	<p class="p1">
+Foremost among the major prophets was <b>Isaiah.</b>  Since much of his message deals with the coming of Christ he has been called the "messianic prophet."  He correctly predicted that the Messiah would be of the seed of David.  The 53rd chapter of his book is probably the most beautiful prophecy of Christ in the Bible.
+	</p>
+	<p class="p1">
+<b>Jeremiah</b> was the weeping prophet as the title of one of his books, Lamentations, indicates.  He warned Judah to repent, forecasting its destruction if it did not.  A blachelor, he was fearless in his preaching and often imprisoned.  <b>Ezekiel</b> and <b>Daniel</b> were prophets during the Babylonian captivity.  Ezekiel's writings are highly symbolic and somewhat difficult to understand.  The book of Daniel, on the other hand, contains considerable history as well as predictions pertaining to the future of Babylon and Persia.  It was he who so clearly foretold the establishment of the kingdom of Christ by saying "And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdom and it shal stand for ever."  (Daniel 2:44.)
+	</p>
+</div>
+
+
+<div class="d1">
+<h2>The Minor Prophets</h2>
+	<p class="p1">
+<b>Joel</b> was possibly the first prophet to leave us a book.  His prophecy to Judah included a call to repentance by Gods people.  <b>Johah</b> was sent to warn the wicked city of Nineveh to repent.  It did, but 150 years later the Lord found it necessary to sent <b>Nathum</b> to repeat the warning.  This time it did not repent and was destroyed.  The prophecy of <b>Obadiah,</b> only one chapter long, is also directed against a neighboring country, the land of Edom, southeast of the Dead Sea.  The forecast of its doom was remarkable fulfilled in the utter destruction of the nation.	
+	</p>
+	<p class="p1">
+The prophets <b>Amos</b> and <b>Hosea</b> were contemporaries who bore a special message to the northern kingdom of Israel.  Amos, a herdsman, did not confine his warnings to Israel, however, but also pronounced his woes upon Judah and other nations.  Hosea used the tragedy of his own life to show that as his wife had proved unfaithful to him, so Israel had committed spiritual adultery in its unfaithfulness to the laws of God.
+	</p>
+	<p class="p1">
+<b>Zephaniah</b> and <b>Micah</b> were both sent to Judah.  They denounced the sins of God's people, but still held out hope for them.  Zepphaniah prophesied that a remnant of Israel would be saved.  Micah declared that the Messiah would come from the little village of Bethlehem.
+	</p>
+
+   <p class="p1">
+The justice of God is vindicated in the writings of <b>Habakkuk</b> who lived during the beginnings of the Babylonian oppression of Judah.  The keynote of the book is expressed in the thought, "The righteous shall live by his faith." (Hab. 2:4--A.S.V.)  The prophets <b>Haggai</b> and <b>Zechariah</b> were sent to the Jews to inspire them in the rebuilding of the temple	after the return from Babylonian captivity.  The book of zachariah is strongly messianic.  Among other things it foretold that Chriwst would be sold of thirty pieces of silver.  <b>Malachi</b> closes the Old Testament prophecies with a denuncination of the vain worship of the Jews and a promise that God would send Elijah the prophet before the day of the Lord.  This was a prediction that John the Baptist would preceed the Christ.
+	</p>
+</div>
+
+
+
+
+<div>
+<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+<table>
+
+
+		<tr><td colspan ="2"><strong>Select the answer to the following questions:</strong></td></tr>
+		
+		<tr><td> &nbsp; &nbsp; 1.  What is the longest chapter in the Bible?</td>
+			<td>
+			<select size="1" name="L09S101" id="L09S101">
+				<option>Select the correct answer:</option>
+				<option value="Proverbs">Proverbs</option>
+			    <option value="Job">Job</option>
+			    <option value="Psalm 119">Psalm 119</option>
+			    <option value="Lamentations">Lamentations</option>
+			</select>
+			</td>
+			</tr>
+
+
+		<tr><td> &nbsp; &nbsp; 2.  What book tells about a man who lost everything?</td>
+			<td>
+			<select size="1" name="L09S102" id="L09S102">
+				<option>Select the correct answer:</option>
+				<option value="Isaiah">Isaiah</option>
+				<option value="Jeremiah">Jeremiah</option>
+				<option value="Job">Job</option>
+				<option value="Malachi">Malachi</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 3.  What book is a collection of wise sayings?</td>
+		<td>
+			<select size="1" name="L09S103" id="L09S103">
+				<option>Select the correct answer:</option>
+				<option value="Proverbs">Proverbs</option>
+				<option value="Psalm 117">Psalm 117</option>
+				<option value="Psalm 119">Psalm 119</option>
+				<option value="Lamentations">Lamentations</option>		
+			</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 4.  How many books of prophecy are there in the Old Testament?</td>
+		<td>		
+			<select size="1" name="L09S104" id="L09S104">
+				<option>Select the correct answer:</option>
+				<option value ="Five">Five</option>
+				<option value ="Forty">Forty</option>
+				<option value="Seventeen">Seventeen</option>
+				<option value ="Twelve">Twelve</option>
+			</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 5.  Who wrote the book of Lamentations?</td>
+		<td>
+			<select size="1" name="L09S105" id="L09S105">
+				<option>Select the correct answer:</option>
+				<option value="Isaiah">Isaiah</option>
+				<option value="Jeremiah">Jeremiah</option>
+				<option value="Job">Job</option>
+				<option value="Malachi">Malachi</option>
+			</select>
+		</td>
+		</tr>
+	
+		<tr><td> &nbsp; &nbsp; 6.  Who is often called the "messianic prophet"?</td>
+			<td>
+			<select size="1" name="L09S106" id="L09S106">
+				<option>Select the correct answer:</option>
+				<option value="Isaiah">Isaiah</option>
+				<option value="Jeremiah">Jeremiah</option>
+				<option value="Job">Job</option>
+				<option value="Malachi">Malachi</option>
+			</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 7.  Who was the weeping prophet?</td>
+			<td>
+			<select size="1" name="L09S107" id="L09S107">
+				<option>Select the correct answer:</option>
+				<option value="Isaiah">Isaiah</option>
+				<option value="Jeremiah">Jeremiah</option>
+				<option value="Job">Job</option>
+				<option value="Malachi">Malachi</option>
+			</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 8.  What was the last book of the Old Testament?</td>
+			<td>
+			<select size="1" name="L09S108" id="L09S108">
+				<option>Select the correct answer:</option>
+				<option value="Proverbs">Proverbs</option>
+				<option value="Job">Job</option>
+				<option value="Psalm 119">Psalm 119</option>
+				<option value="Lamentations">Lamentations</option>	
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 9.  What two men prophesied against Nineveh?</td>
+			<td>
+			<select size="1" name="L09S109" id="L09S109">
+				<option>Select the correct answer:</option>
+				<option value="Amos and Hosea">Amos and Hosea</option>
+				<option value="Habakkuk and Malachi">Habakkuk and Malachi</option>	
+				<option value="Haggai and Zachariah">Haggai and Zachariah</option>
+				<option value="Zephaniah and Micah">Zephaniah and Micah</option>	
+		</select>
+		</td>
+		</tr>
+		
+			
+	</table>
+	
+<table class="t2">
+		<tr><td colspan ="2"><strong>Select the correct location for each scripture:</strong></td></tr>
+		
+		<tr><td>&nbsp; 1. </td><td>"The Lord is my shepherd; I shall not want."</td></tr>
+		<tr><td></dt><td class="cell1">
+		<input type="radio" class="r2" name="L09S201" value="Ecclesiastes 1:2">Ecclesiastes 1:2<br>
+		<input type="radio" class="r2" name="L09S201" value="Psalm 23:1">Psalm 23:1<br>
+		<input type="radio" class="r2" name="L09S201" value="Psalm 117:1">Psalm 117:1<br>
+		<input type="radio" class="r2" name="L09S201" value="CLEAR" checked="checked">CLEAR</td></tr>
+		
+		<tr><td>&nbsp; 2. </td><tD>"I know that thou canst do every thing, and that no thought can withholden from thee."
+		<tr><td></dt><td class="cell1">
+		<input type="radio" class="r2" name="L09S202" value="Job 42:2">Job 42:2<br>
+		<input type="radio" class="r2" name="L09S202" value="Song of Solomon 1:1">Song of Solomon 1:1<br>
+		<input type="radio" class="r2" name="L09S202" value="Psalm 9:2">Psalm 9:2<br>
+		<input type="radio" class="r2" name="L09S202" value="CLEAR" checked="checked">CLEAR</td></tr>
+		
+		<tr><td>&nbsp; 3. </td><td>"A good name is rather to be chosen than great riches."</td></tr>
+		<tr><td></dt><td class="cell1">
+		<input type="radio" class="r2" name="L09S203" value="Psalm 19:7">Pslam 19:7<br>
+		<input type="radio" class="r2" name="L09S203" value="Ecclesiastes 12:13">Ecclesiastes 12:13<br>
+		<input type="radio" class="r2" name="L09S203" value="Proverbs 22:1">Proverbs 22:1<br>
+		<input type="radio" class="r2" name="L09S203" value="CLEAR" checked="checked">CLEAR</td></tr>
+		
+		<tr><td>&nbsp; 4. </td><td>"Remember now thy Creator in the days of thy youth."</td></tr>
+		<tr><td></dt><td class="cell1">
+		<input type="radio" class="r2" name="L09S204" value="Job 42:12">Job 42:12<br> 
+		<input type="radio" class="r2" name="L09S204" value="Ecclesiastes 12:1">Ecclesiastes 12:1<br>
+		<input type="radio" class="r2" name="L09S204" value="Song of Solomon 2:15">Song of Solomon 2:15<br>
+		<input type="radio" class="r2" name="L09S204" value="CLEAR" checked="checked">CLEAR</td></tr>
+		
+		<tr><td>&nbsp; 5. </td><td>"I am the rose of Sharon, and the lily of the valley."</td></tr>
+		<tr><td></dt><td class="cell1">
+		<input type="radio" class="r2" name="L09S205" value="Psalm 24:8">Pslam 24:8<br>
+		<input type="radio" class="r2" name="L09S205" value="Song of Solomon 2:1">Song of Solomon 2:1<br>
+		<input type="radio" class="r2" name="L09S205" value="Proverbs 12:16">Proverbs 12:16<br>
+		<input type="radio" class="r2" name="L09S205" value="CLEAR" checked="checked">CLEAR</td></tr>
+
+		<tr><td>&nbsp; 6. </td><td>"To every thing there is a seasom, and a time to every purpose under the heaven."</td></tr>
+		<tr><td></dt><td class="cell1">
+		<input type="radio" class="r2" name="L09S206" value="Ecclesiastes 3:1">Ecclesiastes 3:1<br>
+		<input type="radio" class="r2" name="L09S206" value="Job 9:29">Job 9:29<br>
+		<input type="radio" class="r2" name="L09S206" value="Proverbs 23:9">Proverbs 23:9<br>
+		<input type="radio" class="r2" name="L09S206" value="CLEAR" checked="checked">CLEAR</td></tr>
+	
+		<tr><td>&nbsp; 7. </td><td>"Who can find a virtuous woman?  for her price is far above rubies?."</td></tr>
+		<tr><td></dt><td class="cell1">
+		<input type="radio" class="r2" name="L09S207" value="Song of Solomon 4:1">Song of Solomon 4:1<br>
+		<input type="radio" class="r2" name="L09S207" value="Proverbs 31:10">Proverbs 31:10<br>
+		<input type="radio" class="r2" name="L09S207" value="Proverbs 14:12">Proverbs 14:12<br>
+		<input type="radio" class="r2" name="L09S207" value="CLEAR" checked="checked">CLEAR</td></tr>
+
+		<tr><td>&nbsp; 8. </td><td>"O give thanks unto the Lord; for he is good; because his mercy endureth for ever."</td></tr>
+		<tr><td></dt><td class="cell1">
+		<input type="radio" class="r2" name="L09S208" value="Psalm 121:2">Psalm 121:2 <br>
+		<input type="radio" class="r2" name="L09S208" value="Job 1:22">Job 1:22<br>
+		<input type="radio" class="r2" name="L09S208" value="Psalm 118:1">Psalm 118:1<br>
+		<input type="radio" class="r2" name="L09S208" value="CLEAR" checked="checked">CLEAR</td></tr>
+		
+	</table>
+
+	<table>
+<tr><td colspan="2"><b>Fill in the blanks in the following prophecies:</b></td></tr>
+<tr><td class ="numcol">1.</td><td class="table-txt"> Isaiah 53:7 (Speaking of Christ)-- "He was <input name="L09S301" id="L09S301">, and 
+he was afflicted, yet he <input name="L09S302" id="L09S302"> not his mouth: he is brought
+as a <input name="L09S303" id="L09S303"> to the slaughter, and as a <input name="L09S304" id="L09S304">
+before her shearers is dumb, so he openeth not his mouth."</td></tr>
+	
+<tr><td class ="numcol">2.</td><td class="table-txt">
+Zechariah 11:12 (Speaking of Christ's being sold by Judas) -- "And I said 
+unto them, if ye think <input name="L09S305" id="L09S305">, give me my <input name="L09S306" id="L09S306">; 
+and if not, forbear.  So they weighed for my price <input name="L09S307" id="L09S307"> 
+pieces of silver."</td></tr>
+
+<tr><td class ="numcol">3.</td><td class="table-txt">
+Jeremiah 50:40 (concerning the eternal destruction of Babylon) -- "As God
+overthrew <input name="L09S308" id="L09S308"> and <input name="L09S309" id="L09S309"> and the neighbour 
+cities thereof, saith the Lord; so shall no man abide there, neigher shall any 
+son of <input name="L09S310" id="L09S310"> dwell therein."</td></tr>
+
+<tr><td class ="numcol">4.</td><td class="table-txt">
+Jonah 3:4 (Jonah's prophecy against Nieveh -- "And Jonah began to 
+enter into the <input name="L09S311" id="L09S311"> a day's <input name="L09S312" id="L09S312"> ,and he
+cried, and said, Yet <input name="L09S313" id="L09S313"> days, and Nineveh shall be 
+<input name="L09S314" id="L09S314">."</td></tr>
+</table>	
+
+	</div>
+<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>	
+
+</body>
+</html>

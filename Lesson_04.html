@@ -1,0 +1,581 @@
+<html lang ="em">
+	<head>
+		<title>Studies in the Bible - The Patriarchs - Lesson 4</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.p4 {	margin-left: 50px;
+					margin-right: 50px;
+			        font-weight: bold;
+					border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.top {	border-top: 3px solid #000000;}
+		</style>
+		<script type="text/javascript">	
+		
+	    
+		//Answers
+		    var score = 0;
+		    var answers ="";
+			
+			var L04_1 = [	"L04S101","Abraham",
+							"L04S102","Jacob",
+							"L04S103","Isaac",
+							"L04S104","Abraham",
+							"L04S105","Jacob",
+							"L04S106","Jacob",
+							"L04S107","Abraham",
+							"L04S108","Isaac",
+							"L04S109","Jacob",
+							"L04S110","Abraham"];
+			
+				
+					
+			var L04_02 =[	"L04S201","nation",
+							"L04S202","name",
+							"L04S203","families",
+							"L04S204","seed",
+							"L04S205","alter"];
+
+/////  unordered list data -- two files
+			var correctAnswers = [	"Reuben","Simeon","Levi","Judeth","Zebulun","Issachar",
+									"Dan","Gad","Naphtali","Joseh","Benjamin","Asher"];
+									
+			var L04_03 =[	"L04S301","L04S302","L04S303","L04S304","L04S305","L04S306",
+				"L04S307","L04S308",
+				"L04S309","L04S310",
+				"L04S311","L04S312"];
+////// end unordered list data
+						
+
+			var L04_04 = [	"L07S201","b",
+							"L07S202","c",
+							"L07S203","b",
+							"L07S204","a",
+							"L07S205","c",
+							"L07S206","a",
+							"L07S207","c",
+							"L07S208","a",
+							"L07S209","b",
+							"L07S210","b"];
+						
+		        
+		function checkAnswers()
+		{
+		    answers ="";
+		  
+			answers ="LESSON 4:  SECTION ONE:\n";
+			SectionOneChecker();
+			
+			answers +="\n\nLESSON 4:  SECTION TWO:\n";
+			SectionTwoChecker();	
+			
+			answers +="\n\nLESSON 4:  SECTION THREE:\n";
+			listChecker(L04_03, correctAnswers);
+			
+			answers +="\n\nLESSON 4:  SECTION FOUR:\n\n";
+			SectionFourChecker();		
+		
+		
+		score =(0.5 + 100 * score/37);
+		//score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+		}
+			
+		////----------------Section One ---------drop down selection ------- 10 questions
+	function SectionOneChecker()
+			{
+				var e="";
+				var strUser="";
+				var e1="";
+				var strUser1="";
+				var count =0;
+
+				for (i=0; i<10; i++)
+				{
+					e = document.getElementById(L04_1[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = L04_1[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+
+//////////////////----end function ----------------///////
+			
+////-----------Section Two ---------- fill in blanks -------------- 5 questions
+			
+function SectionTwoChecker()
+{
+	var count = 0;
+	var strUser ="";
+	
+    for (i=0; i<5; i++)
+	{
+		strUser = document.getElementById(L04_02[2*i]).value;
+		if (strUser === L04_02[2*i+1])
+		{
+			strUser = strUser +" -- "+ L04_02[2*i+1] + " -- correct";
+			score = score +1;
+		}
+		else
+		{
+			strUser = strUser +" -- "+ L04_02[2*i+1] + " -- incorrect";	
+		}
+		count +=1;
+		answers +="\n" + count +".  "+ strUser; 
+				
+	}
+
+}
+//-----------------------------end of section two -----------------------------
+
+/////  --- Section Three ----------------------------------------------
+
+////////////////////// unordered list checker ////////////////////////////////////////////////////								
+function listChecker(item_id, tempList)
+{
+	
+	var e="";
+	var i=0;
+	var z=0;
+	var j=0;
+	var m=0; 
+	var secTxt =""; 
+	var ph="";
+	var y =0;
+    answers +"\nSection Three answers\n";
+	
+	  // begin loop through inputs
+	 for (i=0; i <item_id.length; i++)  
+	{  
+		 secTxt =""; 
+		 m++;   						//update question number
+		z=0;					
+		for (j=0; j<tempList.length; j++)	//loop through answers	
+		{
+			secTxt = " incorrect";  //update responce
+			
+			e = document.getElementById(item_id[i]).value;  //get input
+			
+		   if (e==tempList[j])	//compare input
+			{
+				secTxt = " correct";  //update responce
+				score++;	
+				y=tempList.length-1;
+				ph=tempList[y];
+				tempList[y]=tempList[j];
+				tempList[j]=ph;
+				tempList.length =y;
+			}          
+		}// end of j-loop
+	answers +="\n" + m.toString() + ".  " + e + secTxt;	
+	  
+	z=0;
+	} //end of i-loop
+	
+}   //end of functrion
+
+
+function SectionThreeChecker()
+	{
+		var localAnswer="";
+		var strUser;
+		for (i=0; i<12; i++)
+		{
+		   for (j=0;j<12;j++)
+		   {
+				strUser = document.getElementById(L04_03UserInput[j]).value;
+				if (L04_03[i] == strUser)
+				{
+					localAnswer += strUser +", ";
+					score += 1;	
+					break;
+				}
+			}
+		}
+		answers  += "\nEntered correctly were: " + localAnswer.substring(0,localAnswer.length - 2)+".";		
+	}
+	/////////// -- End Section Three //////////////////////////////
+	
+	//////////  -- Section Four ---------
+	function SectionFourChecker()
+	{
+		var radios ="";
+		var radVal ="";
+	
+	
+			for (i=0;i<10;i++)
+				 {  
+				  pre ="Incorrect " + String(i+1) + ".  ";
+					radios=document.getElementsByName(L04_04[2*i]);
+				     for (j=0; j<radios.length; j++)
+					 {
+					     if(radios[j].checked)
+						 {
+							radVal=radios[j].value;
+						 }
+					 }
+				 
+				 
+					if(radVal==L04_04[2*i+1])
+					{
+						score++;
+						pre = "Correct   " + String(i+1) + ".  ";
+
+					}
+					answers+=pre + radVal +"\n";
+				 }
+				
+				
+	}
+	</script>
+	
+	</head>
+	<body>
+	<nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  4 &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;   
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>The Patriarchs</h1>
+	<h3>Lesson 4</h3>
+<div class="d1">
+	<p class="p1">
+		In our last lesson we traced the history of man through the Bible from the creation to the flood.  We also studied the events immediately following the flood.  In this lesson we shall study the lives of the patriarchs and the story of how their descendants became a great people while slaves in Egypt.  The period from the creation to the giving of the law of Moses is called the <strong>Patriarchal Age</strong> because the patriarchs were the spiritual leaders of this dispensation or period.
+	</p>
+
+<p class="p4">
+			The word "patriarch" means "father."  The three great patriarchs -- Abraham, Isaac, and Jacob -- are so-called because they were the "fathers" of the Hebrew people whom we know as the childern of Israel or Jews.
+		</p>
+</div>
+
+<div>
+	<h2>Abraham</h2>
+	
+	<p class="p1">
+		A direct descendant of Shem, one of Noah's sons, Abraham was born in Ur of the Chaldees in the southern part of the presend day country of Iraq.  God saw in Abraham (then known as Abram) a good man.  Instructing him to leave his people to go into a land He would show him, God made several promises to him (Gen. 12:1-7). (1)  He would make of him a great <strong>Nation.</strong>  Abraham was to become the father of the Israelites.  (2)  He would make his <strong>Name</strong> great.  Today he is honored the world over by Jews and Christians.  (3) He would give him a <strong>Land</strong>.  What Abraham knew as Canaan and we as Israel, was to become the home of the children of Israel.  (4)  He would bless those who blessed Abraham and curse those who cursed him.  The fate of Israel's neighboring nations was to be determined by their attitude toward God's chosen people.  (5)  In him all the nations of the earth would be <strong>Blessed</strong>.  This was fulfilled in Jesus Christ, Abraham's descendant, who would bless the world in making salvation possible for all mankind.  The chief reason the people of Israel were chosen by God was that it was through them that the Savior of the world would come!
+	</p>
+	
+	<p class="p1">
+		In obedience to the divine call Abraham went to Canaan.  Genesis 12-25 relates many events from his time in that land.  His nephew Lot moved to the wicked city of Sodom.  Abraham asked God to spare the city for Lot's sake, but so few good people were found that God burned it aloong with the city of Gomorrah.  Lot was delivered, but his wife in disobedience to God looked back and was turned to a piller of salt.  <Strong>What a lesson for us that we must always obey God!</strong>
+	</p>
+	
+	<p class="p1">
+		Abraham's oldest son was Ishmael, whose mother was Hagar, the handmaid of Sarah, Abraham's wife.  Isaac, Sarah's son, was born when Abraham was 100 years old and Sarah 90.  Ishmael became the father of the Arabs, while God fulfilled his promise to Abraham through Isaac and his descendants,  Perhaps no greater example of faith can be found than when Abraham offered Isaac as a sacrifice in response to God's command.  When the Lord saw thae faith of Abraham, He stayed his hand and saved Isaac's life.  The story is in Genesis 22.  At age 175 Abraham died and was buried in the cave of Machpelah beside Sarah.
+	</p>
+
+</div>
+ 
+ <div>
+	<h2>Isaac</h2>
+	
+	<p class="p1">
+		The second of the patriarchs was Isaac who lived to be 180.  To him God repeated His promise to Abraham that in his seed all nations would be blessed.  Isaac married his cousin, Rebekah, and to her were born twins, Jacob and Esau.  It was through the younger of these, Jacob, that God fulfilled His promise.
+	</p>
+	
+</div>
+
+<div>
+	<h2>Jacob</h2>
+	
+	<p class="p1">
+		The third patriarch, Jacob, was renamed <strong>Israel</strong> by God.  The expression "Children of Israel" refers to Jacob's descendants.  From Esau Jacob bought his birthright for a mess of pottarge (Gen.25)  He also deceived his father to get the blessing belonging to his brother (Gen. 27).  Having incurred Esau's ire, he fled to Haran where he met Rachel for whom he worked seven years to have her as his wife.  Her father decieved him and gave him Leah, Rachel's older sister, instead.  So Jacob married both women and worked another seven years for Rachel (Gen. 28, 29).  Jacob had twelve sons and a daughter, Dinah.  The sons became the fathers of the twelve tribes of Israel.
+	</p>
+	<p class="p1">
+		The story of Jocab's sons is best told in the life of Joseph, his favorite.  He is one of the few important Bible characters of whom nothing evil is said.  His brother became jealous because of Jacob's favoritism and sold Joseph into slavery, telling their father that Joseph had been killed.  Through the course of divine providence Joseph became a servant to Potiphar, captain of the Egyptian Pharaoh's guard.  Due to no fault of his he was cast into prison.  Later, when he was able to interpret the king's dream forcasting seven years of plenty to be followed by seven years of famine, he was elevated to a position second only to the king.  He managed the royal affairs well, saving grain during the years of plenty for use during the famine that followed.  The famine caused Jacob to send ten of his sons to Egypt to buy grain where for the first time in many years they met the brother whom they had sold into slavery.  The story of the reunion of the brothers is one of the most touching that can be read.  All was forgiven and Joseph instructed them to bring their father and their families into Egypt.  Read this beautiful story in Genesis 42-46.
+	</p>
+</div>
+<div>
+	<h2>The Egyptian Bondage</h2>
+	
+	<p class="p1">
+		After the death of Jacob and Joseph, the children of Israel so multiplied that when they left Egypt 430 years later (Exodus 12:40) they had increased from 70 to 600,000 men plus children.  In the meantime, another Pharaoh "who knew not Joseph" came to the throne.  Instead of granting them a favored position, he made them slaves.  God raised a deliverer in the person of Moses.  The story of Moses is a wonderful one - how he was placed in an ark on the river as a baby because his parents feared he would be killed, how he was discovered by the king's daugther and raised as a prince, how he gave up his royaol home and accepted the leadership of his people to deliver them from bondage. 
+	</p>
+	<p class="p1">
+		Moses and his brother, Aaron, who became his spokesman, appeared before Pharaoh to try to persuade him to allow the Israelites to leave Egypt.  The king refused and only after God had brought ten plagues on the land did he relent to allow them to depart.  The last plague was the most terrible of all as the firstborn of each Egyptian family died, even Pharaoh's oldest child.  For the complete story of the patriarchs read Genesis 12 -- Exodus 12.  The story of how Israel left Egypt and for forty years wandered in the wilderness will be told next.
+	</p>
+</div>
+
+<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+<table>
+
+
+		<tr><td colspan ="2"><strong>Name the patriarch:</strong></td></tr>
+		<tr><td> &nbsp; &nbsp; 1.  He was born in Ur of the Chaldees</td>
+			<td>
+			<select size="1" name="L04S101" id="L04S101">
+				<option>Select the patriarch:</option>
+				<option value="Abraham">Abraham</option>
+				<option value="Jacob">Jacob</option>
+				<option value="Isaac">Isaac</option>
+			</select>
+			</td>
+			</tr>
+		
+		<tr><td> &nbsp; &nbsp; 2.  He was renamed Israel by God</td>
+			<td>
+			<select size="1" name="L04S102" id="L04S102">
+				<option>Select the patriarch:</option>
+				<option value="Abraham">Abraham</option>
+				<option value="Jacob">Jacob</option>
+				<option value="Isaac">Isaac</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 3.  He lived to be 180 years old</td>
+			<td>
+			<select size="1" name="L04S103" id="L04S103">
+				<option>Select the patriarch:</option>
+				<option value="Abraham">Abraham</option>
+				<option value="Jacob">Jacob</option>
+				<option value="Isaac">Isaac</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 4.  His wife was Sarah</td>
+			<td>
+			<select size="1" name="L04S104" id="L04S104">
+				<option>Select the patriarch:</option>
+				<option value="Abraham">Abraham</option>
+				<option value="Jacob">Jacob</option>
+				<option value="Isaac">Isaac</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 5.  He had a daughter named Dianah.</td>
+			<td>
+			<select size="1" name="L04S105" id="L04S105">
+				<option>Select the patriarch:</option>
+				<option value="Abraham">Abraham</option>
+				<option value="Jacob">Jacob</option>
+				<option value="Isaac">Isaac</option>
+		</select>
+		</td>
+		</tr>
+	
+		<tr><td> &nbsp; &nbsp; 6.  His twin brother's name was Esau.</td>
+			<td>
+			<select size="1" name="L04S106" id="L04S106">
+				<option>Select the patriarch:</option>
+				<option value="Abraham">Abraham</option>
+				<option value="Jacob">Jacob</option>
+				<option value="Isaac">Isaac</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 7.  He proved his faith in God by offering his son as  sacrifice.</td>
+			<td>
+			<select size="1" name="L04S107" id="L04S107">
+				<option>Select the patriarch:</option>
+				<option value="Abraham">Abraham</option>
+				<option value="Jacob">Jacob</option>
+				<option value="Isaac">Isaac</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 8.  He married Rebekah.</td>
+			<td>
+			<select size="1" name="L04S108" id="L04S108">
+				<option>Select the patriarch:</option>
+				<option value="Abraham">Abraham</option>
+				<option value="Jacob">Jacob</option>
+				<option value="Isaac">Isaac</option>
+				
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 9.  He worked seven years and was given the wrong wife.</td>
+			<td>
+			<select size="1" name="L04S109" id="L04S109">
+				<option>Select the patriarch:</option>
+				<option value="Abraham">Abraham</option>
+				<option value="Jacob">Jacob</option>
+				<option value="Isaac">Isaac</option>
+		</select>
+		</td>
+		</tr>
+		<tr><td> &nbsp; 10.  He tried to save Sodom becuse his nephew Lot lived there.</td>
+			<td>
+			<select size="1" name="L04S110" id="L04S110">
+				<option>Select the patriarch:</option>
+				<option value="Abraham">Abraham</option>
+				<option value="Jacob">Jacob</option>
+				<option value="Isaac">Isaac</option>
+		</select>
+		</td>
+		</tr>
+		
+		
+	</table>
+
+	<br><br>
+	<div>
+	
+	<strong>God's promise to Abraham is found in Genesis 12:1-7.  Verses 2, 3, and 7 are copied below.  Fill in the blanks in the passage:</strong>
+	
+	<p>
+	"And I will makeof thee a great <input id="L04S201"></input>
+	 , and I will bless thee and make thy  <input id="L04S202"></input>
+	 great; and thou shalt be a blessing.  And I will bless them that bless thee, and curse him 
+	 that curseth thee and in thee shall all  <input id="L04S203"></input>
+	 of the earth be blessed. . . And the Lord appeared unot Abram, and said, Unto thy  <input id="L04S204"></input>
+	 will I give this  land; and there builded he an  <input id="L04S205"></input>
+	 unto the Lord who appeared unto him."
+	</p>
+	
+	</div>
+	
+	<div>
+	<strong>The twelve sons of Jacob are all named in Genesis 49:3-27.  List them in the spaces below;</strong>
+	
+	<table>
+		<tr><td>1.</td><td><input id="L04S301"</td><td>5.</td><td><input id="L04S305"</td><td>&nbsp; 9.</td><td><input id="L04S309"</td></tr>
+		<tr><td>2.</td><td><input id="L04S302"</td><td>6.</td><td><input id="L04S306"</td><td>10.</td><td><input id="L04S310"</td></tr>
+		<tr><td>3.</td><td><input id="L04S303"</td><td>7.</td><td><input id="L04S307"</td><td>11.</td><td><input id="L04S311"</td></tr>
+		<tr><td>4.</td><td><input id="L04S304"</td><td>8.</td><td><input id="L04S308"</td><td>12.</td><td><input id="L04S312"</td></tr>
+	
+	</table>
+	</div>
+	
+	
+	<table>
+		<tr><td colspan ="3"><strong>Select the letter representing the correct answer</strong></td></tr>
+		
+		<tr class="radio2" ><td class="radio2">
+				 <input type="radio" class="r1" name="L07S201" value="a">a 
+				 <input type="radio" class="r1" name="L07S201" value="b">b  
+				 <input type="radio" class="r1" name="L07S201" value="c">c 
+				 <input type="radio" class="r1" name="L07S201" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 1. The mother of Isaac was:  (a) Rebekah; (b) Sarh; (c) Hagar. 
+		</td><td class="radio3">(Genesis 21:3) </td></tr>
+		
+		<tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S202" value="a">a
+				
+				 <input type="radio" class="r1" name="L07S202" value="b">b 
+				 <input type="radio" class="r1" name="L07S202" value="c">c 
+				 <input type="radio" class="r1" name="L07S202" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 2. Patriarch means: (a) mother; (b) brother; (c) father.
+		</td><td class="radio3"></td></tr>
+		
+	    <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S203" value="a">a 
+				 <input type="radio" class="r1" name="L07S203" value="b">b 
+				 <input type="radio" class="r1" name="L07S203" value="c">c 
+				 <input type="radio" class="r1" name="L07S203" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 3. The twin sons of Isaac were:  (a) Cain and Abel; (b) Jacob Esau; (c) Sodom and Gomorrah.
+		</td><td class="radio3">(Genesis 25:24-26)</td></tr>
+		
+		<tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S204" value="a">a 
+				 <input type="radio" class="r1" name="L07S204" value="b">b 
+				 <input type="radio" class="r1" name="L07S204" value="c">c  
+				 <input type="radio" class="r1" name="L07S204" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 4.  After Jacob served seven years to gain Rachel as wife, he married both leah and Rchel.  The number of additional years he served was:  (a) seven; (b) one; (c) five.
+		</td><td class="radio3">(Genesis 29:30)</td></tr>
+		
+	    <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S205" value="a">a 
+				 <input type="radio" class="r1" name="L07S205" value="b">b
+				 <input type="radio" class="r1" name="L07S205" value="c">c 
+				 <input type="radio" class="r1" name="L07S205" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 5. Jacob' favorite son was: (a) Judah; (b) Levi; (c) Joseph.
+		</td><td class="radio3">(Genesis 37:3)</td></tr>
+		
+		  <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S206" value="a">a 
+				 <input type="radio" class="r1" name="L07S206" value="b">b
+				 <input type="radio" class="r1" name="L07S206" value="c">c 
+				 <input type="radio" class="r1" name="L07S206" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp 6.  The man who interpreted Pharaoh's dream was: (a) Joseph; (b) Jacob; (c) Benjamin.
+		</td><td class="radio3">(Genesis 41:14-27)</td></tr>
+
+  <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S207" value="a">a 
+				 <input type="radio" class="r1" name="L07S207" value="b">b
+				 <input type="radio" class="r1" name="L07S207" value="c">c 
+				 <input type="radio" class="r1" name="L07S207" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 7.  The number of yers the children of Israel were in Egypt was:  (a) 7; (b) 70; (c) 430.
+		</td><td class="radio3">(Exodus 12:40)</td></tr>
+
+
+  <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S208" value="a">a 
+				 <input type="radio" class="r1" name="L07S208" value="b">b
+				 <input type="radio" class="r1" name="L07S208" value="c">c 
+				 <input type="radio" class="r1" name="L07S208" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 8.  Moses was raised in the home of:  (a) King Pharaoh's daughter; (b) Abraham; (c) Joseph.
+		</td><td class="radio3">(Exodus 2:5-10)</td></tr>
+
+  <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S209" value="a">a 
+				 <input type="radio" class="r1" name="L07S209" value="b">b
+				 <input type="radio" class="r1" name="L07S209" value="c">c 
+				 <input type="radio" class="r1" name="L07S209" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  &nbsp; 9.  The man who became the spokesman for Moses was:  (a) Pharaoh; (b) Aaron; (c) Joshua.
+		</td><td class="radio3">(Exodus 4:14-16)</td></tr>
+		
+		  <tr class="radio2"><td class="radio2">
+				 <input type="radio" class="r1" name="L07S210" value="a">a 
+				 <input type="radio" class="r1" name="L07S210" value="b">b
+				 <input type="radio" class="r1" name="L07S210" value="c">c 
+				 <input type="radio" class="r1" name="L07S210" value="NA" checked ="checked">NA
+		</td><td class="radio3"> &nbsp;  10.  The last plague to come upon Egypt was:  (a) lice; (b) death of the firstborn; (c) darkness.
+		</td><td class="radio3">(Exodus 11:1-5)</td></tr>
+		</table>
+	
+	
+	
+<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>	
+	
+</body>
+</html>

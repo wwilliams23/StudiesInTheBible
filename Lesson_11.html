@@ -1,0 +1,720 @@
+<html lang ="em">
+	<head>
+		<title>Studies in Bible - Jesus Christ -- His Ministry - Lesson 11</title>
+		<style>
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			
+			.numcol {width: 20px;
+						vertical-align: text-top
+			}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.p4 {	margin-left: 50px;
+					margin-right: 50px;
+			        font-weight: bold;
+					border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+					
+			.p5 {	font-size:   18px;
+					line-height: 34px;
+					text-indent: 50px;
+					}
+			
+			.radio3 {   max-width: 675px;
+						min-width: 675px;
+						
+			}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.t-radio {max-width: 840px;
+						min-width: 840px;
+						}
+			.table-txt {	font-size:   18px;
+						
+						line-height: 34px;}
+			
+			.top {	border-top: 3px solid #000000;}
+			.tableNo { 	vertical-align: top;
+						padding-right: 10px;}
+			.tableNo1 {
+						vertical-align: top;
+						width: 180px;
+						max-width: 180px;
+						min-width: 180px;
+						overflow: hidden;
+						
+									 }
+			table {border-spacing: 1px 15px;}
+			
+			.t2 {border: 1px solid #000000;
+				padding: 30px;}
+				
+			.cell1 {border: 1px solid #000000;
+				}
+				
+		</style>
+<script type="text/javascript">	
+//Main Data storage		
+var score = 0;
+var answers ="";
+//Lesson 11 section One data	
+
+var L11_1= ["L11S101","False",
+			"L11S102","True",
+			"L11S103","True",
+			"L11S104","False",
+			"L11S105","False",
+			"L11S106","True",
+			"L11S107","False",
+			"L11S108","True"];		
+
+//Lesson 11 section Two data		
+var L11_2= ["L11S201","Judas Iscariot",
+			"L11S202","Peter",
+			"L11S203","Thomas",
+			"L11S204","Matthew",
+			"L11S205","James the son of Zebedee",
+			"L11S206","Simon"];		
+			
+//Lesson 11 section Three data			
+var L11_3= ["L11S301","35",
+			"L11S302","3",
+			"L11S303","6",
+			"L11S304","9",
+			"L11S305","9000",
+			"L11S306","17"];
+
+//Lesson 11 section Four data
+
+var L11_4=[ "L11S401", "Capernaum",
+			"L11S402", "centurian",
+			"L11S403", "synagogue",
+			"L11S404", "Isreal",
+			"L11S405", "Nain",
+			"L11S406", "dead",
+			"L11S407", "weep",
+			"L11S408", "arise",
+			"L11S409", "speak",
+			"L11S410", "prophet"];
+			
+///////  MAIN FUNCTION ////////////////////////////////////			    
+		function checkAnswers()
+		{
+		    answers ="";
+		  
+			answers ="LESSON 11:  SECTION ONE:\n";
+			SectionOneChecker();
+			
+			answers +="\n\nLESSON 11:  SECTION TWO:\n";
+			SectionTwoChecker();	
+			
+			answers +="\n\nLESSON 11:  SECTION THREE:\n";
+			SectionThreeChecker();		
+			
+			answers +="\n\nLESSON 11:  SECTION FOUR:\n";
+			SectionFourChecker()
+		
+		
+		score =(0.5 + 100 * score/30);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+		}
+ 
+/////////////////----end main function ----------------///////
+
+
+//////////////  Section one function ///////////////////////////		
+function SectionOneChecker()
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<8; i++)
+				{
+					e = document.getElementById(L11_1[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = L11_1[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+	
+////////////////// section two function ///////////////////
+	
+	function SectionTwoChecker()
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<6; i++)
+				{
+					e = document.getElementById(L11_2[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = L11_2[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}	
+
+////////////////// section three function ///////////////////
+	
+	function SectionThreeChecker()
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<6; i++)
+				{
+					e = document.getElementById(L11_3[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = L11_3[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}	
+			
+////////////////// section Four function ///////////////////
+
+function SectionFourChecker()
+{
+	var count = 0;
+	var strUser ="";
+	
+    for (i=0; i<10; i++)
+	{
+		strUser = document.getElementById(L11_4[2*i]).value;
+		if (strUser === L11_4[2*i+1])
+		{
+			strUser = strUser +" -- "+ L11_4[2*i+1] + " -- correct";
+			score = score +1;
+		}
+		else
+		{
+			strUser = strUser +" -- "+ L11_4[2*i+1] + " -- incorrect";	
+		}
+		count +=1;
+		answers +="\n" + count +".  "+ strUser; 
+				
+	}
+
+}
+//-----------------------------end of section four -----------------------------				
+	</script>
+	</head>
+	<body>
+	<nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+    
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;  
+  
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;
+   11 &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  
+ <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>Jesus Christ -- His Ministry</h1>
+	<h3>Lesson 11</h3>
+	
+
+<div class="d1">
+<p class="p1">
+The personal teachings ministry of Christ lasted about three and a half years.  During this time He traveled over Palestine, performing miracles and teaching a new way of life.  At the end of this period He was arrested and crucified at Calvary, surrendering His life that the world might be redeemed.
+</p
+<p class="p1">
+	In the previous lesson we left Jesus at Capernaum, His headquarters during much of his ministry.  He soon left Galilee for Judea to attend the Feast of the Passover at Jerusalem.  
+	While there He cast the money changers out of the temple and had His famous discussion with Nicodemus about the new birth.  Returning to Galilee through Sameria, He met a woman at Jacob's well near the city of Sychar.  After tallking with her at length about spiritual matters, He concluded with the profound thought, "Gon is a Spirit and they that worship him must worship him in spirit and in truth."  (John 4:24.)
+</p>
+</div>
+<div class="d1">
+<h2>The Galilean Ministry</h2>
+	<p class="p1">
+	After His return ot Galilee, Jesus remained there for about two years, taching and healing the sick.  So far as we are told, He returned to Jerusalem only once during this period -- to attend the Passover Feast.  One time He visited Phoenicia, the only occasion He left Palestine after having been brought back from Egypt as a child.
+	</p>
+	<p class="p1">
+	Early inHis Galilean ministry Jesus returned to Nazareth, His boyhood home. Surprisingly He was rejected by His own people who refused to believe the things they had heard about Him.  In the following months Jesus healed many in the hills of Galilee.  Some came for miles that that they might hear Him teach or that they might receive the benefit of His healing powers.  Thousands followed Him on His various journeys into the Galilean villages, or into the desolate areas surrounding the Sea of Galilee.  On one of these trips to a mountain near Capernaum Jesus preached His "Sermon on the Mount" recorded in chapters 5, 6 and 7 of Matthew.  It is probably the most famous sermon ever delivered.  On one occasion nightfall found 5000 men listening to His words of life.  Only five loaves of bread and two small fish were available as food for the multitude, but Jesus by a miracle fed them all.  On stillanother occasion He fed 4000 men in a similar way.  Naturally, some followed Him because they hoped they might eat another free meal, but most were ungry for the spiritual food which He broke in their presence.  So great did His popularity become that when He one time crossed the Sea of Galilee to escape the multitudes they walked around ****
+	</p>
+	<p class="p1">
+	Jesus did not confine His associations to the respectable.  He wonce ate a meal with a group of publicans, the despised tax collectors of the time.  For this He received much criticism, but He retorted, "I am not come to call the righteous, but sinners to repentance."  (Matt. 9:13.)
+	</p>
+	
+	<p class="p2">
+	Special mention should be made of His taking three of His closest disciples with Him to the top of a mountain to pray.  While they were there Jesus was transfigured in a most glorious fashion and Moses with Elijah appeared, talking with Him, a voice out of heaven said, "This is my beloved Son, in whom I am well pleased; hear ye him."  (Matt. 17:5.)  Thus the voice of the Father Himself declared that the authority of His Son is supreme.  We are to be subject neigher to Moses nor to the law that he gave, but the sovereignty of Jesus Christ is absolute.
+	</p>
+</div>
+<div class="d1">
+<h2>The Ministry In Judea And Perea</h2>
+	<p class="p1">
+	After two years of teaching in Galilee Jesus returned to Jerusalem for the Feast of the Tabernacles.  Even before this the Pharisees (the leading religious and political sect among the Jews) had begun to oppose Him.  Their lawyers had attempted to ensnare Him with words, but always they had failed.  Now they sought to kill Him, but they discovered that His popularity was still too great for such an attempt.  Jesus was able to leave Jerusalem in peace and He journeyed across the Jordan River into Perea.  It was here and in Judea that Jesus spent His last months before His arrest and crucifixion.  As He traveled back and forth across the two provinces, He prepared His disciples for the day when He would no longer be with them as their shepherd.
+	</p
+</div>
+<div class="d1">
+<h2>The Apostles</h2>
+	<p class="p1">
+	Jesus had many disciples.  Anyone who truly follows Him is His disciple.  Jesus knew that after He was gone others would have to carry on His work.  He therefore appointed twelve of His disciples as apostles.   An apostle is one who is sent with a commission.  In another lesson we shall study the commission which Jesus gave to His apostles.  Of the twelve He selected there were at least two sets of brothers -- <b>Petr</b> and <b>Andrew;</b> and the sons of Zebedee, <b>James</b> and <b>John.</b>  As members of the inner circle, Peter, James, and John accompanied Him when others did not.  Another apostle was <b>Matthew,</b> a former tax collector who later wrote the gospel of Matthew.  Then there were <b>Philip, Bartholomew, Thomas,James the son of Alphaeus, Thaddaeus</b> or Judas as he was sometimes called, <b>Simon the Zealot,</b> and of all the betrayer, <b>Judas Iscriot.</b>  Most of these were fishermen form the Sea of Galilee.  Their training incuded the witnessing of deeds performed by Christ and listening to His teachings.  He also sent them forth to preach and to heal the sick, giving them valuable experience.
+	</p>
+</div>
+
+<div class="d1">
+
+<h2>The Miracles Of Jesus</h2>
+	<p class="p1">
+	No study of the life of christ is complete without special notice of His miracles.  His fame rested not only on His teaching, but also on the works which deoonstrated His deity.
+	</p>
+	
+	<p class="p1">
+	Thirty-five recorded miracles performed by Jesus are mentioned in the gospels.  Many others are alluded to.  Of those named seventeen were bodily cures.  Those who were helped by Jesus included several blind men whose sight was restored, a centurion's servant who was healded of paralysis, and a man born deaf and dumb who was made to hear and speak.  Also six possessed of devils were cured.  Three were raised by Jesus from the dead.  Those were the son of a widow of Nain, the daughter of Jairus, a ruler of the synagogue; and Lazarus, brother of Mary and Martha, dear friends of Jesus.  We are told of nine miracles by Christ over the forces of nature.  These include the feeding of the 5000 and the 4000.  His walking on the Sea of Galilee, and His stilling of the tempest on the same body of water.
+	</p>
+
+
+	<p class="p2">
+	Christ did not work miracles just to make people well.  He performed them that men would believe His teachings and realize His deity.  When He healed an individual the healing was instantaneous.  It did not take a period of days as is true with some who claim to heal miraculously today.  Likewise, He healed many of whom He required no faith.  Lazarus obviously did not have faith whenJesus raised him from the dead.  Morden "faith healers" who say that they cannot heal without faith on the subject's part obviously do not follow the example of Jesus.
+	</p>
+</div>
+<div class="p4">	
+<h1>What Happened To the Twelve?</h1>
+	<p class="p2">
+	
+	The New Testament does not tell us much about the apostles after Pentecost when all were present at the establishment of the church.  They remained in Jerusalem after the first major persecution scattered most of the Christians.  (Acts 8:1.)  The Acts records Peter's early activities in Palestine and those of Hohn when in the company of Peter.  Judas, the betrayer, took his own life when Jesus was crucified.  The only other one of the twelve whose death is recorded in the Bible is James, executed by Herod in 44 A.D. (Acts 12:2.)  The historian Eusbinus relates a tradition that the apostles drew lots for mission fields and that they went throughout the earth preaching the word.  All, except John, are believed to have died as martyrs.  John spent many years at Ephesus, was banished to the Isle of Patmos late in life and did a natural death at the end of the first century.
+	</p>
+</div>
+
+
+<div>
+<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+<table>
+
+		<tr><td colspan ="2"><strong>  Select true or false before each statement:</strong></td></tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L11S101" id="L11S101">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 1.  The personal ministry of Christ lasted seven years.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L11S102" id="L11S102">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 2.  While in Jerusalem for the Passover, Jesus cast the money changers out of the temple.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L11S103" id="L11S103">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 3.  The ministry of Jesus in Galilee lasted about two years.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L11S104" id="L11S104">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 4.  When He visited His own people at Nazareth they had a big celebrarion for Him.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L11S105" id="L11S105">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 5.  Jesus once fed 5000 men with 25 loaves and three fish.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L11S106" id="L11S106">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 6.  Some followed Him because they hoped to get a free meal.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L11S107" id="L11S107">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 7.  Jesus was afraid to eat with sinners such as the publicans.</td>
+			</tr>
+		
+			<tr><td>
+			<select size="1" name="L11S108" id="L11S108">
+				<option value="No answer"></option>
+				<option value="True">True</option>
+			    <option value="False">False</option>
+			     
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 8.  The last teaching of Jesus before His crucifxion was done in Perea and Judea.</td>
+			</tr>
+
+</table>
+
+<table>
+
+		<tr><td colspan ="2"><strong>Select the apostle that matches the description in the right hand column.</strong></td></tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L11S201" id="L11S201">
+				<option value="none selected">..........................................</option>
+				<option value="Bartholomew" disabled="disabled">Bartholomew</option>
+				<option value="James the son of Alphaeus" disabled="disabled">Jamesthe son of Alphaeus</option>
+				<option value="James the son of Zebedee" disabled="disabled">James the son of Zebedee</option>
+				<option value="John" disabled="disabled">John</option>
+				<option value="Judas Iscariot">Judas Iscariot</option>
+				<option value="Matthew" disabled="disabled">Matthew</option>
+				<option value="Peter" disabled="disabled">Peter</option>
+			    <option value="Philip" disabled="disabled">Philip</option>
+			    <option value="Simon" disabled="disabled">Simon</option>
+			    <option value="Thaddaeus" disabled="disabled">Thaddaeus</option>
+			    <option value="Thomas" disabled="disabled">Thomas</option>  
+			</select>				
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 1.  He betrayed Jesus.</td>
+			</tr>
+
+		
+		
+			<tr><td>
+			<select size="1" name="L11S202" id="L11S202">
+			<option value="none selected">..........................................</option>
+				<option value="Andrew">Andrew</option>
+				<option value="Bartholomew">Bartholomew</option>
+				<option value="James the son of Alphaeus">Jamesthe son of Alphaeus</option>
+				<option value="James the son of Zebedee">James the son of Zebedee</option>
+				<option value="John">John</option>
+				<option value="Judas Iscario">Judas Iscariot</option>
+				<option value="Matthew">Matthew</option>
+				<option value="Peter">Peter</option>
+			    <option value="Philip">Philip</option>
+			    <option value="Simon">Simon</option>
+			    <option value="Thaddaeus">Thaddaeus</option>
+			    <option value="Thomas">Thomas</option>  
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 2.  He was the brother of Andrew</td>
+			</tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L11S203" id="L11S203">
+			<option value="none selected">..........................................</option>
+				<option value="Andrew">Andrew</option>
+				<option value="Bartholomew">Bartholomew</option>
+				<option value="James the son of Alphaeus">Jamesthe son of Alphaeus</option>
+				<option value="James the son of Zebedee">James the son of Zebedee</option>
+				<option value="John">John</option>
+				<option value="Judas Iscario">Judas Iscariot</option>
+				<option value="Matthew">Matthew</option>
+				<option value="Peter">Peter</option>
+			    <option value="Philip">Philip</option>
+			    <option value="Simon">Simon</option>
+			    <option value="Thaddaeus">Thaddaeus</option>
+			    <option value="Thomas">Thomas</option>  
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 3.  He doubted Jesus had arisen from the grave.</td>
+			</tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L11S204" id="L11S204">
+			<option value="none selected">..........................................</option>
+				 <option value="Andrew">Andrew</option>
+				<option value="Bartholomew">Bartholomew</option>
+				<option value="James the son of Alphaeus">Jamesthe son of Alphaeus</option>
+				<option value="James the son of Zebedee">James the son of Zebedee</option>
+				<option value="John">John</option>
+				<option value="Judas Iscario">Judas Iscariot</option>
+				<option value="Matthew">Matthew</option>
+				<option value="Peter">Peter</option>
+			    <option value="Philip">Philip</option>
+			    <option value="Simon">Simon</option>
+			    <option value="Thaddaeus">Thaddaeus</option>
+			    <option value="Thomas">Thomas</option>  
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 4.  He was killed by Herod.  (Acts 12:1,2.)</td>
+			</tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L11S205" id="L11S205">
+			<option value="none selected">..........................................</option>
+			  <option value="Andrew">Andrew</option>
+				<option value="Bartholomew">Bartholomew</option>
+				<option value="James the son of Alphaeus">Jamesthe son of Alphaeus</option>
+				<option value="James the son of Zebedee">James the son of Zebedee</option>
+				<option value="John">John</option>
+				<option value="Judas Iscariot">Judas Iscariot</option>
+				<option value="Matthew">Matthew</option>
+				<option value="Peter">Peter</option>
+			    <option value="Philip">Philip</option>
+			    <option value="Simon">Simon</option>
+			    <option value="Thaddaeus">Thaddaeus</option>
+			    <option value="Thomas">Thomas</option>  
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 5.  With Peter and James, he was in the inner circle of apostles.</td>
+			</tr>
+			
+				
+			<tr><td>
+			<select size="1" name="L11S206" id="L11S206">
+			<option value="none selected">..........................................</option>
+			  <option value="Andrew">Andrew</option>
+				<option value="Bartholomew">Bartholomew</option>
+				<option value="James the son of Alphaeus">Jamesthe son of Alphaeus</option>
+				<option value="James the son of Zebedee">James the son of Zebedee</option>
+				<option value="John">John</option>
+				<option value="Judas Iscario">Judas Iscariot</option>
+				<option value="Matthew">Matthew</option>
+				<option value="Peter">Peter</option>
+			    <option value="Philip">Philip</option>
+			    <option value="Simon">Simon</option>
+			    <option value="Thaddaeus">Thaddaeus</option>
+			    <option value="Thomas">Thomas</option>  
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 6.  He wassometimes called Simon the Zealot.
+			</td>
+			</tr>
+</table>
+
+
+<table>
+
+		<tr><td colspan ="2"><strong>Select the apostle that matches the description in the right hand column.</strong></td></tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L11S301" id="L11S301">
+				<option value="none selected">..........................................</option>
+				 <option value="3">3</option>
+				<option value="6">6</option>
+				<option value="9">9</option>
+				<option value="17">17</option>
+				<option value="35">35</option>
+				<option value="40">40</option>
+				<option value="4000">4000</option>
+			    <option value="5000">5000</option>
+			    <option value="9000">9000</option>				
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 1.  How many recorded miracles did Christ perform?</td>
+			</tr>
+
+		
+		
+			<tr><td>
+			<select size="1" name="L11S302" id="L11S302">
+			<option value="none selected">..........................................</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="6">6</option>
+				<option value="9">9</option>
+				<option value="17">17</option>
+				<option value="35">35</option>
+				<option value="40">40</option>
+				<option value="4000">4000</option>
+			    <option value="5000">5000</option>
+			    <option value="9000">9000</option>
+			    
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 2.  How many did He raise from the dead?</td>
+			</tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L11S303" id="L11S303">
+			<option value="none selected">..........................................</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="6">6</option>
+				<option value="9">9</option>
+				<option value="17">17</option>
+				<option value="35">35</option>
+				<option value="40">40</option>
+				<option value="4000">4000</option>
+			    <option value="5000">5000</option>
+			    <option value="9000">9000</option>
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 3.  Out of how many did He cast devils?</td>
+			</tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L11S304" id="L11S304">
+			<option value="none selected">..........................................</option>
+				 <option value="2">2</option>
+				<option value="3">3</option>
+				<option value="6">6</option>
+				<option value="9">9</option>
+				<option value="17">17</option>
+				<option value="35">35</option>
+				<option value="40">40</option>
+				<option value="4000">4000</option>
+			    <option value="5000">5000</option>
+			    <option value="9000">9000</option>
+			</td>
+			<td> &nbsp; &nbsp; 4.  How many miracles did Jesus perform over the forces of nature?   </td>
+			</tr>
+		
+		
+			<tr><td>
+			<select size="1" name="L11S305" id="L11S305">
+			<option value="none selected">..........................................</option>
+			  <option value="2">2</option>
+				<option value="3">3</option>
+				<option value="6">6</option>
+				<option value="9">9</option>
+				<option value="17">17</option>
+				<option value="35">35</option>
+				<option value="40">40</option>
+				<option value="4000">4000</option>
+			    <option value="5000">5000</option>
+			    <option value="9000">9000</option>
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 5.  What was the <b>total</b> number of men fed by Christ on the two occasions He fed a great multitude?
+			</td>
+			</tr>
+			
+				
+			<tr><td>
+			<select size="1" name="L11S306" id="L11S306">
+			<option value="none selected">..........................................</option>
+			  <option value="2">2</option>
+				<option value="3">3</option>
+				<option value="6">6</option>
+				<option value="9">9</option>
+				<option value="17">17</option>
+				<option value="35">35</option>
+				<option value="40">40</option>
+				<option value="4000">4000</option>
+			    <option value="5000">5000</option>
+			    <option value="9000">9000</option>
+			</select>
+			</td>
+			<td> &nbsp; &nbsp; 6.  How many bodily cures by Christ are recorded?
+			</td>
+			</tr>
+</table>
+
+<br><br>
+<p><b>Read Luke 7:1-18 and fill in the blanks:</b></p>
+
+<p class="p5">
+When Jesus had ended His sayings He went into the city of <input id="L11S401">. <br>
+There a man who was a <input id="L11S402"> sent to Him saying his servant <br>
+was at the point of death.  The elders of the Jews asked Jesus to heal the servant <br>
+because the man had built them a <input id="L11S403">.  Jesus said of <br>
+him, "I have not found so great faith, no, not in <input id="L11S404">." <br>
+Jesus healed the servant.  The next day Jesus went to the city of <input id="L11S405">. <br>
+He saw people carrying out a <input id="L11S406"> man.  Jesus said to his <br>
+mother, "<input id="L11S407"> not."  He touched the bier and said, "Young man, <br>
+I say unto thee, <input id="L11S408">."  The man who had been dead sat up <br>
+and began to <input id="L11S409">.  The people glorified God saying that a <br>
+great <input id="L11S410"> had risen up among them.
+</p>
+
+
+</div>
+<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>	
+
+</body>
+</html>

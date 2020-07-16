@@ -1,0 +1,503 @@
+<html lang ="em">
+	<head>
+		<title>Studies in the Bible - The Resurrection of Christ - Lesson 14</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			p {text-indent: 50px;}
+			.p3 {text-align: right;}
+			.d2 {	border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.top {	border-top: 3px solid #000000;}
+		</style>
+		<script type="text/javascript">	
+				////////////  DATA ///////////////////////////////////////////
+ 
+		
+var score = 0;
+var answers ="";
+
+var L14_1 =["L14S101", "Joseph", 
+			"L14S102", "angel",
+			"L14S103", "Peter", 
+			"L14S104", "John", 
+			"L14S105", "Mary Magdalene", 
+			"L14S106", "Emmaus", 
+			"L14S107", "Thomas", 
+			"L14S108", "Fish", 
+			"L14S109", "seven", 
+			"L14S110", "forty"];
+
+var L14_1_BK =[0,2,4,5,6,7,8,9,10];
+
+var L14_2 =[	"L14S201", "No", 
+				"L14S202", "Yes",
+				"L14S203", "Yes",
+				"L14S204", "No",
+				"L14S205", "Yes",
+				"L14S206", "Yes",
+				"L05S307", "No"
+				];
+
+
+
+var L14_3 =["L14S301","His resurrection",
+			"L14S302","The resurrection of Christ",
+			"L14S303", "Jesus' resurrection"];
+
+
+
+var L14_4 =[	"L14S401", "Mark", 
+				"L14S402", "Luke",
+				"L14S403", "Matthew",
+				"L14S404", "Mark",
+				"L14S405", "Matthew", 
+				"L14S406", "Luke", 
+				"L14S407", "FMatthew", 
+				"L14S408", "Mark",
+				"L14S409", "Matthew", 
+				"L14S410", "Mark"
+				];
+
+		
+		
+/////////////    FUNCTIONS ///////////////////////	
+
+///////////////////////////MAIN FUNCTION ////////////////////////	
+function checkAnswers()
+		{
+		    answers ="";
+		  
+			answers ="LESSON 14:  SECTION ONE:";  //numbered fill in the multiple blank
+			numberedPCk(L14_1_BK, L14_1);
+			
+			answers +="\n\nLESSON 14:  SECTION TWO:\n\n";  //true-false select-list--use radioChecker(activeFile)
+			radioChecker(L14_2);
+			
+			
+			answers +="\n\nLESSON 14:  SECTION THREE:\n";    //numbered single fill in blanks
+			paragraphChecker(L14_3);	
+			
+			answers +="\n\nLESSON 14:   SECTION FOUR:\n";  //dropdownChecker(activeFile)
+			dropdownChecker(L14_4);
+		
+			
+		score =(0.5 + 100 * score/30);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+		}
+//////////////////////// END MAIN FUNCTION /////////////////////////////////////////////////////////				
+		
+		
+	/////////////////////////////////////
+		
+		//////////////////  dropdown-select-list checker
+	function dropdownChecker(activeFile)
+			{
+				var e;
+				var strUser;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<activeFile.length/2; i++)
+				{
+					e = document.getElementById(activeFile[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = activeFile[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+//////////////////////////// end dropdown /////////////////////////////////////	
+
+
+		
+		
+///////////////////////////////////////// Numbered QUESTIONS WITH MULTIPLE ANSWERS  /////////////////////
+/////////  NEED ** TWO ** FILES
+
+
+ 
+ 
+ 
+ 
+ ///////////////////////////////////////// QUESTIONS WITH MULTIPLE ANSWERS  /////////////////////
+
+ //function numberedPCk(activeFile)
+ function numberedPCk(qbreak, activeFile)
+  {
+	var aa="";
+	var qcount = 0;
+	var q2ans="";
+	var pick;
+	var i=0;
+	var m = 0;
+	
+	for (var j=1; j<qbreak.length; j++)  //number of questions
+	{    
+    	m++;  //question number                                                         
+	    q2ans+= "\n"  + m +".";    //build question by parts
+		pick="";  //answer selected  
+	
+		for (i=qbreak[j-1]; i<qbreak[j]; i++)
+		{    
+			
+			
+			aa = document.getElementById(activeFile[2*i]).value;
+	
+			if (aa === activeFile[1+2*i])  // working to this point
+			{
+				pick += "..." + aa + " - " + activeFile[2*i+1]+ " - correct";
+				score +=1;
+		    }	
+			else{pick += "..." + aa + " - "+ activeFile[2*i+1] + " - incorrect";}
+		}
+		
+		q2ans += pick;
+		qcount++;
+	}
+	answers = answers +"\n" + q2ans;
+	q2ans ="";
+
+ }
+ 
+
+ 
+/////////////////////////////////////////////////////////////////////////////////////////////		
+		
+///////////fill in blanks in paragraph -- works with numbered single ianswer questions ///////////////
+	
+function paragraphChecker(activeFile)
+{		
+		var q2ans;
+		var pick;
+		var count = 0;
+		var strUser ="";
+	
+    for (i=0; i<activeFile.length/2; i++)
+	{
+		strUser = document.getElementById(activeFile[2*i]).value;
+		if (strUser === activeFile[2*i+1])
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- correct";
+			score = score +1;
+		}
+		else
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- incorrect";	
+		}
+		count +=1;
+		answers +="\n" + count +".  "+ strUser; 
+				
+	}
+
+}	
+/////////////////////////////---- radio -------------------		
+function radioChecker(activeFile)
+	{
+		var radios ="";
+		var radVal ="";
+	
+	
+			for (i=0;i<activeFile.length/2;i++)
+				 {  
+				  pre ="Incorrect " + String(i+1) + ".  ";
+					radios=document.getElementsByName(activeFile[2*i]);
+				     for (j=0; j<radios.length; j++)
+					 {
+					     if(radios[j].checked)
+						 {
+							radVal=radios[j].value;
+						 }
+					 }
+				 
+				 
+					if(radVal==activeFile[2*i+1])
+					{
+						score++;
+						pre = "Correct   " + String(i+1) + ".  ";
+
+					}
+					answers+=pre + radVal +"\n";
+				 }
+				
+				
+	}
+	//////////////////----end SectionRadioChecker function ----------------///////	
+			</script>
+	</head>
+	<body>
+	<nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+  <a href = "Lesson_08.html"> 8</a> &nbsp; &nbsp;
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;   
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  14 &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>The Resurrection Of Christ</h1>
+	<h3>Lesson 14</h3>
+	<div class="d1">
+	<p class="p1">
+		<Strong>"He is not here, but is risen!"</strong>  With those words the women who had come to the tomb of Jesus at dawn on the first day of the week were greeted by an angel who stood before them.  In keeping with the Law of Moses they had rested on the sabbath and had returned to complete the burial of the Savior which they had begun on the day of His death.  Now, they found the stone rolled away and the tomb empty.  What had happened to the body of their Lord?
+	</p>
+	</div>
+	
+	<div class="d1">
+	<h2 class="subhead">The Appearance of Jesus</h2>
+	<p class="p1">
+		The women went to tell the apostles what they had learned.  Immediately Peter and John ran to the sepulchre to confirm their report.  A little later Mary Magdalene stood weeping near the tomb.  Suddenly, Jesus appeared to her, but she did not recognize Him until He caller her by name.  He told her to go to His brethren to tell them that He would ascend unto the Father.  This she quickly did.
+	</p>
+	<p class="p1">
+		About this time Jesus appeared to the other women, possibly including Mary Magdalene.  The stories of His appearances raised the hopes of the apostles who had been lost as sheep without a shepherd after the crucifixion.  Other reports came to their ears.  Christ had shown Himself to two disciples walking in the countryside on the road to Emmaus and had been seen by Cephas (Peter).
+	</p>
+	<p class="p1">
+		Even so they must have been startled when later that day Jesus suddenly appeared in their midst as they were gathered in a closed room.  But the lacerations on His body soon convinced them that the One who stood before them was their Master in the flesh.  He showed them that He was not in the form of a spirit by eating a boiled fish in their presence (Luke 24:43.)  The apostles no longer doubted the resurrection of Jesus, except Thomas who was absent.  When told of these events he declared, "Except I shall see in His hands the print of the nails, and put my finger into the print of the nails, and thrust my hand into his side, I will not believe."  (John 20:25.)  Just a week later Jesus again appeared to the disciples.  This time Thomas was present.  Christ addressed Thomas:  "Reach hither thy finger, and behold my hands; and reach hither thy hand and thrust it into my side:  and benot faithless, but believe."  (John 20:27.)  Thomas did believe as he cried out, "My Lord and my God."  The fact htat the apostles, and especially Thomas, were turned from skepticism to belief is one of the strongest proofs of the bodily resurrection of Jesus.
+	</p>
+	<p class="p1">
+		Later Jesus appeared to seven disciples at the Sea of Galilee and to the eleven on a mountain.  We are told that He presented himself to 500 at one time and also to James.  (I Cor. 15:6, 7.)  Finally, He appeared to all the apostiles at His ascension into heaven, forty days after the resurrection.  As Jesus spoke His final words of exhortation, He ascended into the clouds of heaven and was seen by them no more.
+	</p>
+	</div>
+	
+	
+	<div class="d1">
+	<h2 class="subhead">The Significance of the Empty Tomb</h2>
+	<p class="p1">
+		The importance of the resurrection of Jesus is summed up by Paul, "And if Christ be not risen, then is our preaching vain and your faith is also vain.  Yea, and we are found false witnesses of God...And if Christ be not raisen, your faith is vain; ye are yet in your sins."  (1 Cor. 15:14, 15, 17.)  Jesus died to atone for our sins.  But we could not know that He did so unless we also knew that He arose from the grave, for one who did not have the power to conquer death would not have power to forgive sins.  Only in the light of the empty tomb does the cross have significance.
+	</p>
+	<p class="p1">
+		Furthermore, Jesus' resurrection demonstrates the possibility of ours.  If He could conquer death by Himself, He can overcome it for His disciples.  The Christian's hope of eternal life is insparably connected to the resurrection of Jesus.
+	</p>
+	<p class="p1">
+		<strong>The resurrection of Christ also shows that Jesus brought an end to the old covenant and its law when He died on the cross.  The Mosaic Age in which Israel had been living for 1500 years ended at Calvary.  There Jesus blotted out "the handwriting of ordinances that was against us...and took it out of the way, nailing it to this cross."  (Col. 2:14.)  From then on all men, Jews and Gentiles, have lived in the Christian Age, subject to the laws of Christ as recorded in the New Testament.</strong>
+	</p>
+	</div>
+	
+	<div class="d1">
+	<h2 class="subhead">The Great Commission</h2>
+	<p class="p1">
+		Before His ascension Jesus gave His disciples a commission.  It is recorded in different forms in the first three gospels.  Although He had previously given them a limited commission to go only to the Jews.  His new commission was world wide.
+	</p>
+	<p class="p1">
+		Let us read these three accounts:  <strong>"Go ye therefore, and teach al nations, baptizing them in the name of the Father, and of the Son and of the Holy Ghost:  teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world.  Amen." (Matt. 28:19, 20.)  "Go ye into all the world, and preach the gospel to every creature.  He that believeth not shall be damned."  (Mark 16:15, 16.)  "Thus it is written, and thus it behooved Christ to suffer, and to rise from the dead the third day: and that repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem."  (Luke 24:46,47.)</strong>  The chart shows the sum of the three accounts of the Great Commission.
+		<br><br>
+		<table class="sum">
+		<tr><td>Matt.</td><td>Go</td><td>Teach </td><td>      </td><td>All      </td><td>       </td><td>      </td><td>Baptize</td><td>Name of the </td><td>         </td><td>Teach</td></tr>
+		<tr><td>     </td><td>  </td><td>      </td><td>      </td><td>nations </td><td>       </td><td>      </td><td>        </td><td>Father, Son</td><td>         </td><td>     </td></tr>
+		<tr><td>     </td><td>  </td><td>      </td><td>      </td><td>        </td><td>       </td><td>      </td><td>        </td><td>Holy Ghost </td><td>         </td><td>      </td></tr>
+		
+		<tr class ="top"><td>Mark </td><td>Go</td><td>Preach</td><td>Gospel</td><td>Every   </td><td>Believe</td><td>       </td><td>Baptize</td><td>            </td><td>Saved     </td><td>     </td></tr>
+		<tr><td>                  </td><td>  </td><td>       </td><td>      </td><td>creature</td><td>       </td><td>      </td><td>        </td><td>           </td><td>          </td><td>     </td></tr>
+		
+		<tr class ="top"><td>Luke </td><td>  </td><td>Preach</td><td>      </td><td>All     </td><td>       </td><td>Repent</td><td>        </td><td>           </td><td>Remission</td><td>     </td></tr>
+		<tr><td>                  </td><td>  </td><td>      </td><td>      </td><td>nations </td><td>       </td><td>      </td><td>        </td><td>           </td><td>of sins  </td><td>     </td></tr>
+		
+		<tr class="top"><td>Sum  </td><td>Go </td><td>Teach,</td><td>Gospel</td><td>All      </td><td>Believe</td><td>Repent</td><td>Baptize</td><td>Name of the </td><td>Saved,   </td><td>Teach</td></tr>
+		<tr><td>                 </td><td>   </td><td>preach</td><td>      </td><td>nations </td><td>       </td><td>      </td><td>        </td><td>Father, Son</td><td>Remission</td><td>     </td></tr>
+		<tr><td>                  </td><td>  </td><td>      </td><td>      </td><td>        </td><td>       </td><td>      </td><td>        </td><td>Holy Ghost </td><td>of sins </td><td>      </td></tr>
+		
+		
+		</table>
+	</p>
+	<p class="p1">
+		Christianity is aggressive.  Jesus insists that His disciples take the gospel to others.  Therefore He instructed the apostles to go.  They were to teach or preach the gospel, which, as we shall later learn, includes the good news of the death, burial, and resurrection of Christ.  They proclaimed Jesus Christ, not politics, science, or economics.  Their message was to be taken to <strong>all nations.</strong>  Unlike the Law of Moses, the gospel story is intended for those of every race or nationality who will accept Jesus as their Savior.  Christians cannot allow racial prejudice to confine their efforts to tell others about Christ.
+	</p>
+	<p class="p1">
+		The conditions of salvation as given in the commission are simple.  A sinner must <strong>believe</strong> in Christ, <strong>repent</strong> and then be <strong>baptized.</strong>  Baptism is to be into the <strong>name of the Father, the Son, and the Holy Ghost</strong> (or Holy Spirit) rather than into the name of Jesus only.  The blessings of forgiveness of sins and salvation come at the time of one's baptism rather than preceding it.  Jesus states, "He that believeth and is baptized shall be saved."  (Mark 16:16.)  These acts of faith and obedience put one into Christ where Jesus saves him by virtue of His blood shed at Calvary.
+	</p>
+	<p class="p1">
+		The Great Commission concluded by instructing the apostles to teach the converts all of the things which Christ had commanded them.  It is not enough to show the lost how to come to Christ.  They also must be taught how to live for Him that they may receive the eternal reward at the end of the way.
+	</p>
+	</div>
+	
+	<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+	<table>
+		<tr><td colspan ="2"><strong>Fill in the blanks:</strong></td><tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 1.</td><td>Jesus was buried in the tomb of <input id="L14S101"></input> of Arimathea</td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 2.</td><td>When the women came to the grave on the first day of the week, they saw an <input id="L14S102"></input> sitting on the stone before the grave.</td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 3.</td><td>When they told the disciples this, <input id="L14S103"></input> and <input id="L14S104"> ran to see if the tomb was empty.</td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 4.</td><td>Jesus first appeared to <input id="L14S105"></input></td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 5.</td><td>Later He appeared to two disciples on the way to <input id="L14S106"></input></td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 6.</td><td>When He first appeared to the apostles,<input id="L14S107"></input> was absent.</td></tr>
+	    <tr><td  > &nbsp; &nbsp;  &nbsp; 7.</td><td>When Jesus appeared to them He ate a <input id="L14S108"></input>(one word)</td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 8.</td><td>One He appeared to <input id="L14S109"></input> (number)  disciples at the sea of Galilee.</td></tr>
+		<tr><td  > &nbsp; &nbsp;  &nbsp; 9.</td><td>He ascended into heaven <input id="L14S110"></input>(word) days after He arose from the grave</td></tr>
+	</table>
+	</br></br>
+	<table>
+		<tr><td colspan ="2"><strong>Read John 20 and answer by yes or no:</strong></td><tr>
+		
+		<tr><td><input type="radio" name="L14S201"  value="Yes">Yes 
+				<input type="radio" name="L14S201"  value="No">No
+				<input type="radio" name="L14S201"  value="Clear" checked ="checked">Clear
+		</td><td>  &nbsp; &nbsp;  &nbsp; 1.  Did Mary Magdalene come late on the first day of the week to the tomb?</td></tr>
+	
+		<tr><td><input type="radio" name="L14S202"  value="Yes">Yes 
+				<input type="radio" name="L14S202"  value="No">No
+				<input type="radio" name="L14S202"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  2.  Did Peter go into the sepulchre and see the linen clothes?</td></tr>
+		
+		<tr><td><input type="radio" name="L14S203"  value="Yes">Yes 
+				<input type="radio" name="L14S203"  value="No">No
+				<input type="radio" name="L14S203"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  3.  Did Jesus say to Mary, "Woman, why weepest thou?"</td></tr>
+		
+		<tr><td><input type="radio" name="L14S204"  value="Yes">Yes 
+				<input type="radio" name="L14S204"  value="No">No
+				<input type="radio" name="L14S204"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  4.  Did she know immediately that it was Jesus who spoke to her?</td></tr>
+		
+		<tr><td><input type="radio" name="L14S205"  value="Yes">Yes 
+				<input type="radio" name="L14S205"  value="No">No
+				<input type="radio" name="L14S205"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  5.  Did Mary tell the disciples that she had seen the Lord?</td></tr>
+		
+		<tr><td><input type="radio" name="L14S206"  value="Yes">Yes 
+				<input type="radio" name="L14S206"  value="No">No
+				<input type="radio" name="L14S206"  value="Clear" checked ="check0ed">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  6.  Did Jesus appear that day to the disciples saying, "Peace be unto you"?</td></tr>
+		
+		<tr><td><input type="radio" name="L14S207"  value="Yes">Yes 
+				<input type="radio" name="L14S207"  value="No">No
+				<input type="radio" name="L14S207"  value="Clear" checked ="checked">Clear
+		</td><td> &nbsp; &nbsp;  &nbsp;  7.  When Thomas saw Jesus did he say, "You are an imposter"?</td></tr>
+	</table>
+	
+	<br><br>
+	<strong>WHAT EVENT--</strong><br>
+	
+	1.  Makes the death of Christ significant? <input id="L14S301"></input><br><br>
+	2.  Ended the Mosaic Age? <input id="L14S302"></input><br><br>
+	3.  Proves the possibility of our resurrection? <input id="L14S303"></input><br><br><br><br>
+	
+	<table>
+		<tr><td colspan ="3"><strong>In the spaces before each phrase from the Great Commission,</strong></td><tr>
+	    <tr><td colspan ="3"><strong>select the name of the book in which the phrase is found:</strong></td><tr>
+	<tr><td>
+		<select size="1" name="L14S301" id="L14S401">
+		<option>Select book of Bible</option>
+		<option value="Matthew">Matthew</option>
+	    <option value="Mark">MarK</option>
+		<option value="Luke">Luke</option>	
+		</select>
+	</td><td  > &nbsp; 1.</td><td>"Preach the gospel to every creature."</td></tr>
+		 
+	<tr><td>
+		<select size="1" name="L14S402" id="L14S402">
+		<option>Select book of Bible</option>
+		<option value="Matthew">Matthew</option>
+	    <option value="Mark">MarK</option>
+		<option value="Luke">Luke</option>	
+		</select>
+	</td><td  > &nbsp; 2.</td><td>"Beginning at Jerusalem."</td></tr>
+	
+	<tr><td>
+		<select size="1" name="L14S403" id="L14S403">
+		<option>Select book of Bible</option>
+		<option value="Matthew">Matthew</option>
+	    <option value="Mark">MarK</option>
+		<option value="Luke">Luke</option>	
+		</select>
+	</td><td  > &nbsp; 3.</td><td>"I am with you alway."</td></tr>
+	
+	<tr><td>
+		<select size="1" name="L14S404" id="L14S404">
+		<option>Select book of Bible</option>
+		<option value="Matthew">Matthew</option>
+	    <option value="Mark">MarK</option>
+		<option value="Luke">Luke</option>	
+		</select>
+	</td><td  > &nbsp; 4.</td><td>"He that believeth and is baptized shall be saved."</td></tr>
+	
+	<tr><td>
+		<select size="1" name="L14S405" id="L14S405">
+		<option>Select book of Bible</option>
+		<option value="Matthew">Matthew</option>
+	    <option value="Mark">MarK</option>
+		<option value="Luke">Luke</option>	
+		</select>
+	</td><td  > &nbsp; 5.</td><td>"Teach all nations."</td></tr>
+	
+	<tr><td>
+		<select size="1" name="L14S346" id="L14S406">
+		<option>Select book of Bible</option>
+		<option value="Matthew">Matthew</option>
+	    <option value="Mark">MarK</option>
+		<option value="Luke">Luke</option>	
+		</select>
+	</td><td  > &nbsp; 6.</td><td>"That repentance and remission of sins should be preached in his name."</td></tr>
+		 
+	<tr><td>
+		<select size="1" name="L14S407" id="L14S407">
+		<option>Select book of Bible</option>
+		<option value="Matthew">Matthew</option>
+	    <option value="Mark">MarK</option>
+		<option value="Luke">Luke</option>	
+		</select>
+	</td><td  > &nbsp; 7.</td><td>"Baptizing them in the name of the Father, and tof the Son, and of the Holy Ghost."</td></tr>
+	
+	<tr><td>
+		<select size="1" name="L14S408" id="L14S408">
+		<option>Select book of Bible</option>
+		<option value="Matthew">Matthew</option>
+	    <option value="Mark">MarK</option>
+		<option value="Luke">Luke</option>	
+		</select>
+	</td><td> &nbsp; 8.</td><td>"Go ye into all the world."</td></tr>
+	
+	<tr><td>
+		<select size="1" name="L14S409" id="L14S409">
+		<option>Select book of Bible</option>
+		<option value="Matthew">Matthew</option>
+	    <option value="Mark">MarK</option>
+		<option value="Luke">Luke</option>	
+		</select>
+	</td><td  > &nbsp; 9.</td><td>"Teaching them to observe all things whatsoever I have commanded you."</td></tr>
+	
+	<tr><td>
+		<select size="1" name="L14S410" id="L14S410">
+		<option>Select book of Bible</option>
+		<option value="Matthew">Matthew</option>
+	    <option value="Mark">MarK</option>
+		<option value="Luke">Luke</option>	
+		</select>
+	</td><td>10.</td><td>"He that believeth not shall be damned."</td></tr>
+	
+		</table>
+		
+	<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>	
+	
+	</body>	
+	</html>

@@ -1,0 +1,630 @@
+<html lang ="em">
+	<head>
+		<title>Studies in the Bible - The Divided Kingdom - Lesson 8</title>
+		<style type="text/css">
+		    h1, h2, h3 {text-align: center;}
+			h2 {color: #FF3366;}
+			
+			.numcol {width: 20px;
+						vertical-align: text-top
+			}
+			p {text-indent: 50px;}
+			.p2 {	padding-left: 50px;
+					padding-right: 50px;
+					font-weight: bold;}
+			.p3 {text-align: right;}
+			.p4 {	margin-left: 50px;
+					margin-right: 50px;
+			        font-weight: bold;
+					border-color: black;
+					border-width: .25em;
+					border-style: solid;
+					padding: 25px;}
+					
+			.p5{	font-size:   18px;
+					line-height: 34px;
+					text-indent: 50px;
+					}
+			
+			.radio3 {   max-width: 675px;
+						min-width: 675px;
+						
+			}
+			.sum {	border-collapse: collapse;
+					border: 3px solid #000000;}
+			.t-radio {max-width: 840px;
+						min-width: 840px;
+						}
+			.top {	border-top: 3px solid #000000;}
+			.tableNo { 	vertical-align: top;
+						padding-right: 10px;}
+			.tableNo1 {
+						vertical-align: top;
+						width: 180px;
+						max-width: 180px;
+						min-width: 180px;
+						overflow: hidden;
+						
+									 }
+			table {border-spacing: 1px 15px;}
+		</style>
+		<script type="text/javascript">	
+		
+	    
+		//Answers
+		    var score = 0;
+		    var answers ="";
+			
+			var L08_1 = [	"L08S101","Jeroboam",
+							"L08S102","Manasseh",
+							"L08S103","Ahab",
+							"L08S104","Zedekiah",
+							"L08S105","Rehoboam",
+							"L08S106","Josiah",
+							"L08S107","Jehu",
+							"L08S108","Hezekiah",];
+			
+			var L08_2 = [	"L08S201","True",
+							"L08S202","False",
+							"L08S203","True",
+							"L08S204","True",
+							"L08S205","False",
+							"L08S206","True",
+							"L08S207","True"
+							];	
+					
+					
+			var L08_3 = [	"L08S301","yes",
+							"L08S302","No",
+							"L08S303","No",
+							"L08S304","No",
+							"L08S305","Yes"
+							];
+							
+			var	L08_4 = [	"L08S401", "Jerusalem",
+							"L08S402", "dish",
+							"L08S403", "inheritance",
+							"L08S404", "Israel",
+							"L08S405", "kings",
+							"L08S406", "doing",
+							"L08S407", "come",
+							"L08S408", "MENE",
+							"L08S409", "UPHARSIN"];
+		
+		var qbreak=[0, 3, 5,7, 9];  //cumulative
+		var secTxt="";
+		var qcount = 0;
+		var q2ans;
+		var pick;
+  	  
+		
+		var activeFile =[];		
+		 //SECTION FOUR ////////////////////////////////////////////////////////////////////////
+
+ ///////////////////////////////   MAIN FUNCTION -checkAnswers()  //////////////////////////////////////////////
+		function checkAnswers()
+		{
+		    answers ="";
+		  
+			answers ="LESSON 8: SECTION ONE:\n";
+			dropdownChecker(L08_1);
+			
+			answers +="\n\nLESSON 8:  SECTION TWO:\n\n";
+			dropdownChecker(L08_2);	
+			
+			answers +="\n\nLESSON 8:  SECTION THREE:\n";
+			dropdownChecker(L08_3);		
+			
+			answers +="\n\nLESSON 8:  SECTION FOUR:";
+			numberedPCk(L08_4);
+		
+		score =(0.5 + 100 * score/29);
+		score = Math.floor(score);
+		answers +="\n\nSCORE:  " + score+"%";
+		alert(answers);
+	
+	
+		}
+			
+
+//////////////////////////////////  FUNCTIONS TO CHECK QUESTIONS   /////////////////////////////////////
+//////////////////QUESTIONS WITH MULTIPLE ANSWERS REQUIRE TWO GLOBAL FILES - ONE PASSED TO FUNCTION ////
+//--------------------------------------------------------------------------------------------------////
+
+ 
+					
+	//////////  -- Section Radio ---------
+	function radioChecker(activeFile)
+	{
+		var radios ="";
+		var radVal ="";
+	
+	
+			for (i=0;i<activeFile.length/2;i++)
+				 {  
+				  pre ="Incorrect " + String(i+1) + ".  ";
+					radios=document.getElementsByName(activeFile[2*i]);
+				     for (j=0; j<radios.length; j++)
+					 {
+					     if(radios[j].checked)
+						 {
+							radVal=radios[j].value;
+						 }
+					 }
+				 
+				 
+					if(radVal==activeFile[2*i+1])
+					{
+						score++;
+						pre = "Correct   " + String(i+1) + ".  ";
+
+					}
+					answers+=pre + radVal +"\n";
+				 }
+				
+				
+	}
+	//////////////////----end SectionRadioChecker function ----------------///////
+//------------------------------------------------------------------------------------------
+	//////////////////  dropdown-select-list checker
+	function dropdownChecker(activeFile)
+			{
+				var e;
+				var strUser;
+				var e1;
+				var strUser1;
+				var count =0;
+
+				for (i=0; i<activeFile.length/2; i++)
+				{
+					e = document.getElementById(activeFile[2*i]);
+					strUser = e.options[e.selectedIndex].value;
+					strUser1 = activeFile[2*i+1];
+					if (strUser === strUser1)
+					{
+						strUser = strUser +" -- "+strUser1 + " -- correct";
+						score = score + 1;
+					}
+					else
+					{
+						strUser = strUser +" -- "+strUser1 + " -- incorrect";	
+					}
+					count +=1;
+					answers +="\n" + count +".  "+ strUser; 
+				}
+			}
+//////////////////////////// end dropdown /////////////////////////////////////
+//----------------------------------------------------------------------------------------
+////////////////////////////  fill in blanks in paragraph /////////////////////////////
+	
+	function paragraphChecker(activeFile)
+{
+	var count = 0;
+	var strUser ="";
+	
+    for (i=0; i<activeFile.length/2; i++)
+	{
+		strUser = document.getElementById(activeFile[2*i]).value;
+		if (strUser === activeFile[2*i+1])
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- correct";
+			score = score +1;
+		}
+		else
+		{
+			strUser = strUser +" -- "+ activeFile[2*i+1] + " -- incorrect";	
+		}
+		count +=1;
+		answers +="\n" + count +".  "+ strUser; 
+				
+	}
+
+}
+//////////////////////////////////////// END OF FILL IN  ////////////////////////////////////// 
+//----------------------------------------------------------------------------------------------
+///////////////////////////////////////// QUESTIONS WITH MULTIPLE ANSWERS  /////////////////////
+
+ function numberedPCk(activeFile)
+  {
+   var secTxt="";
+	var qcount = 0;
+	var q2ans="";
+	var pick;
+   var i=0;
+   var m = 0;
+   
+   
+ 
+	for (var j=1; j<qbreak.length; j++)  //number of questions
+	{    
+    		m++;  //question number                                                         
+	    q2ans+= "\n"  + m +".";    //build question by parts
+		pick="";  //answer selected  
+	  
+		for (i=qbreak[j-1]; i<qbreak[j]; i++)
+		{         
+			secTxt = document.getElementById(activeFile[2*i]).value;
+			if (secTxt == activeFile[1+2*i])
+			{
+				pick += "..." + secTxt + " - " + activeFile[2*i+1] + " - correct";
+				score +=1;
+		    }	
+			else
+		   {
+				pick += "..." + secTxt + " - " + activeFile[2*i+1] + " - incorrect";
+			}
+		}
+		
+		q2ans += pick;
+		qcount++;
+	}
+	answers = answers +"\n" + q2ans;
+	q2ans ="";
+
+ }
+ 
+
+	</script>
+	</head>
+	<body><nav>
+ 
+  <a href = "index.html"> HOME</a> &nbsp; &nbsp;
+  <a href = "Lesson_01.html"> 1</a> &nbsp; &nbsp;
+  <a href = "Lesson_02.html"> 2</a> &nbsp; &nbsp; 
+  <a href = "Lesson_03.html"> 3</a> &nbsp; &nbsp;
+  <a href = "Lesson_04.html"> 4</a> &nbsp; &nbsp;
+  <a href = "Lesson_05.html"> 5</a> &nbsp; &nbsp;
+  <a href = "Lesson_06.html"> 6</a> &nbsp; &nbsp;
+  <a href = "Lesson_07.html"> 7</a> &nbsp; &nbsp;
+   8 &nbsp; &nbsp;
+  <a href = "Lesson_09.html"> 9</a> &nbsp; &nbsp;   
+  <a href = "Lesson_10.html">10</a> &nbsp; &nbsp;   
+  <a href = "Lesson_11.html">11</a> &nbsp; &nbsp;
+  <a href = "Lesson_12.html">12</a> &nbsp; &nbsp;
+  <a href = "Lesson_13.html">13</a> &nbsp; &nbsp;  
+  <a href = "Lesson_14.html">14</a> &nbsp; &nbsp;  
+  <a href = "Lesson_15.html">15</a> &nbsp; &nbsp;
+  
+  
+</nav>
+	<h1>The Divided Kingdom</h1>
+	<h3>Lesson 8</h3>
+	
+
+<div class="d1">
+
+	<p class="p1">
+The death of Solomon ended the greatest period in the history of Israel, the <b>United Kingdom.</b>  This was followed by the <b>Divided Kingdom</b> which lasted 388 years.  At Solomon's death, his son Rehoboam ascended the throne.  His subjects had long chafed under the heavy taxation of Solomon.  Led by Jeroboam, a general of Solomon's, they asked Rehoboam to lighten their load.  Rehoboam foolishly replied "My father made your yoke heavy, and I will add to your yoke." (I Kings 12:14.)  The people were so angry with this reply that ten of the twelve tribes revolted against Roboam and crowned Jeroboam as their king.  Jeroboam's kingdom became known as the <b>northern kingdom</b> or Israel.  Only the tribes of Judah and Benjamin remained with Rehoboam in the <b>southern kingdom</b> or Judah.  (The little tribe of Benjamin was so small it was virtually swallowed by the tribe of Judah.)  II Kings and the last part of the books of I Kings and II chronicles tell the complete story of the Divided Kingdom.  
+	</p>
+</div>
+<div class="d1">
+	<h2>The Northern Kingdom of Israel</h2>
+	<p class="p1">
+You will remember that for about 300 years the twelve tribes of Israel had been loosely governed by judges.  The last and greaest of these was the prophet Samuel.  But the children of Israel wanted to be like their neighbors; they came to Samuel and asked for a king.  Although god was much displeased with their request, He instructed Samuel to anoint as their king a young man named Saul who stood "head and shoulders" above the people.  The people gathered at Mizpeh and were presented with their new ruler who was so timid that he hid among the baggage.
+	</p>
+	<p class="p1">	
+The story of the northern kingdom is not a happy one.  During its 253 years of history it had one bad ruler after another, not a single one of its 19 kings actually being "good".  Nine dynesties or families of kings reignid during this time.  Sesveral kings were murdered and their places were thaken by usurpers.  Jeroboam was so afraid that the people would go back to Jerusalem in Judah to worship and desire Rehoboam for their king, the he set up two golden calves at Dan and Bethel for them to worship.  So angered was God at his action that He sent Ahijah to hem to predict the downfal of Jeroboam's house and the doom of Israel.  The prophet declared, "The Lord shall smite Israel . . . and he shall root up Israel out of this good land . . . and shal scatter them beyond the river."  (I Kings 14:15.)
+	</p>
+	<p class="p1">
+After Jeroboam's death, idolatry became even more rampant than before, and under Ahab, the seventh king, worship of the idol god Baal was introduced.  During its first eight years the northern kingdom was almost continually at war with Judah.  The ascension of Ahab to the throne sank Israel to its lowest dephs.  Ahab married a foreign woman, Jezebel, daughter of the king of Tyre.  She brought along her idols and soon abolished the worship of Jehovah in Israel.  It is doubtful that a more evil, unscrupulous worman is described in the entire Bible and Ahab was so spineless that he yielded to his wifes evil designs.  God sent the prophet Elijah to cry out against this idolatry.  Elijah conducted a contest with the prophets of Baal on Mt. Carmel, and when they were proven false he had them slain.  This intensified the determination of Jezebel to kill Elijah, but she never succeeded in her attempt.
+	</p>
+	<p class="p1">
+Perhaps the best of all kings of Israel was Jehu who succeeded Ahab's son as king.  With a ruthless determination he had Jezebel killed and Baal worship abolished.  But his zeal ran out and he never did away with the golden calves se up by Jeroboam.  Of most of the kingws who followed Jehu it is said ehey "departed not from the sins of Jeroboam."  Israel's political strength reached its greatest height since Solomon under Jeroboam II, but idolatry again grew worse.  Gon carried out His promise made by Ahijah to punish and scatter Israel.  in 722 B. C. the powerful Assyrian king carried the people of Israel into Assyria.  They <b>never</b> returned.  From this point the story of the Jews is that of the Kingdom of Judah.
+	</p>
+</div>
+
+<div class="d1">
+<h2>The Southern Kingdom of Judah</h2>	
+	<p class="p1">
+Judah was smaller and weaker than Israel.  Yet, though its 388 years of history it remained much closer to God.  Several kings were very good and on the whole the bad were not so evil as those of Israel.  All were of the family of David.  Judah began to decline under Rehoboam, but during the reigns of good kings Asa and Jehoshaphat a great revival swept the land.  In the following years Judah borrowed the religion of Baal from Israel.  It remained for King Hezekiah to completely root out idolatry.  He and his gread-grandson Josiah were the two best kings to rule Judah.  But Hezekiah's son, Manasseh, was as evil as Hezekiah was good.  In his fifty-five year reign he introduced every form of idol worship he could think of and even burned his own childeren with fire as a religious rite.  This caused God to promise through the rophets that Judah would be sorely punished for it idolatry.  After Josiah became king he set out to bring the people back to God.  When the lost book of the law was found in the temple, Josiah instituted such a religious revival as his people had never seen.
+	</p>
+	<p class="p1">
+Following Josiah's death, Judah descended rapidly.  All the remaining kings	were bad or weak.  Judah was soon made a "satellite" of Babylon, and when the kings dared to rebel, King Nebuchadnezzer of Babylon in 606 B. C. carried most of the people into captivity as the Assyrians had done with Israel over 100 years before.  Zedekiah, the last king of Judah, goveerned a few that remained, but in 587 B. C. he too and most of the rest were also carried into Babylon.  This punishment of God taught the Jews a lesson.  Never again did they return to idolatry.
+	</p>
+</div>
+
+<div class="d1">
+<h2>The Babylonian Captivity</h2>	
+	<p class="p1">
+The Jews remained in Babylon seventy years before any returned.  Our Bible knowledge of the capitivity is largely gained from the books of Daniel and Esther.  While Daniel is a book of prophecy, it also contains much history and many fine stories such as the three Hebrew children in the fiery furnance, Daniel in the lions' den, and the handwriting on the wall.  Esther tells us how a Jewish maiden became queen, and how she saved her people from almost certain destruction when they were about to be slain.
+	</p>
+</div>
+
+
+<div class="d1">
+<h2>The Return</h2>	
+	<p class="p1">
+In 546 B. C. Zerubbabel led many of the Jews back home.  He began a new temple to replace Solomon's which had been destroyed when Judah was carried into captivity.  Ezra, the great priest and scribe, led another group back eighty years later and shortly afterwards Nehemiah returned with a third group to rebuild the walls of Jerusalem.  The story of these returns is told in the books of Nehemiah and Ezra.  Not all the Jews returned nor was the Kingdom of Judah re-established after the return.	
+	</p>
+	<p class="p1">
+	
+The book of Nehemiah ends the historical protion of the Old Testament, but form profane history we know that in the following 400 years before Christ the Jews were ruled mostly by the Persians, Macedonians, and Romans except for a brief period of independence under the leadership of the Maccabees.
+	</p>
+</div>
+
+
+
+<div>
+<h1 id="q-head">"Seek and Ye Shall Find"</h1>
+<table>
+
+
+		<tr><td colspan ="2"><strong>Select the name of the king of Israel of Judah described by each of these statements:</strong></td></tr>
+		<tr><td> &nbsp; &nbsp; 1.  Who as the first ruler of the northern kingdom of Israel?.</td>
+			<td>
+			<select size="1" name="L08S101" id="L08S101">
+				<option>Select the king:</option>
+				<option value="Ahab">Ahab</option>
+				<option value="Hezekiah">Hezekiah</option>
+				<option value="Jehu">Jehu</option>
+				<option value="Jeroboam">Jeroboam</option>
+				<option value="Josiah">Josiah</option>
+				<option value="Manasseh">Manasseh</option>
+				<option value="Rehoboam">Rehoboam</option>
+				<option value="Zedekiah">Zedekiah</option>
+			</select>
+			</td>
+			</tr>
+		
+		<tr><td> &nbsp; &nbsp; 2.  What king of Judah burned his children with fire?</td>
+			<td>
+			<select size="1" name="L08S102" id="L08S102">
+				<option>Select the king:</option>
+				<option value="Ahab">Ahab</option>
+				<option value="Hezekiah">Hezekiah</option>
+				<option value="Jehu">Jehu</option>
+				<option value="Jeroboam">Jeroboam</option>
+				<option value="Josiah">Josiah</option>
+				<option value="Manasseh">Manasseh</option>
+				<option value="Rehoboam">Rehoboam</option>
+				<option value="Zedekiah">Zedekiah</option>
+
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 3.  Who had the wicked Jezebel as queen?</td>
+			<td>
+			<select size="1" name="L08S103" id="L08S103">
+				<option>Select the king:</option>
+				<option value="Ahab">Ahab</option>
+				<option value="Hezekiah">Hezekiah</option>
+				<option value="Jehu">Jehu</option>
+				<option value="Jeroboam">Jeroboam</option>
+				<option value="Josiah">Josiah</option>
+				<option value="Manasseh">Manasseh</option>
+				<option value="Rehoboam">Rehoboam</option>
+				<option value="Zedekiah">Zedekiah</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 4.  What king was carried into Babylon as a captive?</td>
+			<td>		
+			<select size="1" name="L08S104" id="L08S104">
+				<option>Select the king:</option>
+				<option value="Ahab">Ahab</option>
+				<option value="Hezekiah">Hezekiah</option>
+				<option value="Jehu">Jehu</option>
+				<option value="Jeroboam">Jeroboam</option>
+				<option value="Josiah">Josiah</option>
+				<option value="Manasseh">Manasseh</option>
+				<option value="Rehoboam">Rehoboam</option>
+				<option value="Zedekiah">Zedekiah</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 5.  What king was the son on Solomon?</td>
+			<td>
+			<select size="1" name="L08S105" id="L08S105">
+				<option>Select the king:</option>
+				<option value="Ahab">Ahab</option>
+				<option value="Hezekiah">Hezekiah</option>
+				<option value="Jehu">Jehu</option>
+				<option value="Jeroboam">Jeroboam</option>
+				<option value="Josiah">Josiah</option>
+				<option value="Manasseh">Manasseh</option>
+				<option value="Rehoboam">Rehoboam</option>
+				<option value="Zedekiah">Zedekiah</option>
+		</select>
+		</td>
+		</tr>
+	
+		<tr><td> &nbsp; &nbsp; 6.  In whose reign was found the lost book of the law?</td>
+			<td>
+			<select size="1" name="L08S106" id="L08S106">
+				<option>Select the king:</option>
+				<option value="Ahab">Ahab</option>
+				<option value="Hezekiah">Hezekiah</option>
+				<option value="Jehu">Jehu</option>
+				<option value="Jeroboam">Jeroboam</option>
+				<option value="Josiah">Josiah</option>
+				<option value="Manasseh">Manasseh</option>
+				<option value="Rehoboam">Rehoboam</option>
+				<option value="Zedekiah">Zedekiah</option>
+
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 7.  Who killed Jezebel and abolished Baal worshi in Israel?</td>
+			<td>
+			<select size="1" name="L08S107" id="L08S107">
+				<option>Select the king:</option>
+				<option value="Ahab">Ahab</option>
+				<option value="Hezekiah">Hezekiah</option>
+				<option value="Jehu">Jehu</option>
+				<option value="Jeroboam">Jeroboam</option>
+				<option value="Josiah">Josiah</option>
+				<option value="Manasseh">Manasseh</option>
+				<option value="Rehoboam">Rehoboam</option>
+				<option value="Zedekiah">Zedekiah</option>
+
+		</select>
+		</td>
+		</tr>
+		
+		<tr><td> &nbsp; &nbsp; 8.  Besides Josiah, who was the other great king of Judah?</td>
+			<td>
+			<select size="1" name="L08S108" id="L08S108">
+				<option>Select the king:</option>
+				<option value="Ahab">Ahab</option>
+				<option value="Hezekiah">Hezekiah</option>
+				<option value="Jehu">Jehu</option>
+				<option value="Jeroboam">Jeroboam</option>
+				<option value="Josiah">Josiah</option>
+				<option value="Manasseh">Manasseh</option>
+				<option value="Rehoboam">Rehoboam</option>
+				<option value="Zedekiah">Zedekiah</option>
+
+		</select>
+		</td>
+		</tr>
+		
+			
+	</table>
+	
+	
+	<table>
+		<tr><td colspan ="2"><strong>Read the story of the contest between Elijah and the prophets of Baal in I Kings 18:17-40.  Select True or False to answer the questions:</strong></td></tr>
+		<tr><td> &nbsp; &nbsp; 1.  When Ahab saw Elijah he said "Art thou he that troubleth Israel?"</td>
+			<td>
+			<select size="1" name="L08S201" id="L08S201">
+				<option>Select your answer:</option>
+				<option value="True">True</option>
+				<option value="False">False</option>
+			</select>
+			</td>
+			</tr>
+		
+		<tr><td> &nbsp; &nbsp; 2.  The prophets of Baal numbered 275.</td>
+			<td>
+			<select size="1" name="L08S202" id="L08S202">
+				<option>Select your answer:</option>
+				<option value="True">True</option>
+				<option value="False">False</option>
+			</select>
+			</td>
+			</tr>
+		<tr><td> &nbsp; &nbsp; 3.  Elijah gave the people a choice between God and Baal.</td>
+			<td>
+			<select size="1" name="L08S203" id="L08S203">
+				<option>Select your answer:</option>
+				<option value="True">True</option>
+				<option value="False">False</option>
+			</select>
+			</td>
+			</tr>
+		<tr><td> &nbsp; &nbsp; 4.  The prophets of Baal cut themselves with knives until they drew blood.</td>
+			<td>
+			<select size="1" name="L08S204" id="L08S204">
+				<option>Selec your answer:</option>
+				<option value="True">True</option>
+				<option value="False">False</option>
+			</select>
+			</td>
+			</tr>
+		<tr><td> &nbsp; &nbsp; 5.  Elijah built an altar with six stones.</td>
+			<td>
+			<select size="1" name="L08S205" id="L08S205">
+				<option>Select your answer:</option>
+				<option value="True">True</option>
+				<option value="False">False</option>
+			</select>
+			</td>
+			</tr>
+		<tr><td> &nbsp; &nbsp; 6.  Elijah commanded that four barrels of water be poured three times over the sacrifice.</td>
+			<td>
+			<select size="1" name="L08S206" id="L08S206">
+				<option>Select your answer:</option>
+				<option value="True">True</option>
+				<option value="False">False</option>
+			</select>
+			</td>
+			</tr>
+		<tr><td> &nbsp; &nbsp; 7.  Fire from the Lord consumed Elijah's sacrifice.</td>
+			<td>
+			<select size="1" name="L08S207" id="L08S207">
+				<option>Select your answer:</option>
+				<option value="True">True</option>
+				<option value="False">False</option>
+			</select>
+			</td>
+			</tr>					
+	</table>
+
+		<table>
+		<tr><td colspan ="2"><strong>Read the story of Daniel in the lion's den in Daniel 6.   Select Yes or No to answer the questions:</strong></td></tr>
+		<tr><td> &nbsp; &nbsp; 1.  Did the presidents and princes persuade the king to make a decree forbidding worship to any man or god, except the king himself, for thirty days.</td>
+			<td>
+			<select size="1" name="L08S301" id="L08S301">
+				<option>Select your answer:</option>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+			</td>
+			</tr>
+		
+		<tr><td> &nbsp; &nbsp; 2.  Did Daniel stop worshiping God when he heard of the decree?</td>
+			<td>
+			<select size="1" name="L08S302" id="L08S302">
+				<option>Select your answer:</option>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+			</td>
+			</tr>
+		<tr><td> &nbsp; &nbsp; 3.  Was the king glad that Daniel had disobeyed the law so that he could cast him ino the lions' den?</td>
+			<td>
+			<select size="1" name="L08S303" id="L08S303">
+				<option>Select your answer:</option>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+			</td>
+			</tr>
+		<tr><td> &nbsp; &nbsp; 4.  When the king came to the lion's den in he morning had Daniel been eaten by the lions?</td>
+			<td>
+			<select size="1" name="L08S304" id="L08S304">
+				<option>Select your answer:</option>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+			</td>
+			</tr>
+		<tr><td> &nbsp; &nbsp; 5.  Were the accusers of Daniel cast into the den of lions?</td>
+			<td>
+			<select size="1" name="L08S305" id="L08S305">
+				<option>Select your answer:</option>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+			</td>
+			</tr>
+							
+	</table>
+
+<table>
+<tr><td colspan="2"><b>Fill in the scripture quotations:</b></td></tr>
+<tr><td class ="numcol">1.</td><td class="table-txt"> II Kings 21: 13, 14 -- "And I will stretch over	<input name="L08S401" id="L08S401"> the line of Samaria, and the plummet of the house of Ahab: and I will wipe Jerusalem as a man wipeth a <input name="L08S402" id="L08S402">,wiping it, and turning it upside down.  And I will forsake the remnant of mine <input name="L08S403" id="L08S403">, and deliver them into the hand of their enemies; and they shall become a prey and a spoil to all their enemies."</td></tr>
+	
+<tr><td class ="numcol">2.</td><td class="table-txt">II Kings 18:5 (speaking of Herekiah) -- "He trusted in the Lord God of <input name="L08S404" id="L08S404">; so that after him was none like him among all the <input name="L08S405" id="L08S405"> of Judah, no any that were before him."</td></tr>
+	
+<tr><td class ="numcol">3.</td><td class="table-txt">Nehemiah 6:3  (words of Nehemiah when asked to compromise while rebuilding the walls of Jerusalem) -- "And I sent messengers unto them, saying, I am <input name="L08S406" id="L08S406"> a great work, so that I cannot <input name="L08S407" id="L08S407"> down: why should the work cease, whilst I leave it, and come down to you?"</td></tr>
+
+	
+<tr><td class ="numcol">4.</td><td class="table-txt">Daniel 5:25 (the handwriting on the wall) -- "And this is the writing that was written, MENE, <input name="L08S408" id="L08S408">, TEKEL.  <input name="L08S409" id="L08S409">."</td></tr>
+	
+</table>	
+	</div>
+<footer>	
+<div id ="wrap_up">
+
+<button onclick="checkAnswers()">Check Answers</button>
+                
+</div>
+</footer>	
+
+</body>
+</html>
